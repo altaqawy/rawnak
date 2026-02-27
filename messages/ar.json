@@ -1,0 +1,905 @@
+{
+    "meta":  {
+                 "title":  "رونق أوفيشال",
+                 "description":  "الموقع الرسمي لرونق أوفيشال."
+             },
+    "brand":  {
+                  "name":  "رونق أوفيشال",
+                  "tagline":  "علامة واحدة… إمكانيات لا تنتهي."
+              },
+    "nav":  {
+                "home":  "الرئيسية",
+                "services":  "الخدمات",
+                "products":  "المنتجات",
+                "diy":  "اصنعها بنفسك",
+                "portfolio":  "الأعمال",
+                "about":  "عن رونق",
+                "contact":  "تواصل",
+                "login":  "تسجيل الدخول",
+                "signup":  "إنشاء حساب",
+                "admin":  "لوحة الإدارة",
+                "portal":  "بوابة العميل",
+                "logout":  "تسجيل الخروج",
+                "language":  "اللغة",
+                "openMenu":  "فتح القائمة",
+                "closeMenu":  "إغلاق القائمة",
+                "goHome":  "العودة للرئيسية"
+            },
+    "theme":  {
+                  "light":  "فاتح",
+                  "dark":  "داكن",
+                  "switchToLight":  "التبديل للوضع الفاتح",
+                  "switchToDark":  "التبديل للوضع الداكن"
+              },
+    "system":  {
+                   "sectionPending":  "سيتم إضافة المحتوى بواسطة المستخدمين المخوّلين.",
+                   "noItems":  "لا توجد عناصر بعد.",
+                   "contentArea":  "منطقة المحتوى",
+                   "detailsArea":  "منطقة التفاصيل",
+                   "formArea":  "منطقة النموذج"
+               },
+    "pages":  {
+                  "services":  {
+                                   "title":  "الخدمات"
+                               },
+                  "products":  {
+                                   "title":  "المنتجات"
+                               },
+                  "diy":  {
+                              "title":  "اصنعها بنفسك"
+                          },
+                  "portfolio":  {
+                                    "title":  "الأعمال"
+                                },
+                  "about":  {
+                                "title":  "عن رونق"
+                            },
+                  "contact":  {
+                                  "title":  "تواصل"
+                              }
+              },
+    "footer":  {
+                   "brand":  "رونق أوفيشال",
+                   "note":  "يتم إدارة المحتوى بواسطة المستخدمين المخوّلين."
+               },
+    "auth":  {
+                 "fields":  {
+                                "email":  "البريد الإلكتروني",
+                                "password":  "كلمة المرور"
+                            },
+                 "errors":  {
+                                "supabase_not_configured":  "متغيرات Supabase غير مهيأة.",
+                                "missing_fields":  "يرجى استكمال الحقول المطلوبة.",
+                                "invalid_credentials":  "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+                                "signup_disabled":  "تسجيل العملاء متوقف حالياً.",
+                                "signup_failed":  "تعذر إنشاء الحساب، حاول مرة أخرى."
+                            },
+                 "status":  {
+                                "check_email":  "تحقق من بريدك الإلكتروني لإكمال تفعيل الحساب."
+                            },
+                 "login":  {
+                               "title":  "تسجيل الدخول",
+                               "subtitle":  "الوصول إلى حسابك.",
+                               "submit":  "تسجيل الدخول",
+                               "noAccount":  "لا تملك حساباً؟",
+                               "signupLink":  "أنشئ حساباً"
+                           },
+                 "signup":  {
+                                "title":  "إنشاء حساب",
+                                "subtitle":  "إنشاء حساب عميل.",
+                                "submit":  "إنشاء حساب",
+                                "haveAccount":  "لديك حساب بالفعل؟",
+                                "loginLink":  "تسجيل الدخول"
+                            }
+             },
+    "admin":  {
+                  "title":  "لوحة فريق العمل",
+                  "nav":  {
+                              "overview":  "نظرة عامة",
+                              "services":  "الخدمات",
+                              "products":  "المنتجات",
+                              "kits":  "العدة",
+                              "portfolio":  "الأعمال",
+                              "pages":  "الصفحات",
+                              "templates":  "القوالب",
+                              "theme":  "المظهر",
+                              "media":  "الوسائط",
+                              "seo":  "SEO",
+                              "analytics":  "الإحصائيات",
+                              "audit":  "سجل التغييرات",
+                              "users":  "المستخدمون والأدوار",
+                              "settings":  "إعدادات الموقع",
+                              "dashboard":  "لوحة المعلومات",
+                              "customers":  "العملاء",
+                              "leads":  "الطلبات والاستفسارات",
+                              "tickets":  "التذاكر",
+                              "orders":  "الطلبات",
+                              "deliveries":  "التسليم والمرتجعات",
+                              "inventoryItems":  "العناصر",
+                              "stockMoves":  "حركة المخزون",
+                              "stockLedger":  "دفتر المخزون",
+                              "invoices":  "الفواتير",
+                              "payments":  "المدفوعات",
+                              "expenses":  "المصروفات",
+                              "cashflow":  "التدفق النقدي",
+                              "profitLoss":  "الربح والخسارة",
+                              "reportWebsite":  "تقرير الموقع",
+                              "reportCustomers":  "تقرير العملاء",
+                              "reportTeam":  "تقرير الفريق",
+                              "reportInventory":  "تقرير المخزون",
+                              "reportFinance":  "تقرير المالية",
+                              "hub":  "مركز الإدارة",
+                              "contentModule":  "الموقع والمحتوى",
+                              "crmModule":  "العملاء (CRM)",
+                              "teamModule":  "الفريق والأدوار",
+                              "opsModule":  "العمليات",
+                              "inventoryModule":  "المخزون",
+                              "financeModule":  "المالية",
+                              "reportsModule":  "التقارير"
+                          },
+                  "roles":  {
+                                "owner":  "مالك",
+                                "admin":  "مسؤول",
+                                "supervisor":  "مشرف",
+                                "employee":  "موظف",
+                                "customer":  "عميل"
+                            },
+                  "scopes":  {
+                                 "all":  "الكل",
+                                 "services":  "الخدمات",
+                                 "products":  "المنتجات",
+                                 "kits":  "العدة",
+                                 "portfolio":  "الأعمال"
+                             },
+                  "actions":  {
+                                  "site":  "فتح الموقع",
+                                  "logout":  "تسجيل الخروج",
+                                  "create":  "إنشاء",
+                                  "save":  "حفظ",
+                                  "delete":  "حذف",
+                                  "markCompleted":  "تسجيل عملية مكتملة"
+                              },
+                  "overview":  {
+                                   "title":  "نظرة عامة",
+                                   "subtitle":  "إدارة المحتوى والصلاحيات حسب الدور.",
+                                   "builder":  "منشئ الصفحات",
+                                   "content":  "المحتوى",
+                                   "activity":  "سجل التغييرات"
+                               },
+                  "content":  {
+                                  "hint":  "سيتم إضافة المحتوى بواسطة المستخدمين المخوّلين.",
+                                  "createTitle":  "إنشاء عنصر",
+                                  "createHint":  "استخدم بيانات حقيقية فقط.",
+                                  "itemsTitle":  "العناصر",
+                                  "itemsHint":  "يمكنك تعديل السجلات المسموح بها حسب دورك."
+                              },
+                  "fields":  {
+                                 "titleAr":  "العنوان (عربي)",
+                                 "titleEn":  "العنوان (إنجليزي)",
+                                 "descriptionAr":  "الوصف (عربي)",
+                                 "descriptionEn":  "الوصف (إنجليزي)",
+                                 "slug":  "الرابط المختصر",
+                                 "status":  "الحالة",
+                                 "assignedTo":  "معرّف المستخدم المسند إليه (اختياري)"
+                             },
+                  "status":  {
+                                 "draft":  "مسودة",
+                                 "published":  "منشور"
+                             },
+                  "users":  {
+                                "subtitle":  "دعوة الموظفين أولاً، ثم تعيين الدور والنطاق بعد قبول الدعوة.",
+                                "inviteTitle":  "دعوة موظف",
+                                "inviteHint":  "الدعوات لحسابات الموظفين فقط.",
+                                "inviteAction":  "إرسال الدعوة",
+                                "rolesTitle":  "الأدوار",
+                                "rolesHint":  "تغيير الدور والنطاق مفروض بواسطة RLS.",
+                                "roleField":  "الدور",
+                                "scopesField":  "النطاقات",
+                                "noDisplayName":  "بدون اسم عرض"
+                            },
+                  "settings":  {
+                                   "subtitle":  "إعدادات الموقع يديرها المالك/المسؤول فقط.",
+                                   "fields":  {
+                                                  "brandNameAr":  "اسم العلامة (عربي)",
+                                                  "brandNameEn":  "اسم العلامة (إنجليزي)",
+                                                  "taglineAr":  "الشعار (عربي)",
+                                                  "taglineEn":  "الشعار (إنجليزي)",
+                                                  "logoPath":  "مسار الشعار",
+                                                  "lightIntensity":  "شدة خلفية الوضع الفاتح",
+                                                  "darkIntensity":  "شدة خلفية الوضع الداكن",
+                                                  "allowCustomerSignup":  "السماح بتسجيل العملاء",
+                                                  "backgroundMotionEnabled":  "تفعيل حركة الخلفية"
+                                              }
+                               },
+                  "empty":  {
+                                "noItems":  "لا توجد عناصر بعد.",
+                                "authorizedOnly":  "سيتم إضافة المحتوى بواسطة المستخدمين المخوّلين."
+                            },
+                  "messages":  {
+                                   "missing_fields":  "يرجى استكمال الحقول المطلوبة.",
+                                   "invalid_request":  "طلب غير صالح.",
+                                   "save_failed":  "تعذر إكمال العملية.",
+                                   "delete_failed":  "تعذر الحذف.",
+                                   "invited":  "تم إرسال الدعوة.",
+                                   "saved":  "تم الحفظ بنجاح.",
+                                   "deleted":  "تم الحذف بنجاح.",
+                                   "supabase_not_configured":  "متغيرات Supabase غير مهيأة.",
+                                   "invite_failed":  "تعذر إرسال الدعوة.",
+                                   "cannot_grant_owner":  "غير مسموح بمنح دور المالك."
+                               },
+                  "sections":  {
+                                   "dashboard":  "لوحة المعلومات",
+                                   "website":  "الموقع والمحتوى",
+                                   "content":  "المحتوى",
+                                   "customers":  "العملاء",
+                                   "team":  "الفريق والأدوار",
+                                   "operations":  "العمليات",
+                                   "inventory":  "المخزون",
+                                   "finance":  "المالية",
+                                   "reports":  "التقارير",
+                                   "main":  "الرئيسية",
+                                   "modules":  "الوحدات"
+                               }
+              },
+    "analytics":  {
+                      "title":  "الإحصائيات",
+                      "subtitle":  "تتبّع المشاهدات والنقرات والعمليات المكتملة للصفحات والعناصر.",
+                      "empty":  "لا توجد عناصر بعد.",
+                      "filters":  {
+                                      "from":  "من",
+                                      "to":  "إلى",
+                                      "locale":  "اللغة",
+                                      "entityType":  "نوع العنصر",
+                                      "all":  "الكل",
+                                      "apply":  "تطبيق الفلاتر"
+                                  },
+                      "cards":  {
+                                    "totalEvents":  "إجمالي الأحداث",
+                                    "pageViews":  "مشاهدات الصفحات",
+                                    "clicks":  "النقرات",
+                                    "completed":  "العمليات المكتملة",
+                                    "ctr":  "معدل النقر",
+                                    "completionRate":  "معدل الإكمال"
+                                },
+                      "tables":  {
+                                     "entities":  "أداء العناصر",
+                                     "pages":  "أداء الصفحات",
+                                     "recent":  "أحدث الأحداث"
+                                 },
+                      "columns":  {
+                                      "entityType":  "النوع",
+                                      "entity":  "العنصر",
+                                      "clicks":  "النقرات",
+                                      "completed":  "المكتمل",
+                                      "rate":  "المعدل",
+                                      "page":  "الصفحة",
+                                      "views":  "المشاهدات",
+                                      "event":  "الحدث",
+                                      "time":  "الوقت"
+                                  },
+                      "entity":  {
+                                     "services":  "الخدمات",
+                                     "products":  "المنتجات",
+                                     "kits":  "الأطقم",
+                                     "portfolio":  "الأعمال"
+                                 }
+                  },
+    "ownerBuilder":  {
+                         "empty":  {
+                                       "noItems":  "لا توجد عناصر بعد.",
+                                       "authorizedOnly":  "سيتم إضافة المحتوى بواسطة المالك."
+                                   },
+                         "messages":  {
+                                          "missing_fields":  "يرجى استكمال الحقول المطلوبة.",
+                                          "invalid_request":  "طلب غير صالح.",
+                                          "save_failed":  "تعذر إكمال العملية.",
+                                          "delete_failed":  "تعذر الحذف.",
+                                          "saved":  "تم الحفظ بنجاح.",
+                                          "deleted":  "تم الحذف بنجاح.",
+                                          "restored":  "تمت استعادة المراجعة.",
+                                          "template_saved":  "تم حفظ القالب.",
+                                          "applied":  "تم التطبيق.",
+                                          "preset_saved":  "تم حفظ الإعداد."
+                                      },
+                         "status":  {
+                                        "draft":  "مسودة",
+                                        "published":  "منشور"
+                                    },
+                         "actions":  {
+                                         "create":  "إنشاء",
+                                         "save":  "حفظ",
+                                         "delete":  "حذف",
+                                         "createPage":  "إنشاء صفحة",
+                                         "edit":  "تحرير",
+                                         "preview":  "معاينة",
+                                         "addBlock":  "إضافة بلوك",
+                                         "saveDraft":  "حفظ كمسودة",
+                                         "publish":  "نشر",
+                                         "unpublish":  "إلغاء النشر",
+                                         "saveTemplate":  "حفظ كقالب",
+                                         "saveBlockTemplate":  "حفظ مجموعة بلوكات",
+                                         "restore":  "استعادة",
+                                         "duplicate":  "نسخ",
+                                         "hide":  "إخفاء",
+                                         "show":  "إظهار",
+                                         "applyTemplate":  "تطبيق القالب",
+                                         "upload":  "رفع",
+                                         "filter":  "تصفية",
+                                         "savePreset":  "حفظ إعداد",
+                                         "applyPreset":  "تطبيق الإعداد",
+                                         "undo":  "تراجع",
+                                         "redo":  "إعادة",
+                                         "append":  "إضافة",
+                                         "replace":  "استبدال",
+                                         "pickMedia":  "اختيار وسائط",
+                                         "addItem":  "إضافة عنصر",
+                                         "close":  "إغلاق",
+                                         "resetOverrides":  "إعادة تعيين التخصيصات",
+                                         "copyBaseToDevice":  "نسخ الأساس إلى الجهاز",
+                                         "testAnimation":  "اختبار الحركة",
+                                         "previewAnimationsOn":  "معاينة الحركة: مفعّلة",
+                                         "previewAnimationsOff":  "معاينة الحركة: متوقفة"
+                                     },
+                         "fields":  {
+                                        "slug":  "الرابط المختصر",
+                                        "titleAr":  "العنوان (عربي)",
+                                        "titleEn":  "العنوان (إنجليزي)",
+                                        "status":  "الحالة",
+                                        "templateName":  "اسم القالب",
+                                        "blockTemplateName":  "اسم مجموعة البلوكات",
+                                        "template":  "القالب",
+                                        "contentAr":  "المحتوى (عربي)",
+                                        "contentEn":  "المحتوى (إنجليزي)",
+                                        "spacingTop":  "مسافة أعلى",
+                                        "spacingBottom":  "مسافة أسفل",
+                                        "containerWidth":  "عرض الحاوية",
+                                        "alignment":  "المحاذاة",
+                                        "columns":  "الأعمدة",
+                                        "altAr":  "نص بديل (عربي)",
+                                        "altEn":  "نص بديل (إنجليزي)",
+                                        "media":  "الوسائط",
+                                        "file":  "ملف",
+                                        "bgIntensityLight":  "شدة خلفية الوضع الفاتح",
+                                        "bgIntensityDark":  "شدة خلفية الوضع الداكن",
+                                        "bgMotionEnabled":  "تفعيل حركة الخلفية",
+                                        "lightBase":  "أساس الفاتح",
+                                        "lightSecondary":  "ثانوي الفاتح",
+                                        "lightPrimary":  "أساسي الفاتح",
+                                        "lightText":  "نص الفاتح",
+                                        "darkBase":  "أساس الداكن",
+                                        "darkSecondary":  "ثانوي الداكن",
+                                        "darkAccent":  "تمييز الداكن",
+                                        "darkText":  "نص الداكن",
+                                        "radius":  "الاستدارة",
+                                        "shadowSoft":  "ظل ناعم",
+                                        "typographyScale":  "مقياس الخط",
+                                        "brandNameAr":  "اسم العلامة (عربي)",
+                                        "brandNameEn":  "اسم العلامة (إنجليزي)",
+                                        "taglineAr":  "الشعار (عربي)",
+                                        "taglineEn":  "الشعار (إنجليزي)",
+                                        "logoPath":  "مسار الشعار",
+                                        "customersSignupEnabled":  "السماح بتسجيل العملاء",
+                                        "action":  "الإجراء",
+                                        "entityType":  "نوع الكيان",
+                                        "entityId":  "معرّف الكيان",
+                                        "actorId":  "معرّف المنفذ",
+                                        "createdAt":  "وقت الإنشاء",
+                                        "navLabelAr":  "تسمية القائمة (عربي)",
+                                        "navLabelEn":  "تسمية القائمة (إنجليزي)",
+                                        "navOrder":  "ترتيب القائمة",
+                                        "showInNav":  "إظهار في التنقل",
+                                        "zoom":  "التكبير",
+                                        "link":  "الرابط",
+                                        "embedUrl":  "رابط التضمين",
+                                        "fileLabelAr":  "تسمية الملف (عربي)",
+                                        "fileLabelEn":  "تسمية الملف (إنجليزي)",
+                                        "galleryMode":  "وضع المعرض",
+                                        "faqItems":  "عناصر الأسئلة الشائعة",
+                                        "animationEnabled":  "تفعيل الحركة",
+                                        "animationEngine":  "محرك الحركة",
+                                        "animationPreset":  "نمط الحركة",
+                                        "durationMs":  "المدة (مللي ثانية)",
+                                        "delayMs":  "التأخير (مللي ثانية)",
+                                        "easing":  "التسارع",
+                                        "trigger":  "المشغل",
+                                        "once":  "مرة واحدة",
+                                        "viewportAmount":  "نسبة الظهور",
+                                        "staggerMs":  "فاصل التعاقب (مللي ثانية)",
+                                        "hoverScale":  "تكبير التحويم",
+                                        "parallaxStrength":  "قوة البارالاكس",
+                                        "lottieMedia":  "ملف لوتي JSON",
+                                        "loop":  "تكرار",
+                                        "autoplay":  "تشغيل تلقائي",
+                                        "speed":  "السرعة",
+                                        "customClass":  "فئة مخصصة",
+                                        "parent":  "الحاوية الأب",
+                                        "searchMedia":  "بحث الوسائط"
+                                    },
+                         "options":  {
+                                         "content":  "المحتوى",
+                                         "wide":  "واسع",
+                                         "full":  "كامل",
+                                         "start":  "بداية",
+                                         "center":  "وسط",
+                                         "end":  "نهاية",
+                                         "grid":  "شبكة",
+                                         "carousel":  "دوار",
+                                         "lightbox":  "عرض موسع",
+                                         "onScroll":  "عند التمرير",
+                                         "onHover":  "عند المرور",
+                                         "onView":  "عند الظهور",
+                                         "onLoad":  "عند التحميل",
+                                         "hover":  "تحويم",
+                                         "manual":  "يدوي",
+                                         "all":  "الكل"
+                                     },
+                         "labels":  {
+                                        "selectTemplate":  "اختر قالباً",
+                                        "untitledTemplate":  "قالب بدون اسم",
+                                        "page":  "صفحة",
+                                        "block_group":  "مجموعة بلوكات",
+                                        "presetName":  "اسم الإعداد",
+                                        "untitledPreset":  "إعداد بدون اسم",
+                                        "desktop":  "سطح المكتب",
+                                        "mobile":  "الجوال",
+                                        "root":  "الجذر",
+                                        "image":  "صورة",
+                                        "video":  "فيديو",
+                                        "audio":  "صوت",
+                                        "model3d":  "نموذج ثلاثي الأبعاد",
+                                        "file":  "ملف",
+                                        "yes":  "نعم",
+                                        "no":  "لا",
+                                        "visibility":  "إظهار/إخفاء",
+                                        "tablet":  "تابلت",
+                                        "hiddenOnDevice":  "مخفي على هذا الجهاز",
+                                        "base":  "الأساس (كل الأجهزة)",
+                                        "autoSync":  "تلقائي (مزامنة لكل الأجهزة)",
+                                        "inherited":  "موروث",
+                                        "device":  "الجهاز",
+                                        "hide":  "إخفاء",
+                                        "show":  "إظهار",
+                                        "editingTarget":  "هدف التعديل"
+                                    },
+                         "pages":  {
+                                       "title":  "الصفحات",
+                                       "create":  "إنشاء صفحة جديدة",
+                                       "list":  "قائمة الصفحات"
+                                   },
+                         "editor":  {
+                                        "title":  "محرر الصفحات",
+                                        "blocks":  "البلوكات",
+                                        "templates":  "القوالب",
+                                        "layers":  "الطبقات",
+                                        "pick":  "تحديد",
+                                        "dropInside":  "إفلات بالداخل",
+                                        "hidden":  "مخفي",
+                                        "revisions":  "المراجعات",
+                                        "availableTemplates":  "القوالب",
+                                        "inspector":  "لوحة الخصائص",
+                                        "tab":  {
+                                                    "content":  "المحتوى",
+                                                    "style":  "النمط",
+                                                    "animation":  "الحركة",
+                                                    "advanced":  "متقدم"
+                                                }
+                                    },
+                         "templates":  {
+                                           "title":  "القوالب",
+                                           "apply":  "تطبيق قالب على صفحة جديدة",
+                                           "list":  "قائمة القوالب",
+                                           "builtin":  "قوالب مدمجة",
+                                           "saved":  "قوالب محفوظة"
+                                       },
+                         "theme":  {
+                                       "title":  "إدارة المظهر",
+                                       "current":  "المظهر الحالي",
+                                       "presets":  "إعدادات المظهر",
+                                       "revisions":  "مراجعات المظهر"
+                                   },
+    "media":  {
+                  "title":  "مكتبة الوسائط",
+                  "upload":  "رفع وسائط",
+                  "library":  "المكتبة",
+                  "picker":  "منتقي الوسائط"
+              },
+    "reactBits":  {
+                      "openLibrary":  "مكتبة React Bits",
+                      "title":  "مكتبة React Bits",
+                      "subtitle":  "تصفح كل عناصر React Bits المفهرسة واختر ما تحتاجه.",
+                      "openCatalog":  "فتح الكتالوج الكامل",
+                      "searchPlaceholder":  "ابحث بالاسم أو الوسوم أو المسار",
+                      "allCategories":  "كل التصنيفات",
+                      "allVariants":  "كل النسخ",
+                      "results":  "نتيجة",
+                      "addBlock":  "إضافة بلوك",
+                      "applyToSelected":  "تطبيق على المحدد",
+                      "mappedTo":  "الربط التلقائي:",
+                      "files":  "ملف",
+                      "variants":  "نسخة",
+                      "loading":  "جاري التحميل...",
+                      "loadError":  "تعذر تحميل عناصر المكتبة.",
+                      "pageLabel":  "الصفحة",
+                      "previous":  "السابق",
+                      "next":  "التالي",
+                      "pageSize":  "حجم الصفحة:"
+                  },
+    "animation":  {
+                      "none":  "بدون",
+                                           "fadeIn":  "ظهور",
+                                           "slideUp":  "انزلاق للأعلى",
+                                           "slideDown":  "انزلاق للأسفل",
+                                           "slideLeft":  "انزلاق لليسار",
+                                           "slideRight":  "انزلاق لليمين",
+                                           "scaleIn":  "تكبير",
+                                           "staggerChildren":  "تعاقب العناصر",
+                                           "parallax":  "بارالاكس",
+                                           "hoverLift":  "رفع عند المرور",
+                                           "hoverScale":  "تكبير عند المرور",
+                                           "parallaxOnScroll":  "بارالاكس مع التمرير",
+                                           "animeFade":  "أنيمي: ظهور",
+                                           "animeSlideUp":  "أنيمي: انزلاق للأعلى",
+                                           "engine":  {
+                                                          "none":  "بدون",
+                                                          "framer":  "Framer Motion",
+                                                          "lottie":  "Lottie",
+                                                          "anime":  "Anime.js"
+                                                      }
+                                       },
+                         "audit":  {
+                                       "title":  "سجل التغييرات"
+                                   },
+                         "settings":  {
+                                          "title":  "إعدادات الموقع"
+                                      },
+                         "blocks":  {
+                                        "container":  "حاوية",
+                                        "columns":  "أعمدة",
+                                        "grid":  "شبكة",
+                                        "spacer":  "فاصل مسافة",
+                                        "divider":  "فاصل",
+                                        "richText":  "نص منسق",
+                                        "image":  "صورة",
+                                        "video":  "فيديو",
+                                        "audio":  "صوت",
+                                        "file":  "ملف",
+                                        "button":  "زر",
+                                        "gallery":  "معرض",
+                                        "buttonRow":  "صف أزرار",
+                                        "hero":  "واجهة رئيسية",
+                                        "featureCards":  "بطاقات مزايا",
+                                        "faq":  "الأسئلة الشائعة",
+                                        "ctaBanner":  "شريط إجراء",
+                                        "lottie":  "لوتي",
+                                        "model3d":  "نموذج ثلاثي الأبعاد"
+                                    }
+                     },
+    "portal":  {
+                   "title":  "بوابة العميل",
+                   "nav":  {
+                               "overview":  "نظرة عامة",
+                               "profile":  "الملف الشخصي",
+                               "requests":  "الطلبات"
+                           },
+                   "actions":  {
+                                   "site":  "فتح الموقع",
+                                   "logout":  "تسجيل الخروج",
+                                   "save":  "حفظ"
+                               },
+                   "overview":  {
+                                    "title":  "نظرة عامة",
+                                    "subtitle":  "سيظهر سجل الطلبات هنا عند توفره."
+                                },
+                   "profile":  {
+                                   "subtitle":  "إدارة بيانات ملفك الشخصي.",
+                                   "fields":  {
+                                                  "displayName":  "اسم العرض"
+                                              }
+                               },
+                   "requests":  {
+                                    "subtitle":  "سيظهر سجل الطلبات هنا عند توفره."
+                                },
+                   "empty":  {
+                                 "noItems":  "لا توجد عناصر بعد.",
+                                 "authorizedOnly":  "سيتم إضافة المحتوى بواسطة المستخدمين المخوّلين."
+                             },
+                   "messages":  {
+                                    "save_failed":  "تعذر إكمال العملية.",
+                                    "saved":  "تم الحفظ بنجاح.",
+                                    "supabase_not_configured":  "متغيرات Supabase غير مهيأة."
+                                }
+               },
+    "adminHub":  {
+                     "title":  "مركز الإدارة",
+                     "subtitle":  "اختر الوحدة المطلوبة لإدارة أقسام المالك.",
+                     "search":  "ابحث في الوحدات والروابط",
+                     "builderEntry":  "اختر صفحة أولاً ثم افتح المحرر المرئي.",
+                     "favorites":  {
+                                       "title":  "المفضلة",
+                                       "empty":  "لا توجد عناصر بعد.",
+                                       "pin":  "تثبيت",
+                                       "unpin":  "إزالة"
+                                   },
+                     "cards":  {
+                                   "content":  {
+                                                   "title":  "الموقع والمحتوى",
+                                                   "description":  "إدارة الصفحات والمحرر والقوالب والوسائط."
+                                               },
+                                   "crm":  {
+                                               "title":  "العملاء (CRM)",
+                                               "description":  "إدارة العملاء والطلبات الواردة."
+                                           },
+                                   "team":  {
+                                                "title":  "الفريق والأدوار",
+                                                "description":  "إدارة المستخدمين والأدوار وسجل النشاط."
+                                            },
+                                   "ops":  {
+                                               "title":  "العمليات",
+                                               "description":  "إدارة مسارات وسير العمليات."
+                                           },
+                                   "inventory":  {
+                                                     "title":  "المخزون",
+                                                     "description":  "إدارة العناصر وحركة الوارد/الصادر والدفتر."
+                                                 },
+                                   "finance":  {
+                                                   "title":  "المالية",
+                                                   "description":  "إدارة الفواتير والمدفوعات والمصروفات والملخصات."
+                                               },
+                                   "reports":  {
+                                                   "title":  "التقارير",
+                                                   "description":  "عرض التقارير التحليلية حسب المجال."
+                                               },
+                                   "settings":  {
+                                                    "title":  "الإعدادات",
+                                                    "description":  "إدارة إعدادات الموقع والتكاملات."
+                                                }
+                               },
+                     "links":  {
+                                   "moduleOverview":  "نظرة عامة للوحدة",
+                                   "pages":  "الصفحات",
+                                   "builder":  "المحرر",
+                                   "templates":  "القوالب",
+                                   "reactBits":  "مكتبة React Bits",
+                                   "media":  "الوسائط",
+                                   "seo":  "SEO",
+                                   "siteSettings":  "إعدادات الموقع",
+                                   "customers":  "العملاء",
+                                   "leads":  "الطلبات",
+                                   "users":  "المستخدمون والأدوار",
+                                   "audit":  "سجل النشاط",
+                                   "orders":  "الطلبات",
+                                   "deliveries":  "التسليم والمرتجعات",
+                                   "inventoryItems":  "العناصر",
+                                   "stockMoves":  "حركة المخزون",
+                                   "stockLedger":  "دفتر المخزون",
+                                   "invoices":  "الفواتير",
+                                   "payments":  "المدفوعات",
+                                   "expenses":  "المصروفات",
+                                   "cashflow":  "التدفق النقدي",
+                                   "profitLoss":  "الربح والخسارة",
+                                   "reportWebsite":  "تقرير الموقع",
+                                   "reportCustomers":  "تقرير العملاء",
+                                   "reportTeam":  "تقرير الفريق",
+                                   "reportInventory":  "تقرير المخزون",
+                                   "reportFinance":  "تقرير المالية",
+                                   "security":  "الأمان",
+                                   "integrations":  "التكاملات"
+                               },
+                     "reactBits":  {
+                                       "title":  "كتالوج React Bits",
+                                       "subtitle":  "كل العناصر المفهرسة من الأرشيف المرفوع متاحة هنا.",
+                                       "searchPlaceholder":  "ابحث بالاسم أو الوسوم أو المسار",
+                                       "allCategories":  "كل التصنيفات",
+                                       "allVariants":  "كل النسخ",
+                                       "applyFilters":  "تطبيق الفلاتر",
+                                       "summary":  {
+                                                       "totalFiles":  "إجمالي الملفات",
+                                                       "estimatedComponents":  "تقدير المكونات",
+                                                       "filteredRows":  "النتائج بعد الفلترة",
+                                                       "categories":  "التصنيفات"
+                                                   },
+                                       "table":  {
+                                                     "component":  "المكوّن",
+                                                     "category":  "التصنيف",
+                                                     "variant":  "النسخة",
+                                                     "path":  "مسار المصدر"
+                                                 },
+                                       "pagination":  {
+                                                          "page":  "الصفحة",
+                                                          "previous":  "السابق",
+                                                          "next":  "التالي"
+                                                      }
+                               }
+                 },
+    "adminImport":  {
+                        "title":  "استيراد البيانات",
+                        "subtitle":  "استيراد بيانات المالك من CSV أو Excel أو JSON.",
+                        "fields":  {
+                                       "target":  "الجدول المستهدف",
+                                       "selectTarget":  "اختر الجدول",
+                                       "mode":  "وضع الاستيراد",
+                                       "file":  "الملف",
+                                       "dryRun":  "فحص فقط بدون كتابة"
+                                   },
+                        "targets":  {
+                                        "services":  "الخدمات",
+                                        "products":  "المنتجات",
+                                        "kits":  "الأطقم",
+                                        "portfolio":  "الأعمال",
+                                        "inventoryItems":  "عناصر المخزون",
+                                        "customers":  "العملاء",
+                                        "leads":  "الطلبات والاستفسارات"
+                                    },
+                        "modes":  {
+                                      "insert":  "إدراج فقط",
+                                      "upsert":  "تحديث/إدراج (عند الدعم)"
+                                  },
+                        "actions":  {
+                                        "import":  "تنفيذ الاستيراد"
+                                    },
+                        "status":  {
+                                       "import_done":  "اكتمل الاستيراد.",
+                                       "dry_run_done":  "اكتمل الفحص."
+                                   },
+                        "errors":  {
+                                       "invalid_target":  "الجدول المستهدف غير صالح.",
+                                       "file_required":  "الملف مطلوب.",
+                                       "import_failed":  "فشل الاستيراد."
+                                   },
+                        "summary":  {
+                                        "title":  "ملخص آخر عملية",
+                                        "target":  "الهدف",
+                                        "parsed":  "الصفوف المقروءة",
+                                        "valid":  "الصفوف الصحيحة",
+                                        "written":  "الصفوف المكتوبة",
+                                        "skipped":  "الصفوف المتخطاة",
+                                        "errors":  "الأخطاء"
+                                    },
+                        "columns":  {
+                                        "title":  "الأعمدة المتوقعة",
+                                        "content":  "جداول المحتوى: slug, title_ar, title_en, واختياري: description_ar, description_en, status, assigned_to",
+                                        "inventory":  "المخزون: sku, name_ar, name_en",
+                                        "customers":  "العملاء: name, user_id",
+                                        "leads":  "الطلبات: customer_id, name, channel, status"
+                                    }
+                    },
+    "adminSecurity":  {
+                          "title":  "الأمان",
+                          "subtitle":  "حالة وصول المالك وإعدادات المصادقة.",
+                          "ownerId":  "معرّف المالك",
+                          "ownerEmail":  "بريد المالك",
+                          "customerSignup":  "تسجيل العملاء",
+                          "enabled":  "مفعل",
+                          "disabled":  "متوقف",
+                          "goToSiteSettings":  "فتح إعدادات الموقع"
+                      },
+    "adminModules":  {
+                         "empty":  "لا توجد عناصر بعد.",
+                         "actions":  {
+                                         "create":  "إنشاء",
+                                         "exportCsv":  "تصدير CSV",
+                                         "filter":  "تصفية"
+                                     },
+                         "fields":  {
+                                        "name":  "الاسم",
+                                        "userId":  "معرف المستخدم",
+                                        "customerId":  "معرف العميل",
+                                        "channel":  "القناة",
+                                        "sku":  "SKU",
+                                        "nameAr":  "الاسم (عربي)",
+                                        "nameEn":  "الاسم (إنجليزي)",
+                                        "item":  "العنصر",
+                                        "quantity":  "الكمية",
+                                        "referenceType":  "نوع المرجع",
+                                        "referenceId":  "معرف المرجع",
+                                        "note":  "ملاحظة",
+                                        "subtotal":  "الإجمالي الفرعي",
+                                        "tax":  "الضريبة",
+                                        "total":  "الإجمالي",
+                                        "amount":  "المبلغ",
+                                        "category":  "التصنيف",
+                                        "method":  "الطريقة",
+                                        "invoiceId":  "معرف الفاتورة",
+                                        "search":  "بحث"
+                                    },
+                         "status":  {
+                                        "new":  "جديد",
+                                        "inProgress":  "قيد التنفيذ",
+                                        "closed":  "مغلق"
+                                    },
+                         "customers":  {
+                                           "title":  "العملاء"
+                                       },
+                         "leads":  {
+                                       "title":  "الطلبات والاستفسارات"
+                                   },
+                         "tickets":  {
+                                         "title":  "التذاكر"
+                                     },
+                         "inventory":  {
+                                           "items":  "عناصر المخزون",
+                                           "moves":  "حركة المخزون",
+                                           "ledger":  "دفتر المخزون",
+                                           "stockIn":  "وارد",
+                                           "stockOut":  "صادر"
+                                       },
+                         "finance":  {
+                                         "invoices":  "الفواتير",
+                                         "payments":  "المدفوعات",
+                                         "expenses":  "المصروفات",
+                                         "cashflow":  "التدفق النقدي",
+                                         "profitLoss":  "الربح والخسارة",
+                                         "cashIn":  "داخل",
+                                         "cashOut":  "خارج",
+                                         "revenue":  "الإيرادات",
+                                         "expenseTotal":  "إجمالي المصروفات",
+                                         "netProfit":  "صافي الربح",
+                                         "outstanding":  "إجمالي المستحق"
+                                     },
+                         "operations":  {
+                                            "orders":  "الطلبات",
+                                            "deliveries":  "التسليم والمرتجعات"
+                                        },
+                         "seo":  {
+                                     "title":  "SEO"
+                                 },
+                         "reports":  {
+                                         "website":  "تقرير الموقع",
+                                         "customers":  "تقرير العملاء",
+                                         "team":  "تقرير الفريق",
+                                         "inventory":  "تقرير المخزون",
+                                         "finance":  "تقرير المالية",
+                                         "pageviews":  "مشاهدات الصفحات",
+                                         "events":  "الأحداث",
+                                         "customersCount":  "العملاء",
+                                         "leadsCount":  "الاستفسارات"
+                                     }
+                     },
+    "adminDashboard":  {
+                           "title":  "لوحة المعلومات",
+                           "subtitle":  "عرض تحليلي فعلي مبني على البيانات المسجلة فقط.",
+                           "filters":  {
+                                           "all":  "الكل",
+                                           "mobile":  "جوال",
+                                           "tablet":  "تابلت",
+                                           "desktop":  "سطح المكتب",
+                                           "country":  "رمز الدولة",
+                                           "eventType":  "نوع الحدث",
+                                           "apply":  "تطبيق الفلاتر"
+                                       },
+                           "kpi":  {
+                                       "sessions":  "الجلسات",
+                                       "uniqueVisitors":  "الزوار الفريدون",
+                                       "pageviews":  "مشاهدات الصفحات",
+                                       "totalEvents":  "إجمالي الأحداث",
+                                       "conversions":  "التحويلات",
+                                       "newCustomers":  "عملاء جدد",
+                                       "outstandingInvoices":  "الفواتير المستحقة"
+                                   },
+                           "charts":  {
+                                          "pageviewsTrend":  "مشاهدات الصفحات عبر الزمن"
+                                      },
+                           "map":  {
+                                       "map":  "الخريطة",
+                                       "list":  "القائمة"
+                                   },
+                           "mini":  {
+                                        "finance":  "ملخص المالية",
+                                        "inventory":  "ملخص المخزون",
+                                        "cashIn":  "داخل",
+                                        "cashOut":  "خارج",
+                                        "stockIn":  "وارد",
+                                        "stockOut":  "صادر"
+                                    },
+                           "tables":  {
+                                          "topPages":  "أعلى الصفحات",
+                                          "recentEvents":  "أحدث الأحداث",
+                                          "latestCustomers":  "أحدث العملاء",
+                                          "recentFinance":  "آخر حركات مالية"
+                                      },
+                           "empty":  {
+                                         "noData":  "لا توجد عناصر بعد.",
+                                         "noGeoData":  "لا توجد بيانات جغرافية بعد."
+                                     }
+                       }
+}

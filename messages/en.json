@@ -1,0 +1,905 @@
+{
+    "meta":  {
+                 "title":  "Rawnak Official",
+                 "description":  "Official website for Rawnak Official."
+             },
+    "brand":  {
+                  "name":  "Rawnak Official",
+                  "tagline":  "One brand. Endless possibilities."
+              },
+    "nav":  {
+                "home":  "Home",
+                "services":  "Services",
+                "products":  "Products",
+                "diy":  "DIY Kits",
+                "portfolio":  "Portfolio",
+                "about":  "About",
+                "contact":  "Contact",
+                "login":  "Login",
+                "signup":  "Sign up",
+                "admin":  "Admin",
+                "portal":  "Portal",
+                "logout":  "Logout",
+                "language":  "Language",
+                "openMenu":  "Open menu",
+                "closeMenu":  "Close menu",
+                "goHome":  "Go to home"
+            },
+    "theme":  {
+                  "light":  "Light",
+                  "dark":  "Dark",
+                  "switchToLight":  "Switch to light theme",
+                  "switchToDark":  "Switch to dark theme"
+              },
+    "system":  {
+                   "sectionPending":  "Content will be added by authorized users.",
+                   "noItems":  "No items yet.",
+                   "contentArea":  "Content area",
+                   "detailsArea":  "Details area",
+                   "formArea":  "Form area"
+               },
+    "pages":  {
+                  "services":  {
+                                   "title":  "Services"
+                               },
+                  "products":  {
+                                   "title":  "Products"
+                               },
+                  "diy":  {
+                              "title":  "DIY Kits"
+                          },
+                  "portfolio":  {
+                                    "title":  "Portfolio"
+                                },
+                  "about":  {
+                                "title":  "About"
+                            },
+                  "contact":  {
+                                  "title":  "Contact"
+                              }
+              },
+    "footer":  {
+                   "brand":  "Rawnak Official",
+                   "note":  "Content is managed by authorized users."
+               },
+    "auth":  {
+                 "fields":  {
+                                "email":  "Email",
+                                "password":  "Password"
+                            },
+                 "errors":  {
+                                "supabase_not_configured":  "Supabase environment variables are not configured.",
+                                "missing_fields":  "Please complete all required fields.",
+                                "invalid_credentials":  "Invalid email or password.",
+                                "signup_disabled":  "Customer sign-up is currently disabled.",
+                                "signup_failed":  "Sign-up failed. Please try again."
+                            },
+                 "status":  {
+                                "check_email":  "Check your email to continue account activation."
+                            },
+                 "login":  {
+                               "title":  "Login",
+                               "subtitle":  "Access your account.",
+                               "submit":  "Login",
+                               "noAccount":  "No account?",
+                               "signupLink":  "Create one"
+                           },
+                 "signup":  {
+                                "title":  "Sign up",
+                                "subtitle":  "Create a customer account.",
+                                "submit":  "Sign up",
+                                "haveAccount":  "Already have an account?",
+                                "loginLink":  "Login"
+                            }
+             },
+    "admin":  {
+                  "title":  "Staff Dashboard",
+                  "nav":  {
+                              "overview":  "Overview",
+                              "services":  "Services",
+                              "products":  "Products",
+                              "kits":  "Kits",
+                              "portfolio":  "Portfolio",
+                              "pages":  "Pages",
+                              "templates":  "Templates",
+                              "theme":  "Theme",
+                              "media":  "Media",
+                              "seo":  "SEO",
+                              "analytics":  "Analytics",
+                              "audit":  "Audit Log",
+                              "users":  "Users \u0026 Roles",
+                              "settings":  "Site Settings",
+                              "dashboard":  "Dashboard",
+                              "customers":  "Customers",
+                              "leads":  "Leads / Requests",
+                              "tickets":  "Tickets",
+                              "orders":  "Orders",
+                              "deliveries":  "Deliveries / Returns",
+                              "inventoryItems":  "Items",
+                              "stockMoves":  "Stock In/Out",
+                              "stockLedger":  "Stock Ledger",
+                              "invoices":  "Invoices",
+                              "payments":  "Payments",
+                              "expenses":  "Expenses",
+                              "cashflow":  "Cash In/Out",
+                              "profitLoss":  "Profit/Loss",
+                              "reportWebsite":  "Website report",
+                              "reportCustomers":  "Customers report",
+                              "reportTeam":  "Team report",
+                              "reportInventory":  "Inventory report",
+                              "reportFinance":  "Finance report",
+                              "hub":  "Admin Hub",
+                              "contentModule":  "Website & Content",
+                              "crmModule":  "Customers (CRM)",
+                              "teamModule":  "Team & Roles",
+                              "opsModule":  "Operations",
+                              "inventoryModule":  "Inventory",
+                              "financeModule":  "Finance",
+                              "reportsModule":  "Reports"
+                          },
+                  "roles":  {
+                                "owner":  "Owner",
+                                "admin":  "Admin",
+                                "supervisor":  "Supervisor",
+                                "employee":  "Employee",
+                                "customer":  "Customer"
+                            },
+                  "scopes":  {
+                                 "all":  "All",
+                                 "services":  "Services",
+                                 "products":  "Products",
+                                 "kits":  "Kits",
+                                 "portfolio":  "Portfolio"
+                             },
+                  "actions":  {
+                                  "site":  "Open Site",
+                                  "logout":  "Logout",
+                                  "create":  "Create",
+                                  "save":  "Save",
+                                  "delete":  "Delete",
+                                  "markCompleted":  "Mark completed"
+                              },
+                  "overview":  {
+                                   "title":  "Overview",
+                                   "subtitle":  "Manage content and access by role.",
+                                   "builder":  "Page Builder",
+                                   "content":  "Content",
+                                   "activity":  "Activity"
+                               },
+                  "content":  {
+                                  "hint":  "Content will be added by authorized users.",
+                                  "createTitle":  "Create item",
+                                  "createHint":  "Use real data only.",
+                                  "itemsTitle":  "Items",
+                                  "itemsHint":  "You can edit only allowed records based on your role."
+                              },
+                  "fields":  {
+                                 "titleAr":  "Title (Arabic)",
+                                 "titleEn":  "Title (English)",
+                                 "descriptionAr":  "Description (Arabic)",
+                                 "descriptionEn":  "Description (English)",
+                                 "slug":  "Slug",
+                                 "status":  "Status",
+                                 "assignedTo":  "Assigned user ID (optional)"
+                             },
+                  "status":  {
+                                 "draft":  "Draft",
+                                 "published":  "Published"
+                             },
+                  "users":  {
+                                "subtitle":  "Invite staff, then assign role and scopes after acceptance.",
+                                "inviteTitle":  "Invite staff",
+                                "inviteHint":  "Invitations are for staff accounts only.",
+                                "inviteAction":  "Send invite",
+                                "rolesTitle":  "Roles",
+                                "rolesHint":  "Role and scope changes are enforced by RLS.",
+                                "roleField":  "Role",
+                                "scopesField":  "Scopes",
+                                "noDisplayName":  "No display name"
+                            },
+                  "settings":  {
+                                   "subtitle":  "Site settings are managed by owner/admin only.",
+                                   "fields":  {
+                                                  "brandNameAr":  "Brand name (Arabic)",
+                                                  "brandNameEn":  "Brand name (English)",
+                                                  "taglineAr":  "Tagline (Arabic)",
+                                                  "taglineEn":  "Tagline (English)",
+                                                  "logoPath":  "Logo path",
+                                                  "lightIntensity":  "Light background intensity",
+                                                  "darkIntensity":  "Dark background intensity",
+                                                  "allowCustomerSignup":  "Allow customer sign-up",
+                                                  "backgroundMotionEnabled":  "Enable background motion"
+                                              }
+                               },
+                  "empty":  {
+                                "noItems":  "No items yet.",
+                                "authorizedOnly":  "Content will be added by authorized users."
+                            },
+                  "messages":  {
+                                   "missing_fields":  "Please complete all required fields.",
+                                   "invalid_request":  "Invalid request.",
+                                   "save_failed":  "Action could not be completed.",
+                                   "delete_failed":  "Delete could not be completed.",
+                                   "invited":  "Invitation sent.",
+                                   "saved":  "Saved successfully.",
+                                   "deleted":  "Deleted successfully.",
+                                   "supabase_not_configured":  "Supabase environment variables are not configured.",
+                                   "invite_failed":  "Invitation could not be sent.",
+                                   "cannot_grant_owner":  "You are not allowed to grant the owner role."
+                               },
+                  "sections":  {
+                                   "dashboard":  "Dashboard",
+                                   "website":  "Website \u0026 Content",
+                                   "content":  "Content",
+                                   "customers":  "Customers",
+                                   "team":  "Team \u0026 Roles",
+                                   "operations":  "Operations",
+                                   "inventory":  "Inventory",
+                                   "finance":  "Finance",
+                                   "reports":  "Reports",
+                                   "main":  "Main",
+                                   "modules":  "Modules"
+                               }
+              },
+    "analytics":  {
+                      "title":  "Analytics",
+                      "subtitle":  "Track views, clicks, and completed operations for pages and content items.",
+                      "empty":  "No items yet.",
+                      "filters":  {
+                                      "from":  "From",
+                                      "to":  "To",
+                                      "locale":  "Locale",
+                                      "entityType":  "Entity type",
+                                      "all":  "All",
+                                      "apply":  "Apply filters"
+                                  },
+                      "cards":  {
+                                    "totalEvents":  "Total events",
+                                    "pageViews":  "Page views",
+                                    "clicks":  "Clicks",
+                                    "completed":  "Completed operations",
+                                    "ctr":  "CTR",
+                                    "completionRate":  "Completion rate"
+                                },
+                      "tables":  {
+                                     "entities":  "Items performance",
+                                     "pages":  "Pages performance",
+                                     "recent":  "Recent events"
+                                 },
+                      "columns":  {
+                                      "entityType":  "Type",
+                                      "entity":  "Item",
+                                      "clicks":  "Clicks",
+                                      "completed":  "Completed",
+                                      "rate":  "Rate",
+                                      "page":  "Page",
+                                      "views":  "Views",
+                                      "event":  "Event",
+                                      "time":  "Time"
+                                  },
+                      "entity":  {
+                                     "services":  "Services",
+                                     "products":  "Products",
+                                     "kits":  "Kits",
+                                     "portfolio":  "Portfolio"
+                                 }
+                  },
+    "ownerBuilder":  {
+                         "empty":  {
+                                       "noItems":  "No items yet.",
+                                       "authorizedOnly":  "Content will be added by authorized users."
+                                   },
+                         "messages":  {
+                                          "missing_fields":  "Please complete all required fields.",
+                                          "invalid_request":  "Invalid request.",
+                                          "save_failed":  "Action could not be completed.",
+                                          "delete_failed":  "Delete could not be completed.",
+                                          "saved":  "Saved successfully.",
+                                          "deleted":  "Deleted successfully.",
+                                          "restored":  "Revision restored.",
+                                          "template_saved":  "Template saved.",
+                                          "applied":  "Preset applied.",
+                                          "preset_saved":  "Preset saved."
+                                      },
+                         "status":  {
+                                        "draft":  "Draft",
+                                        "published":  "Published"
+                                    },
+                         "actions":  {
+                                         "create":  "Create",
+                                         "save":  "Save",
+                                         "delete":  "Delete",
+                                         "createPage":  "Create page",
+                                         "edit":  "Edit",
+                                         "preview":  "Preview",
+                                         "addBlock":  "Add block",
+                                         "saveDraft":  "Save Draft",
+                                         "publish":  "Publish",
+                                         "unpublish":  "Unpublish",
+                                         "saveTemplate":  "Save as template",
+                                         "saveBlockTemplate":  "Save block group",
+                                         "restore":  "Restore",
+                                         "duplicate":  "Duplicate",
+                                         "hide":  "Hide",
+                                         "show":  "Show",
+                                         "applyTemplate":  "Apply template",
+                                         "upload":  "Upload",
+                                         "filter":  "Filter",
+                                         "savePreset":  "Save preset",
+                                         "applyPreset":  "Apply preset",
+                                         "undo":  "Undo",
+                                         "redo":  "Redo",
+                                         "append":  "Append",
+                                         "replace":  "Replace",
+                                         "pickMedia":  "Pick media",
+                                         "addItem":  "Add item",
+                                         "close":  "Close",
+                                         "resetOverrides":  "Reset overrides",
+                                         "copyBaseToDevice":  "Copy base -> device",
+                                         "testAnimation":  "Test animation",
+                                         "previewAnimationsOn":  "Preview animations: ON",
+                                         "previewAnimationsOff":  "Preview animations: OFF"
+                                     },
+                         "fields":  {
+                                        "slug":  "Slug",
+                                        "titleAr":  "Title (Arabic)",
+                                        "titleEn":  "Title (English)",
+                                        "status":  "Status",
+                                        "templateName":  "Template name",
+                                        "blockTemplateName":  "Block group name",
+                                        "template":  "Template",
+                                        "contentAr":  "Content (Arabic)",
+                                        "contentEn":  "Content (English)",
+                                        "spacingTop":  "Top spacing",
+                                        "spacingBottom":  "Bottom spacing",
+                                        "containerWidth":  "Container width",
+                                        "alignment":  "Alignment",
+                                        "columns":  "Columns",
+                                        "altAr":  "Alt text (Arabic)",
+                                        "altEn":  "Alt text (English)",
+                                        "media":  "Media",
+                                        "file":  "File",
+                                        "bgIntensityLight":  "Light background intensity",
+                                        "bgIntensityDark":  "Dark background intensity",
+                                        "bgMotionEnabled":  "Enable background motion",
+                                        "lightBase":  "Light base",
+                                        "lightSecondary":  "Light secondary",
+                                        "lightPrimary":  "Light primary",
+                                        "lightText":  "Light text",
+                                        "darkBase":  "Dark base",
+                                        "darkSecondary":  "Dark secondary",
+                                        "darkAccent":  "Dark accent",
+                                        "darkText":  "Dark text",
+                                        "radius":  "Radius",
+                                        "shadowSoft":  "Soft shadow",
+                                        "typographyScale":  "Typography scale",
+                                        "brandNameAr":  "Brand name (Arabic)",
+                                        "brandNameEn":  "Brand name (English)",
+                                        "taglineAr":  "Tagline (Arabic)",
+                                        "taglineEn":  "Tagline (English)",
+                                        "logoPath":  "Logo path",
+                                        "customersSignupEnabled":  "Allow customer sign-up",
+                                        "action":  "Action",
+                                        "entityType":  "Entity type",
+                                        "entityId":  "Entity ID",
+                                        "actorId":  "Actor ID",
+                                        "createdAt":  "Created at",
+                                        "navLabelAr":  "Nav label (Arabic)",
+                                        "navLabelEn":  "Nav label (English)",
+                                        "navOrder":  "Nav order",
+                                        "showInNav":  "Show in navigation",
+                                        "zoom":  "Zoom",
+                                        "link":  "Link",
+                                        "embedUrl":  "Embed URL",
+                                        "fileLabelAr":  "File label (Arabic)",
+                                        "fileLabelEn":  "File label (English)",
+                                        "galleryMode":  "Gallery mode",
+                                        "faqItems":  "FAQ items",
+                                        "animationEnabled":  "Animation enabled",
+                                        "animationEngine":  "Animation engine",
+                                        "animationPreset":  "Animation preset",
+                                        "durationMs":  "Duration (ms)",
+                                        "delayMs":  "Delay (ms)",
+                                        "easing":  "Easing",
+                                        "trigger":  "Trigger",
+                                        "once":  "Run once",
+                                        "viewportAmount":  "Viewport amount",
+                                        "staggerMs":  "Stagger (ms)",
+                                        "hoverScale":  "Hover scale",
+                                        "parallaxStrength":  "Parallax strength",
+                                        "lottieMedia":  "Lottie JSON",
+                                        "loop":  "Loop",
+                                        "autoplay":  "Autoplay",
+                                        "speed":  "Speed",
+                                        "customClass":  "Custom class",
+                                        "parent":  "Parent container",
+                                        "searchMedia":  "Search media"
+                                    },
+                         "options":  {
+                                         "content":  "Content",
+                                         "wide":  "Wide",
+                                         "full":  "Full",
+                                         "start":  "Start",
+                                         "center":  "Center",
+                                         "end":  "End",
+                                         "grid":  "Grid",
+                                         "carousel":  "Carousel",
+                                         "lightbox":  "Lightbox",
+                                         "onScroll":  "On scroll",
+                                         "onHover":  "On hover",
+                                         "onView":  "On view",
+                                         "onLoad":  "On load",
+                                         "hover":  "Hover",
+                                         "manual":  "Manual",
+                                         "all":  "All"
+                                     },
+                         "labels":  {
+                                        "selectTemplate":  "Select template",
+                                        "untitledTemplate":  "Untitled template",
+                                        "page":  "Page",
+                                        "block_group":  "Block group",
+                                        "presetName":  "Preset name",
+                                        "untitledPreset":  "Untitled preset",
+                                        "desktop":  "Desktop",
+                                        "mobile":  "Mobile",
+                                        "root":  "Root",
+                                        "image":  "Image",
+                                        "video":  "Video",
+                                        "audio":  "Audio",
+                                        "model3d":  "3D model",
+                                        "file":  "File",
+                                        "yes":  "Yes",
+                                        "no":  "No",
+                                        "visibility":  "Visibility",
+                                        "tablet":  "Tablet",
+                                        "hiddenOnDevice":  "Hidden on this device",
+                                        "base":  "Base (All devices)",
+                                        "autoSync":  "Auto (sync across devices)",
+                                        "inherited":  "Inherited",
+                                        "device":  "Device",
+                                        "hide":  "Hide",
+                                        "show":  "Show",
+                                        "editingTarget":  "Editing target"
+                                    },
+                         "pages":  {
+                                       "title":  "Pages",
+                                       "create":  "Create new page",
+                                       "list":  "Page list"
+                                   },
+                         "editor":  {
+                                        "title":  "Page Editor",
+                                        "blocks":  "Blocks",
+                                        "templates":  "Templates",
+                                        "layers":  "Layers",
+                                        "pick":  "Pick",
+                                        "dropInside":  "Drop inside",
+                                        "hidden":  "Hidden",
+                                        "revisions":  "Revisions",
+                                        "availableTemplates":  "Templates",
+                                        "inspector":  "Inspector",
+                                        "tab":  {
+                                                    "content":  "Content",
+                                                    "style":  "Style",
+                                                    "animation":  "Animation",
+                                                    "advanced":  "Advanced"
+                                                }
+                                    },
+                         "templates":  {
+                                           "title":  "Templates",
+                                           "apply":  "Apply template to new page",
+                                           "list":  "Template list",
+                                           "builtin":  "Built-in templates",
+                                           "saved":  "Saved templates"
+                                       },
+                         "theme":  {
+                                       "title":  "Theme Manager",
+                                       "current":  "Current theme",
+                                       "presets":  "Theme presets",
+                                       "revisions":  "Theme revisions"
+                                   },
+    "media":  {
+                  "title":  "Media Library",
+                  "upload":  "Upload media",
+                  "library":  "Library",
+                  "picker":  "Media picker"
+              },
+    "reactBits":  {
+                      "openLibrary":  "React Bits Library",
+                      "title":  "React Bits Library",
+                      "subtitle":  "Browse all indexed React Bits items and apply what you need.",
+                      "openCatalog":  "Open full catalog",
+                      "searchPlaceholder":  "Search by component, tag, or path",
+                      "allCategories":  "All categories",
+                      "allVariants":  "All variants",
+                      "results":  "results",
+                      "addBlock":  "Add block",
+                      "applyToSelected":  "Apply to selected",
+                      "mappedTo":  "Mapped preset:",
+                      "files":  "files",
+                      "variants":  "variants",
+                      "loading":  "Loading...",
+                      "loadError":  "Could not load library items.",
+                      "pageLabel":  "Page",
+                      "previous":  "Previous",
+                      "next":  "Next",
+                      "pageSize":  "Page size:"
+                  },
+    "animation":  {
+                      "none":  "None",
+                                           "fadeIn":  "Fade In",
+                                           "slideUp":  "Slide Up",
+                                           "slideDown":  "Slide Down",
+                                           "slideLeft":  "Slide Left",
+                                           "slideRight":  "Slide Right",
+                                           "scaleIn":  "Scale In",
+                                           "staggerChildren":  "Stagger Children",
+                                           "parallax":  "Parallax",
+                                           "hoverLift":  "Hover Lift",
+                                           "hoverScale":  "Hover Scale",
+                                           "parallaxOnScroll":  "Parallax On Scroll",
+                                           "animeFade":  "Anime Fade",
+                                           "animeSlideUp":  "Anime Slide Up",
+                                           "engine":  {
+                                                          "none":  "None",
+                                                          "framer":  "Framer Motion",
+                                                          "lottie":  "Lottie",
+                                                          "anime":  "Anime.js"
+                                                      }
+                                       },
+                         "audit":  {
+                                       "title":  "Audit Log"
+                                   },
+                         "settings":  {
+                                          "title":  "Site Settings"
+                                      },
+                         "blocks":  {
+                                        "container":  "Container",
+                                        "columns":  "Columns",
+                                        "grid":  "Grid",
+                                        "spacer":  "Spacer",
+                                        "divider":  "Divider",
+                                        "richText":  "Rich Text",
+                                        "image":  "Image",
+                                        "video":  "Video",
+                                        "audio":  "Audio",
+                                        "file":  "File",
+                                        "button":  "Button",
+                                        "gallery":  "Gallery",
+                                        "buttonRow":  "Button Row",
+                                        "hero":  "Hero",
+                                        "featureCards":  "Feature Cards",
+                                        "faq":  "FAQ",
+                                        "ctaBanner":  "CTA Banner",
+                                        "lottie":  "Lottie",
+                                        "model3d":  "3D model"
+                                    }
+                     },
+    "portal":  {
+                   "title":  "Customer Portal",
+                   "nav":  {
+                               "overview":  "Overview",
+                               "profile":  "Profile",
+                               "requests":  "Requests"
+                           },
+                   "actions":  {
+                                   "site":  "Open Site",
+                                   "logout":  "Logout",
+                                   "save":  "Save"
+                               },
+                   "overview":  {
+                                    "title":  "Portal Overview",
+                                    "subtitle":  "Your account data appears here."
+                                },
+                   "profile":  {
+                                   "subtitle":  "Manage your profile details.",
+                                   "fields":  {
+                                                  "displayName":  "Display name"
+                                              }
+                               },
+                   "requests":  {
+                                    "subtitle":  "Request history will appear here when available."
+                                },
+                   "empty":  {
+                                 "noItems":  "No items yet.",
+                                 "authorizedOnly":  "Content will be added by authorized users."
+                             },
+                   "messages":  {
+                                    "save_failed":  "Action could not be completed.",
+                                    "saved":  "Saved successfully.",
+                                    "supabase_not_configured":  "Supabase environment variables are not configured."
+                                }
+               },
+    "adminHub":  {
+                     "title":  "Admin Hub",
+                     "subtitle":  "Choose a module to manage owner-only sections.",
+                     "search":  "Search modules and links",
+                     "builderEntry":  "Select a page first, then open its visual builder.",
+                     "favorites":  {
+                                       "title":  "Favorites",
+                                       "empty":  "No items yet.",
+                                       "pin":  "Pin",
+                                       "unpin":  "Unpin"
+                                   },
+                     "cards":  {
+                                   "content":  {
+                                                   "title":  "Website \u0026 Content",
+                                                   "description":  "Manage pages, builder, templates, and media."
+                                               },
+                                   "crm":  {
+                                               "title":  "Customers (CRM)",
+                                               "description":  "Manage customers and inbound requests."
+                                           },
+                                   "team":  {
+                                                "title":  "Team \u0026 Roles",
+                                                "description":  "Manage users, roles, and activity audit."
+                                            },
+                                   "ops":  {
+                                               "title":  "Operations",
+                                               "description":  "Manage operational routes and workflows."
+                                           },
+                                   "inventory":  {
+                                                     "title":  "Inventory",
+                                                     "description":  "Track catalog, stock in/out, and ledger."
+                                                 },
+                                   "finance":  {
+                                                   "title":  "Finance",
+                                                   "description":  "Track invoices, payments, expenses, and summaries."
+                                               },
+                                   "reports":  {
+                                                   "title":  "Reports",
+                                                   "description":  "View analytical reports by domain."
+                                               },
+                                   "settings":  {
+                                                    "title":  "Settings",
+                                                    "description":  "Manage site settings and integrations."
+                                                }
+                               },
+                     "links":  {
+                                   "moduleOverview":  "Module overview",
+                                   "pages":  "Pages",
+                                   "builder":  "Builder",
+                                   "templates":  "Templates",
+                                   "reactBits":  "React Bits Library",
+                                   "media":  "Media",
+                                   "seo":  "SEO",
+                                   "siteSettings":  "Site settings",
+                                   "customers":  "Customers",
+                                   "leads":  "Leads",
+                                   "users":  "Users \u0026 Roles",
+                                   "audit":  "Activity log",
+                                   "orders":  "Orders",
+                                   "deliveries":  "Deliveries / Returns",
+                                   "inventoryItems":  "Items",
+                                   "stockMoves":  "Stock In/Out",
+                                   "stockLedger":  "Stock Ledger",
+                                   "invoices":  "Invoices",
+                                   "payments":  "Payments",
+                                   "expenses":  "Expenses",
+                                   "cashflow":  "Cash In/Out",
+                                   "profitLoss":  "Profit/Loss",
+                                   "reportWebsite":  "Website report",
+                                   "reportCustomers":  "Customers report",
+                                   "reportTeam":  "Team report",
+                                   "reportInventory":  "Inventory report",
+                                   "reportFinance":  "Finance report",
+                                   "security":  "Security",
+                                   "integrations":  "Integrations"
+                               },
+                     "reactBits":  {
+                                       "title":  "React Bits Catalog",
+                                       "subtitle":  "All indexed items from the provided React Bits archive are available here.",
+                                       "searchPlaceholder":  "Search by component name, tag, or path",
+                                       "allCategories":  "All categories",
+                                       "allVariants":  "All variants",
+                                       "applyFilters":  "Apply filters",
+                                       "summary":  {
+                                                       "totalFiles":  "Total files",
+                                                       "estimatedComponents":  "Estimated components",
+                                                       "filteredRows":  "Filtered rows",
+                                                       "categories":  "Categories"
+                                                   },
+                                       "table":  {
+                                                     "component":  "Component",
+                                                     "category":  "Category",
+                                                     "variant":  "Variant",
+                                                     "path":  "Source path"
+                                                 },
+                                       "pagination":  {
+                                                          "page":  "Page",
+                                                          "previous":  "Previous",
+                                                          "next":  "Next"
+                                                      }
+                               }
+                 },
+    "adminImport":  {
+                        "title":  "Data Import",
+                        "subtitle":  "Import owner data from CSV, Excel, or JSON files.",
+                        "fields":  {
+                                       "target":  "Target table",
+                                       "selectTarget":  "Select target",
+                                       "mode":  "Import mode",
+                                       "file":  "File",
+                                       "dryRun":  "Dry run (validate only)"
+                                   },
+                        "targets":  {
+                                        "services":  "Services",
+                                        "products":  "Products",
+                                        "kits":  "Kits",
+                                        "portfolio":  "Portfolio",
+                                        "inventoryItems":  "Inventory items",
+                                        "customers":  "Customers",
+                                        "leads":  "Leads / Requests"
+                                    },
+                        "modes":  {
+                                      "insert":  "Insert only",
+                                      "upsert":  "Upsert (where supported)"
+                                  },
+                        "actions":  {
+                                        "import":  "Run import"
+                                    },
+                        "status":  {
+                                       "import_done":  "Import completed.",
+                                       "dry_run_done":  "Dry run completed."
+                                   },
+                        "errors":  {
+                                       "invalid_target":  "Invalid import target.",
+                                       "file_required":  "A file is required.",
+                                       "import_failed":  "Import failed."
+                                   },
+                        "summary":  {
+                                        "title":  "Last run summary",
+                                        "target":  "Target",
+                                        "parsed":  "Parsed rows",
+                                        "valid":  "Valid rows",
+                                        "written":  "Written rows",
+                                        "skipped":  "Skipped rows",
+                                        "errors":  "Errors"
+                                    },
+                        "columns":  {
+                                        "title":  "Expected columns",
+                                        "content":  "Content tables: slug, title_ar, title_en, optional: description_ar, description_en, status, assigned_to",
+                                        "inventory":  "Inventory: sku, name_ar, name_en",
+                                        "customers":  "Customers: name, user_id",
+                                        "leads":  "Leads: customer_id, name, channel, status"
+                                    }
+                    },
+    "adminSecurity":  {
+                          "title":  "Security",
+                          "subtitle":  "Owner access and auth-related status.",
+                          "ownerId":  "Owner user ID",
+                          "ownerEmail":  "Owner email",
+                          "customerSignup":  "Customer signup",
+                          "enabled":  "Enabled",
+                          "disabled":  "Disabled",
+                          "goToSiteSettings":  "Open site settings"
+                      },
+    "adminModules":  {
+                         "empty":  "No items yet.",
+                         "actions":  {
+                                         "create":  "Create",
+                                         "exportCsv":  "Export CSV",
+                                         "filter":  "Filter"
+                                     },
+                         "fields":  {
+                                        "name":  "Name",
+                                        "userId":  "User ID",
+                                        "customerId":  "Customer ID",
+                                        "channel":  "Channel",
+                                        "sku":  "SKU",
+                                        "nameAr":  "Name (Arabic)",
+                                        "nameEn":  "Name (English)",
+                                        "item":  "Item",
+                                        "quantity":  "Quantity",
+                                        "referenceType":  "Reference type",
+                                        "referenceId":  "Reference ID",
+                                        "note":  "Note",
+                                        "subtotal":  "Subtotal",
+                                        "tax":  "Tax",
+                                        "total":  "Total",
+                                        "amount":  "Amount",
+                                        "category":  "Category",
+                                        "method":  "Method",
+                                        "invoiceId":  "Invoice ID",
+                                        "search":  "Search"
+                                    },
+                         "status":  {
+                                        "new":  "New",
+                                        "inProgress":  "In progress",
+                                        "closed":  "Closed"
+                                    },
+                         "customers":  {
+                                           "title":  "Customers"
+                                       },
+                         "leads":  {
+                                       "title":  "Leads / Requests"
+                                   },
+                         "tickets":  {
+                                         "title":  "Tickets"
+                                     },
+                         "inventory":  {
+                                           "items":  "Inventory items",
+                                           "moves":  "Stock In/Out",
+                                           "ledger":  "Stock ledger",
+                                           "stockIn":  "Stock in",
+                                           "stockOut":  "Stock out"
+                                       },
+                         "finance":  {
+                                         "invoices":  "Invoices",
+                                         "payments":  "Payments",
+                                         "expenses":  "Expenses",
+                                         "cashflow":  "Cash in/out",
+                                         "profitLoss":  "Profit/Loss",
+                                         "cashIn":  "Cash in",
+                                         "cashOut":  "Cash out",
+                                         "revenue":  "Revenue",
+                                         "expenseTotal":  "Expenses total",
+                                         "netProfit":  "Net profit",
+                                         "outstanding":  "Outstanding total"
+                                     },
+                         "operations":  {
+                                            "orders":  "Orders",
+                                            "deliveries":  "Deliveries / Returns"
+                                        },
+                         "seo":  {
+                                     "title":  "SEO"
+                                 },
+                         "reports":  {
+                                         "website":  "Website report",
+                                         "customers":  "Customers report",
+                                         "team":  "Team report",
+                                         "inventory":  "Inventory report",
+                                         "finance":  "Finance report",
+                                         "pageviews":  "Pageviews",
+                                         "events":  "Events",
+                                         "customersCount":  "Customers",
+                                         "leadsCount":  "Leads"
+                                     }
+                     },
+    "adminDashboard":  {
+                           "title":  "Dashboard",
+                           "subtitle":  "Real-time owner analytics overview based on stored data.",
+                           "filters":  {
+                                           "all":  "All",
+                                           "mobile":  "Mobile",
+                                           "tablet":  "Tablet",
+                                           "desktop":  "Desktop",
+                                           "country":  "Country code",
+                                           "eventType":  "Event type",
+                                           "apply":  "Apply filters"
+                                       },
+                           "kpi":  {
+                                       "sessions":  "Sessions",
+                                       "uniqueVisitors":  "Unique visitors",
+                                       "pageviews":  "Pageviews",
+                                       "totalEvents":  "Total events",
+                                       "conversions":  "Conversions",
+                                       "newCustomers":  "New customers",
+                                       "outstandingInvoices":  "Outstanding invoices"
+                                   },
+                           "charts":  {
+                                          "pageviewsTrend":  "Pageviews over time"
+                                      },
+                           "map":  {
+                                       "map":  "Map",
+                                       "list":  "List"
+                                   },
+                           "mini":  {
+                                        "finance":  "Finance summary",
+                                        "inventory":  "Inventory summary",
+                                        "cashIn":  "Cash in",
+                                        "cashOut":  "Cash out",
+                                        "stockIn":  "Stock in",
+                                        "stockOut":  "Stock out"
+                                    },
+                           "tables":  {
+                                          "topPages":  "Top pages",
+                                          "recentEvents":  "Recent events",
+                                          "latestCustomers":  "Latest customers",
+                                          "recentFinance":  "Recent finance transactions"
+                                      },
+                           "empty":  {
+                                         "noData":  "No items yet.",
+                                         "noGeoData":  "No geo data yet."
+                                     }
+                       }
+}

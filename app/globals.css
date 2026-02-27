@@ -1,0 +1,149 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --theme-light-base: #f6f8fb;
+  --theme-light-secondary: #eef3f8;
+  --theme-light-primary: #1f3b57;
+  --theme-light-text: #0e1b2a;
+  --theme-dark-base: #000000;
+  --theme-dark-secondary: #0e1a2b;
+  --theme-dark-primary: #9fc3ff;
+  --theme-dark-text: #eaf0ff;
+  --theme-radius: 0.875rem;
+  --theme-shadow-soft: 0 16px 48px -36px rgba(31, 59, 87, 0.35);
+  --theme-typography-scale: 1;
+}
+
+.theme-scope {
+  --brand-base: var(--theme-light-base);
+  --brand-secondary: var(--theme-light-secondary);
+  --brand-primary: var(--theme-light-primary);
+  --brand-text: var(--theme-light-text);
+  --radius: var(--theme-radius);
+  --shadow-soft: var(--theme-shadow-soft);
+  --background: var(--brand-base);
+  --foreground: var(--brand-text);
+  --card: color-mix(in srgb, var(--brand-base) 82%, white 18%);
+  --card-foreground: var(--brand-text);
+  --popover: color-mix(in srgb, var(--brand-base) 88%, white 12%);
+  --popover-foreground: var(--brand-text);
+  --primary: var(--brand-primary);
+  --primary-foreground: #f6f8fb;
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: var(--brand-text);
+  --muted: color-mix(in srgb, var(--brand-secondary) 76%, white 24%);
+  --muted-foreground: color-mix(in srgb, var(--brand-text) 62%, white 38%);
+  --accent: color-mix(in srgb, var(--brand-primary) 84%, white 16%);
+  --accent-foreground: #f6f8fb;
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --border: color-mix(in srgb, var(--brand-primary) 15%, white 85%);
+  --input: color-mix(in srgb, var(--brand-base) 74%, white 26%);
+  --ring: color-mix(in srgb, var(--brand-primary) 52%, white 48%);
+  --bg-base: var(--brand-base);
+  --glass-bg: rgba(255, 255, 255, 0.58);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --hairline: rgba(31, 59, 87, 0.16);
+  font-size: calc(16px * var(--theme-typography-scale));
+}
+
+.dark .theme-scope {
+  --brand-base: var(--theme-dark-base);
+  --brand-secondary: var(--theme-dark-secondary);
+  --brand-primary: var(--theme-dark-primary);
+  --brand-text: var(--theme-dark-text);
+  --background: var(--brand-base);
+  --foreground: var(--brand-text);
+  --card: color-mix(in srgb, var(--brand-base) 86%, white 14%);
+  --card-foreground: var(--brand-text);
+  --popover: color-mix(in srgb, var(--brand-base) 90%, white 10%);
+  --popover-foreground: var(--brand-text);
+  --primary: var(--brand-primary);
+  --primary-foreground: #000000;
+  --secondary: var(--brand-secondary);
+  --secondary-foreground: var(--brand-text);
+  --muted: color-mix(in srgb, var(--brand-secondary) 70%, black 30%);
+  --muted-foreground: color-mix(in srgb, var(--brand-text) 76%, black 24%);
+  --accent: color-mix(in srgb, var(--brand-primary) 84%, black 16%);
+  --accent-foreground: #000000;
+  --destructive: #ef6969;
+  --destructive-foreground: #140b0b;
+  --border: color-mix(in srgb, var(--brand-primary) 24%, black 76%);
+  --input: color-mix(in srgb, var(--brand-secondary) 72%, black 28%);
+  --ring: color-mix(in srgb, var(--brand-primary) 58%, black 42%);
+  --bg-base: var(--brand-base);
+  --glass-bg: rgba(0, 0, 0, 0.55);
+  --glass-border: rgba(159, 195, 255, 0.16);
+  --hairline: rgba(159, 195, 255, 0.22);
+}
+
+@theme inline {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-transparent text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(10px);
+  }
+
+  .hairline-divider {
+    border-color: var(--hairline);
+  }
+}
+
+@keyframes services-shiny {
+  0% {
+    background-position: 180% 0;
+  }
+  100% {
+    background-position: -40% 0;
+  }
+}
+
