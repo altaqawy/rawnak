@@ -135,7 +135,8 @@
                               "opsModule":  "العمليات",
                               "inventoryModule":  "المخزون",
                               "financeModule":  "المالية",
-                              "reportsModule":  "التقارير"
+                              "reportsModule":  "التقارير",
+                              "owner":  "لوحة المالك"
                           },
                   "roles":  {
                                 "owner":  "مالك",
@@ -901,5 +902,69 @@
                                          "noData":  "لا توجد عناصر بعد.",
                                          "noGeoData":  "لا توجد بيانات جغرافية بعد."
                                      }
-                       }
+                       },
+    "ownerDashboard":  {
+                         "title":  "لوحة المالك",
+                         "subtitle":  "عرض موحد لجميع الموديولات",
+                         "kpi":  {
+                                     "revenue":  "الإيرادات",
+                                     "activeOrders":  "الطلبات النشطة",
+                                     "customerSatisfaction":  "رضا العملاء",
+                                     "performanceScore":  "درجة الأداء"
+                                 },
+                         "health":  {
+                                        "title":  "صحة الموديولات",
+                                        "green":  "صحيح",
+                                        "yellow":  "يحتاج انتباه",
+                                        "red":  "حرج",
+                                        "unknown":  "حالة غير معروفة",
+                                        "notConfigured":  "غير مكون"
+                                    },
+                         "opportunities":  {
+                                              "title":  "الفرص",
+                                              "subtitle":  "إشارات النمو والمؤشرات الإيجابية",
+                                              "empty":  "لم يتم العثور على فرص",
+                                              "needsConfig":  "يحتاج إلى تكوين",
+                                              "low":  "منخفض",
+                                              "medium":  "متوسط",
+                                              "high":  "مرتفع"
+                                          },
+                         "challenges":  {
+                                            "title":  "التحديات",
+                                            "subtitle":  "المخاطر والمجالات التي تحتاج انتباه",
+                                            "empty":  "لم يتم اكتشاف تحديات",
+                                            "needsConfig":  "يحتاج إلى تكوين",
+                                            "low":  "منخفض",
+                                            "medium":  "متوسط",
+                                            "high":  "مرتفع"
+                                        },
+                         "quickActions":  {
+                                              "title":  "إجراءات سريعة"
+                                          },
+                         "charts":  {
+                                        "title":  "الاتجاهات التاريخية",
+                                        "noData":  "لا توجد بيانات رسم بياني متاحة",
+                                        "notConfigured":  "الرسوم البيانية غير مكونة"
+                                    },
+                         "states":  {
+                                        "loading":  "جاري تحميل البيانات...",
+                                        "empty":  "لا توجد بيانات متاحة",
+                                        "notConfigured":  "غير مكون",
+                                        "error":  "خطأ في تحميل البيانات"
+                                    },
+                         "modules":  {
+                                         "analytics":  "التحليلات",
+                                         "crm":  "العملاء (CRM)",
+                                         "finance":  "المالية",
+                                         "inventory":  "المخزون",
+                                         "operations":  "العمليات",
+                                         "content":  "الموقع والمحتوى",
+                                         "team":  "الفريق والأدوار",
+                                         "reports":  "التقارير",
+                                         "settings":  "إعدادات الموقع"
+                                     },
+                         "actions":  {
+                                         "viewAll":  "عرض الكل"
+                                     }
+                     }
 }

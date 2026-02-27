@@ -135,7 +135,8 @@
                               "opsModule":  "Operations",
                               "inventoryModule":  "Inventory",
                               "financeModule":  "Finance",
-                              "reportsModule":  "Reports"
+                              "reportsModule":  "Reports",
+                              "owner":  "Owner Console"
                           },
                   "roles":  {
                                 "owner":  "Owner",
@@ -901,5 +902,69 @@
                                          "noData":  "No items yet.",
                                          "noGeoData":  "No geo data yet."
                                      }
-                       }
+                       },
+    "ownerDashboard":  {
+                         "title":  "Owner Dashboard",
+                         "subtitle":  "Unified overview across all modules",
+                         "kpi":  {
+                                     "revenue":  "Revenue",
+                                     "activeOrders":  "Active Orders",
+                                     "customerSatisfaction":  "Customer Satisfaction",
+                                     "performanceScore":  "Performance Score"
+                                 },
+                         "health":  {
+                                        "title":  "Module Health",
+                                        "green":  "Healthy",
+                                        "yellow":  "Attention needed",
+                                        "red":  "Critical",
+                                        "unknown":  "Unknown status",
+                                        "notConfigured":  "Not configured"
+                                    },
+                         "opportunities":  {
+                                              "title":  "Opportunities",
+                                              "subtitle":  "Growth signals and positive business indicators",
+                                              "empty":  "No opportunities found",
+                                              "needsConfig":  "Needs configuration",
+                                              "low":  "Low",
+                                              "medium":  "Medium",
+                                              "high":  "High"
+                                          },
+                         "challenges":  {
+                                            "title":  "Challenges",
+                                            "subtitle":  "Risks and areas needing attention",
+                                            "empty":  "No challenges detected",
+                                            "needsConfig":  "Needs configuration",
+                                            "low":  "Low",
+                                            "medium":  "Medium",
+                                            "high":  "High"
+                                        },
+                         "quickActions":  {
+                                              "title":  "Quick Actions"
+                                          },
+                         "charts":  {
+                                        "title":  "Historical Trends",
+                                        "noData":  "No chart data available",
+                                        "notConfigured":  "Charts not configured"
+                                    },
+                         "states":  {
+                                        "loading":  "Loading data...",
+                                        "empty":  "No data available",
+                                        "notConfigured":  "Not configured",
+                                        "error":  "Error loading data"
+                                    },
+                         "modules":  {
+                                         "analytics":  "Analytics",
+                                         "crm":  "Customers (CRM)",
+                                         "finance":  "Finance",
+                                         "inventory":  "Inventory",
+                                         "operations":  "Operations",
+                                         "content":  "Website & Content",
+                                         "team":  "Team & Roles",
+                                         "reports":  "Reports",
+                                         "settings":  "Site Settings"
+                                     },
+                         "actions":  {
+                                         "viewAll":  "View all"
+                                     }
+                     }
 }
