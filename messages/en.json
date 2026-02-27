@@ -927,7 +927,10 @@
                                               "needsConfig":  "Needs configuration",
                                               "low":  "Low",
                                               "medium":  "Medium",
-                                              "high":  "High"
+                                              "high":  "High",
+                                              "highConversion":  "Strong Conversion Rate",
+                                              "recentCustomers":  "Recent Customer Growth",
+                                              "revenueGrowth":  "Revenue Growth Detected"
                                           },
                          "challenges":  {
                                             "title":  "Challenges",
@@ -936,7 +939,10 @@
                                             "needsConfig":  "Needs configuration",
                                             "low":  "Low",
                                             "medium":  "Medium",
-                                            "high":  "High"
+                                            "high":  "High",
+                                            "lowConversion":  "Low Conversion Rate",
+                                            "pendingOrders":  "High Number of Pending Orders",
+                                            "noRevenue":  "No Revenue Recorded"
                                         },
                          "quickActions":  {
                                               "title":  "Quick Actions"

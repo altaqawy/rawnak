@@ -927,7 +927,10 @@
                                               "needsConfig":  "يحتاج إلى تكوين",
                                               "low":  "منخفض",
                                               "medium":  "متوسط",
-                                              "high":  "مرتفع"
+                                              "high":  "مرتفع",
+                                              "highConversion":  "معدل تحويل قوي",
+                                              "recentCustomers":  "نمو العملاء الجدد",
+                                              "revenueGrowth":  "نمو الإيرادات"
                                           },
                          "challenges":  {
                                             "title":  "التحديات",
@@ -936,7 +939,10 @@
                                             "needsConfig":  "يحتاج إلى تكوين",
                                             "low":  "منخفض",
                                             "medium":  "متوسط",
-                                            "high":  "مرتفع"
+                                            "high":  "مرتفع",
+                                            "lowConversion":  "معدل تحويل منخفض",
+                                            "pendingOrders":  "عدد كبير من الطلبات المعلقة",
+                                            "noRevenue":  "لا توجد إيرادات مسجلة"
                                         },
                          "quickActions":  {
                                               "title":  "إجراءات سريعة"
