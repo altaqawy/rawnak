@@ -21,6 +21,7 @@ export default async function AdminLayout({ children, params }: LayoutProps) {
           {
             title: t('sections.main'),
             items: [
+              { href: `/${locale}/admin/owner`, label: t('nav.owner') },
               { href: `/${locale}/admin`, label: t('nav.hub') },
               { href: `/${locale}/admin/dashboard`, label: t('nav.dashboard') },
             ],
