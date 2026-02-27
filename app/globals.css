@@ -136,6 +136,32 @@
   .hairline-divider {
     border-color: var(--hairline);
   }
+
+  .admin-shell .glass-card {
+    padding: 1rem !important;
+  }
+
+  .admin-shell .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem;
+  }
+
+  .admin-shell table :is(th, td) {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .admin-shell[data-admin-density='compact'] .glass-card {
+    padding: 0.75rem !important;
+  }
+
+  .admin-shell[data-admin-density='compact'] .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.625rem;
+  }
+
+  .admin-shell[data-admin-density='compact'] table :is(th, td) {
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+  }
 }
 
 @keyframes services-shiny {
