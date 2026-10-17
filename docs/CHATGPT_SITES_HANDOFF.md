@@ -85,3 +85,14 @@ Start a ChatGPT **Work** conversation and invoke `@Sites` on this handoff. The o
 ## Approved reference design (2026-10-17)
 
 The owner specifically approved the black-and-white React Bits / Framer-inspired landing concept: hero with floating dark glass tiles and orbits, tool categories and five cards, code editor showcase, components gallery, nearly pure-black background. The updated implementation is in `components/tools/ToolsLanding.tsx`, `components/tools/tools-theme.css`, and `components/tools/ToolsHeader.tsx` on the same feature branch. Preserve this visual direction in the ChatGPT Sites port.
+
+## V4 Interaction Lab — added 2026-10-18
+
+- New original `lib/tools/interaction-presets.ts` exports 24 effects: 12 IntersectionObserver-triggered scroll reveals, 12 pointer-reactive monochrome backgrounds.
+- New live editor `components/tools/InteractionLab.tsx` and isolated CSS `components/tools/interaction-lab.css`; bilingual Next route `app/[locale]/tools/interactions/page.tsx`.
+- Intended public routes: `/en/interactions`, `/ar/interactions`; language switch preserves the destination.
+- Controls: animation duration/text for scroll effects, live pointer preview for backgrounds, filtering/search, local favorites, copy/download HTML + CSS + vanilla JS or React JSX.
+- Accessibility: reduced-motion behavior for scroll previews and exports; pointer backgrounds remain visible without interaction; keyboard focus styles.
+- All 24 presets are original. Alongside 50 previous original motion presets, the animation/interaction catalog now has 74 effects. Five interactive studios and five UI components are separate.
+- Offline self-contained V4 review archive: `rawnak-tools-v4-interactions.zip`, generated as a local downloadable conversation artifact (not automatically stored in GitHub).
+- Important: source is on a GitHub feature branch and not ported into the owner's actual ChatGPT Site yet. Do not claim the custom domain is active.
