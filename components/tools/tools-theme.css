@@ -314,3 +314,21 @@
 @media(max-width:800px){.rt-motion-teaser-inner{grid-template-columns:1fr}.rt-motion-teaser-art{height:250px;max-width:500px;width:100%;margin:auto}}
 @media(max-width:500px){.rt-motion-teaser-text h2{font-size:46px}.rt-motion-teaser-art{transform:scale(.75);transform-origin:center}}
 @media(prefers-reduced-motion:reduce){.rt-motion-teaser-ring,.rt-motion-teaser-core{animation:none!important}}
+
+
+/* Interaction Lab teaser — monochrome gradients and slow cinematic movement. */
+.rt-interaction-teaser{background:radial-gradient(ellipse at 80% 55%,#191919,#060606 51%,#000 85%);overflow:hidden}
+.rt-interaction-teaser-inner{display:grid;grid-template-columns:1fr .9fr;gap:45px;align-items:center;min-height:320px}
+.rt-interaction-content h2{font-size:clamp(40px,5vw,74px);font-weight:700;letter-spacing:-.06em;line-height:1.06;margin:15px 0}
+.rt-interaction-content h2 span{background:linear-gradient(130deg,#fff,#6e6e6e);background-clip:text;-webkit-text-fill-color:transparent}
+.rt-interaction-content p{color:#aaa;font-size:15px;max-width:510px;line-height:1.8;margin:20px 0 29px}
+.rt-interaction-demo{height:310px;position:relative;isolation:isolate;display:grid;place-items:center;overflow:hidden}
+.rt-interaction-grid{position:absolute;inset:0;opacity:.5;background-image:linear-gradient(#fff1 1px,transparent 1px),linear-gradient(90deg,#fff1 1px,transparent 1px);background-size:36px 36px;mask-image:radial-gradient(ellipse at center,#000 10%,transparent 80%)}
+.rt-interaction-disc{border-radius:50%;border:1px solid #ffffff66;position:absolute;box-shadow:0 0 35px #fff2,inset 0 0 30px #ffffff16}
+.rt-disc-one{height:220px;width:220px;animation:rt-disc-float 6s ease-in-out infinite;background:radial-gradient(circle at 35% 30%,#9994,transparent 55%)}
+.rt-disc-two{height:305px;width:305px;border-color:#ffffff33;animation:rt-disc-float 7.5s ease-in-out infinite reverse}
+.rt-disc-three{height:140px;width:140px;border-color:#ffffff88;background:radial-gradient(ellipse at 30% 27%,#eee7,#2225 48%,#030303 78%);animation:rt-disc-float 8s ease-in-out infinite}
+.rt-interaction-demo>span{position:absolute;bottom:5px;right:0;font:10px ui-monospace,monospace;letter-spacing:.17em;color:#888}
+@keyframes rt-disc-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+@media(max-width:800px){.rt-interaction-teaser-inner{grid-template-columns:1fr}.rt-interaction-demo{max-width:480px;width:100%;margin-inline:auto;height:270px}}
+@media(prefers-reduced-motion:reduce){.rt-interaction-disc{animation:none!important}}
