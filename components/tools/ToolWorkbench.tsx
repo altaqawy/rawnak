@@ -29,6 +29,80 @@ function getMotionFrames(kind: MotionKind) {
   return '0%, 100% { transform: translateY(0); } 50% { transform: translateY(-18px); }';
 }
 
+
+type ExportOptions = {
+  tool: ToolSlug;
+  label: string;
+  accent: string;
+  radius: number;
+  shadow: boolean;
+  motion: MotionKind;
+  duration: number;
+  background: string;
+  foreground: string;
+  svg: string;
+  frames: string;
+  heroTitle: string;
+  heroBody: string;
+};
+
+function generateReactSource(o: ExportOptions): string {
+  // JSON string expressions avoid treating text entered by visitors as JSX source.
+  const value = (s: string) => '{' + JSON.stringify(s).replace(/</g, '\\u003c') + '}';
+  if (o.tool === 'button-studio') {
+    const css = '.rawnak-btn{padding:15px 26px;border:0;border-radius:' + o.radius +
+      'px;background:' + o.accent + ';color:#fff;font:700 14px system-ui;cursor:pointer;' +
+      (o.shadow ? 'box-shadow:0 14px 35px ' + o.accent + '55;' : '') +
+      'transition:transform .2s}.rawnak-btn:hover{transform:translateY(-3px)}' +
+      '.rawnak-btn:focus-visible{outline:3px solid ' + o.accent + ';outline-offset:3px}' +
+      '@media(prefers-reduced-motion:reduce){.rawnak-btn{transition:none}.rawnak-btn:hover{transform:none}}';
+    return 'export default function RawnakButton() {\n  return (\n    <>\n' +
+      '      <button type="button" className="rawnak-btn">' + value(o.label) + '</button>\n' +
+      '      <style>{' + JSON.stringify(css) + '}</style>\n    </>\n  );\n}';
+  }
+  if (o.tool === 'motion-studio') {
+    const css = '.rawnak-motion{display:inline-block;padding:19px 25px;border-radius:' +
+      o.radius + 'px;background:' + o.accent + ';color:#fff;font:700 17px system-ui;' +
+      'animation:rawnak-' + o.motion + ' ' + o.duration + 's ease-in-out infinite}' +
+      '@keyframes rawnak-' + o.motion + '{' + o.frames + '}' +
+      '@media(prefers-reduced-motion:reduce){.rawnak-motion{animation:none}}';
+    return 'export default function RawnakMotion() {\n  return (\n    <>\n' +
+      '      <div className="rawnak-motion">' + value(o.label) + '</div>\n' +
+      '      <style>{' + JSON.stringify(css) + '}</style>\n    </>\n  );\n}';
+  }
+  if (o.tool === 'theme-builder') {
+    return 'export default function RawnakThemeCard() {\n  return (\n' +
+      '    <section style={{background:' + JSON.stringify(o.background) +
+      ',color:' + JSON.stringify(o.foreground) + ',borderRadius:' + o.radius +
+      ',padding:32}}>\n      <h2>Design with intention.</h2>\n' +
+      '      <p>A consistent visual system.</p>\n' +
+      '      <button type="button" style={{background:' + JSON.stringify(o.accent) +
+      ',color:"#fff",padding:"12px 20px",border:0}}>Get started</button>\n' +
+      '    </section>\n  );\n}';
+  }
+  if (o.tool === 'svg-studio') {
+    const background = 'url("data:image/svg+xml,' + encodeURIComponent(o.svg) + '")';
+    return 'export default function RawnakPattern() {\n  return (\n' +
+      '    <div style={{width:"100%",height:260,backgroundColor:"#0a1020",' +
+      'backgroundImage:' + JSON.stringify(background) + '}} />\n  );\n}';
+  }
+  const css = '.rawnak-hero{padding:clamp(65px,12vw,145px) 24px;' +
+    'background:' + o.background + ';color:' + o.foreground +
+    '}.rawnak-hero-inner{max-width:1050px;margin:auto}' +
+    '.rawnak-hero h1{font:700 clamp(42px,7vw,84px)/1.07 system-ui}' +
+    '.rawnak-hero p{font:17px/1.8 system-ui;opacity:.8}' +
+    '.rawnak-hero-action{display:inline-block;padding:14px 22px;border-radius:' +
+    o.radius + 'px;background:' + o.accent + ';color:#fff;text-decoration:none}';
+  return 'export default function RawnakHero() {\n  return (\n    <>\n' +
+    '      <section className="rawnak-hero"><div className="rawnak-hero-inner">\n' +
+    '        <h1>' + value(o.heroTitle) + '</h1>\n' +
+    '        <p>' + value(o.heroBody) + '</p>\n' +
+    '        <a className="rawnak-hero-action" href="#next-section">' +
+    value(o.label) + '</a>\n' +
+    '      </div></section>\n' +
+    '      <style>{' + JSON.stringify(css) + '}</style>\n    </>\n  );\n}';
+}
+
 export default function ToolWorkbench({ tool, locale }: Props) {
   const ar = locale === 'ar';
   const [label, setLabel] = useState('Explore Rawnak');
@@ -45,6 +119,7 @@ export default function ToolWorkbench({ tool, locale }: Props) {
   const [heroBody, setHeroBody] = useState('A powerful starting point for your next great idea.');
   const [copied, setCopied] = useState(false);
   const [notice, setNotice] = useState('');
+  const [exportFormat, setExportFormat] = useState<'native' | 'react'>('native');
 
   const frames = getMotionFrames(motion);
   const svg = patternSvg(pattern, step, accent);
@@ -66,6 +141,12 @@ export default function ToolWorkbench({ tool, locale }: Props) {
     return '<section class="rawnak-hero">\n  <div class="rawnak-hero-inner">\n    <p class="rawnak-eyebrow">RAWNAK / BUILDER</p>\n    <h1>' + escapeHtml(heroTitle) + '</h1>\n    <p>' + escapeHtml(heroBody) + '</p>\n    <a class="rawnak-hero-action" href="#next-section">' + escapeHtml(label) + '</a>\n  </div>\n</section>\n<style>\n.rawnak-hero { padding: clamp(64px, 12vw, 150px) 24px; background: ' + background + '; color: ' + foreground + '; }\n.rawnak-hero-inner { max-width: 1050px; margin: auto; }\n.rawnak-eyebrow { letter-spacing: .2em; font-size: 12px; opacity: .7; }\n.rawnak-hero h1 { font: 700 clamp(44px, 7vw, 90px)/1.06 system-ui, sans-serif; letter-spacing: -.05em; max-width: 760px; margin: 24px 0; }\n.rawnak-hero-inner > p:not(.rawnak-eyebrow) { max-width: 540px; font: 18px/1.7 system-ui, sans-serif; opacity: .8; margin-bottom: 32px; }\n.rawnak-hero-action { display: inline-block; padding: 15px 24px; border-radius: ' + radius + 'px; background: ' + accent + '; color: white; text-decoration: none; font: 600 15px system-ui, sans-serif; }\n</style>';
   }, [tool, label, accent, radius, shadow, motion, duration, frames, background, foreground, svg, heroTitle, heroBody]);
 
+  const reactSnippet = generateReactSource({
+    tool, label, accent, radius, shadow, motion, duration,
+    background, foreground, svg, frames, heroTitle, heroBody,
+  });
+  const exportedSnippet = exportFormat === 'react' ? reactSnippet : snippet;
+
   const reset = () => {
     setLabel('Explore Rawnak');
     setAccent('#4772f5');
@@ -81,11 +162,12 @@ export default function ToolWorkbench({ tool, locale }: Props) {
     setHeroBody('A powerful starting point for your next great idea.');
     setCopied(false);
     setNotice('');
+    setExportFormat('native');
   };
 
   async function copyCode() {
     try {
-      await navigator.clipboard.writeText(snippet);
+      await navigator.clipboard.writeText(exportedSnippet);
       setCopied(true);
       setNotice(ar ? 'تم نسخ الكود' : 'Code copied');
     } catch {
@@ -94,8 +176,8 @@ export default function ToolWorkbench({ tool, locale }: Props) {
   }
 
   function downloadCode() {
-    const extension = tool === 'svg-studio' ? 'svg' : tool === 'theme-builder' ? 'css' : 'html';
-    const blob = new Blob([snippet], { type: extension === 'svg' ? 'image/svg+xml' : 'text/plain;charset=utf-8' });
+    const extension = exportFormat === 'react' ? 'jsx' : tool === 'svg-studio' ? 'svg' : tool === 'theme-builder' ? 'css' : 'html';
+    const blob = new Blob([exportedSnippet], { type: extension === 'svg' ? 'image/svg+xml' : 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement('a');
     anchor.href = url;
@@ -256,8 +338,23 @@ export default function ToolWorkbench({ tool, locale }: Props) {
               </button>
             </div>
           </div>
-          <div className="border-b border-border/60 bg-background/40 px-5 py-3 font-mono text-xs text-muted-foreground" dir="ltr">{tool === 'svg-studio' ? 'pattern.svg' : tool === 'theme-builder' ? 'theme.css' : tool + '.html'}</div>
-          <pre dir="ltr" className="max-h-[340px] overflow-auto whitespace-pre p-5 text-left font-mono text-[12px] leading-6 text-foreground/90 sm:p-6"><code>{snippet}</code></pre>
+          <div className="flex gap-2 border-b border-border/60 px-5 py-2" role="tablist" aria-label={ar ? 'صيغة الكود' : 'Code format'}>
+            {(['native', 'react'] as const).map((format) => (
+              <button
+                key={format}
+                type="button"
+                role="tab"
+                aria-selected={exportFormat === format}
+                onClick={() => { setExportFormat(format); setCopied(false); }}
+                className={'rounded-md px-3 py-1.5 text-xs font-medium transition-colors ' +
+                  (exportFormat === format ? 'bg-blue-600/20 text-blue-400' : 'text-muted-foreground hover:text-foreground')}
+              >
+                {format === 'react' ? 'React JSX' : tool === 'svg-studio' ? 'SVG' : tool === 'theme-builder' ? 'CSS' : 'HTML + CSS'}
+              </button>
+            ))}
+          </div>
+          <div className="border-b border-border/60 bg-background/40 px-5 py-3 font-mono text-xs text-muted-foreground" dir="ltr">{exportFormat === 'react' ? tool + '.jsx' : tool === 'svg-studio' ? 'pattern.svg' : tool === 'theme-builder' ? 'theme.css' : tool + '.html'}</div>
+          <pre dir="ltr" className="max-h-[340px] overflow-auto whitespace-pre p-5 text-left font-mono text-[12px] leading-6 text-foreground/90 sm:p-6"><code>{exportedSnippet}</code></pre>
           <div role="status" aria-live="polite" className="flex min-h-10 items-center gap-2 border-t border-border/70 px-5 py-2 text-xs text-muted-foreground">
             <Sparkles className="size-3.5" />{notice || (ar ? 'أي تعديل في الإعدادات يُحدث المعاينة والكود فورًا.' : 'Every change updates the preview and code instantly.')}
           </div>
