@@ -27,15 +27,17 @@ const nextConfig = {
       // URLs visible to visitors: tools.rawnakgroup.com/en[/button-studio]
       // Internal routes: /en/tools[/button-studio].
       beforeFiles: [
-        {
-          source: '/:locale(ar|en)',
-          has: toolsHostRule,
-          destination: '/:locale/tools',
-        },
+        // The more specific rule comes first: Next.js can keep evaluating
+        // beforeFiles rewrites, so /en must not become /en/tools/tools.
         {
           source: '/:locale(ar|en)/:tool',
           has: toolsHostRule,
           destination: '/:locale/tools/:tool',
+        },
+        {
+          source: '/:locale(ar|en)',
+          has: toolsHostRule,
+          destination: '/:locale/tools',
         },
       ],
     };
