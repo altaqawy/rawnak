@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Code2, Copy, Download, Eye, Heart, MousePointer2 } from 'lucide-react';
 import type { Locale } from '@/i18n/config';
 
-type ComponentKind = 'text-reveal' | 'glass-navigation' | 'spotlight-card' | 'dot-grid' | 'floating-input';
+export type ComponentKind = 'text-reveal' | 'glass-navigation' | 'spotlight-card' | 'dot-grid' | 'floating-input';
 type Format = 'html' | 'react';
 
 type Item = {
@@ -17,7 +17,7 @@ type Item = {
   category: string;
 };
 
-const collection: Item[] = [
+export const collection: Item[] = [
   { slug: 'text-reveal', en: 'Text Reveal', ar: 'ظهور النص', descriptionEn: 'A soft, animated headline entrance.', descriptionAr: 'ظهور تدريجي أنيق للعناوين.', category: 'TEXT' },
   { slug: 'glass-navigation', en: 'Glass Navigation', ar: 'شريط تنقّل زجاجي', descriptionEn: 'Minimal navigation with a glass finish.', descriptionAr: 'شريط تنقل زجاجي بسيط وحديث.', category: 'NAVIGATION' },
   { slug: 'spotlight-card', en: 'Spotlight Card', ar: 'بطاقة مضيئة', descriptionEn: 'A luminous hover interaction.', descriptionAr: 'بطاقة بتوهّج عند المرور عليها.', category: 'CARDS' },
@@ -29,7 +29,7 @@ function escapeHtml(input: string): string {
   return input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-function sourceFor(kind: ComponentKind, text: string, accent: string, radius: number, duration: number, format: Format) {
+export function sourceFor(kind: ComponentKind, text: string, accent: string, radius: number, duration: number, format: Format) {
   const htmlText = escapeHtml(text || 'Build something better.');
   const css: Record<ComponentKind, string> = {
     'text-reveal': '.rtx-reveal{display:inline-block;max-width:100%;color:#f5f5f5;font:700 clamp(32px,6vw,64px)/1.15 system-ui;letter-spacing:-.06em;animation:rtx-appear ' + duration + 's cubic-bezier(.2,.8,.2,1) both}@keyframes rtx-appear{from{transform:translateY(24px);opacity:0;filter:blur(8px)}to{transform:none;opacity:1;filter:none}}@media(prefers-reduced-motion:reduce){.rtx-reveal{animation:none}}',
@@ -58,7 +58,7 @@ function sourceFor(kind: ComponentKind, text: string, accent: string, radius: nu
   return 'export default function RawnakComponent() {\n  return (\n    <>\n      ' + react[kind] + '\n      <style>{' + JSON.stringify(styles) + '}</style>\n    </>\n  );\n}';
 }
 
-function LiveComponent({kind, text, accent, radius, duration}: {
+export function LiveComponent({kind, text, accent, radius, duration}: {
   kind: ComponentKind;
   text: string;
   accent: string;
