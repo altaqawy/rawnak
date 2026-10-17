@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import type { Locale } from '@/i18n/config';
 import { toolCatalog, type ToolSlug } from '@/lib/tools/catalog';
+import { motionCount } from '@/lib/tools/original-motions';
 import { toolsPath } from '@/lib/tools/domain';
 
 type Category = 'all' | 'developers' | 'designers' | 'business' | 'professionals';
@@ -152,9 +153,9 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
     <section className="rt-section rt-motion-teaser" aria-labelledby="rt-motions-title">
       <div className="rt-container rt-motion-teaser-inner">
         <div className="rt-motion-teaser-text">
-          <div className="rt-eyebrow">ORIGINAL MOTIONS · 034</div>
+          <div className="rt-eyebrow">ORIGINAL MOTIONS · {motionCount}</div>
           <h2 id="rt-motions-title">{ar?'الحركة تصنع':'Make it'} <span>{ar?'الفرق.':'move.'}</span></h2>
-          <p>{ar?'٣٤ أنيميشن أصلية مجانية، بخمس فئات، ومعاينة وتعديل وتصدير React أو CSS مباشرة.':'34 original free animations in five categories — preview, customize, then export as React or CSS.'}</p>
+          <p>{ar?'{motionCount} أنيميشن أصلية مجانية، بخمس فئات، ومعاينة وتعديل وتصدير React أو CSS مباشرة.':'{motionCount} original free animations in five categories — preview, customize, then export as React or CSS.'}</p>
           <Link className="rt-button rt-button-white" href={'/'+locale+(toolsHost?'/animations':'/tools/animations')}>
             {ar?'افتح مكتبة الأنيميشن':'Explore Motion Library'} <ArrowUpRight size={17}/>
           </Link>
