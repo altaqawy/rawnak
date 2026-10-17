@@ -31,8 +31,8 @@ export default async function ToolPage({ params }: Props) {
   const toolsHost = isToolsHost((await headers()).get('host'));
   const BackIcon = locale === 'ar' ? ArrowRight : ArrowLeft;
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-6xl px-4 pb-24 pt-10 sm:px-6">
+    <div className="rt-editor-page">
+      <div className="mx-auto max-w-6xl px-4 pb-24 pt-12 sm:px-6">
         <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
           <Link href={toolsPath(locale, undefined, toolsHost)} className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
             <BackIcon className="size-4" />{locale === 'ar' ? 'كل الأدوات' : 'All tools'}
@@ -41,8 +41,8 @@ export default async function ToolPage({ params }: Props) {
             <Braces className="size-4" /> RAWNAK TOOLS / {selected.hint}
           </div>
         </div>
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">{selected.label[locale]}</h1>
-        <p className="mb-8 mt-3 text-muted-foreground">{selected.subtitle[locale]}</p>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">{selected.label[locale]}</h1>
+        <p className="mb-10 mt-4 text-muted-foreground">{selected.subtitle[locale]}</p>
         <ToolWorkbench tool={selected.slug} locale={locale} />
       </div>
     </div>
