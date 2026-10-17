@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type CSSProperties } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft, ArrowRight, ArrowUpRight, Check, Code2, Copy, Download,
@@ -49,7 +49,7 @@ function MotionPreview({preset,config,revision}:{preset:MotionPreset;config:Conf
     preset.slug==='sheen-drift'?'linear-gradient(115deg,#080808,#333,'+config.accent+'75,#080808)':
     preset.slug==='ambient-shift'?'linear-gradient(135deg,#050505,'+config.accent+'65,#050505)':
     'radial-gradient('+config.accent+'8c 1px,transparent 1px)';
-  const style:React.CSSProperties={
+  const style:CSSProperties={
     animationName:isHover&&!hover?'none':name,
     animationDuration:config.duration+'s',
     animationIterationCount:isHover?1:config.loop?'infinite':1,
