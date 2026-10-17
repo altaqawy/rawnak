@@ -96,3 +96,22 @@ The owner specifically approved the black-and-white React Bits / Framer-inspired
 - All 24 presets are original. Alongside 50 previous original motion presets, the animation/interaction catalog now has 74 effects. Five interactive studios and five UI components are separate.
 - Offline self-contained V4 review archive: `rawnak-tools-v4-interactions.zip`, generated as a local downloadable conversation artifact (not automatically stored in GitHub).
 - Important: source is on a GitHub feature branch and not ported into the owner's actual ChatGPT Site yet. Do not claim the custom domain is active.
+
+## V5 — Original Kinetic Lab (2026-10-18)
+
+The owner approved the Framer-inspired pure-black aesthetic and requested the next phase of 3D cards, magnetic interactions, and interactive galleries.
+
+Added 12 **new original** interactive presets grouped as:
+- 3D Cards (4): Perspective Tilt, Liquid Glass, Layered Depth, Border Glow
+- Magnetic (4): Magnetic Button, Magnetic Orb, Magnetic Pill, Magnetic Tile
+- Galleries (4): Editorial Rail, Layer Stack, Focus Gallery, Arc Gallery
+
+**Implementation**: \`lib/tools/kinetic-presets.ts\` (original effect registry, HTML/CSS/JS and React JSX exports), \`components/tools/KineticLab.tsx\` (editor, hover/pointer previews, controls, keyboard gallery navigation, search, local favorites), \`components/tools/kinetic-lab.css\`, \`app/[locale]/tools/kinetic/page.tsx\`, and nav/homepage changes.
+
+**URLs after actual ChatGPT Sites publication**: \`https://tools.rawnakgroup.com/en/kinetic\` and \`/ar/kinetic\`. They are only planned at present.
+
+**Catalog totals**: 50 original motion presets + 24 scroll/pointer presets + 12 kinetic presets = 86 distinct effect presets; the separate 5 original UI components and 5 utility studios are not included in the 86 count.
+
+**Offline local review**: \`rawnak-tools-v5-kinetic.zip\`, a self-contained downloadable preview in the conversation (not a website release). Tested in Chromium for 3D pointer tilt, magnetic translation, gallery next/previous navigation, React export tab, favorites, and 390px mobile layout without JavaScript errors or horizontal overflow. This **does not** validate a future ChatGPT Sites port.
+
+**Accessibility/security**: no external packages or personal-data collection; reduced-motion fallbacks; keyboard/focus affordances. Generated source should be visually reviewed and smoke-tested inside each target application before production deployment.
