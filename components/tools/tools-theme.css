@@ -291,3 +291,26 @@
 @media(prefers-reduced-motion:reduce){
  .rawnak-tools-page *, .rawnak-tools-page *::before,.rawnak-tools-page *::after,.rt-site-header *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* Animated library teaser: original abstract CSS rings (no third-party sprites). */
+.rt-motion-teaser {background:radial-gradient(ellipse at 78% 50%,#171717 0%,#050505 45%,#000 78%);overflow:hidden;}
+.rt-motion-teaser-inner{display:grid;grid-template-columns:1fr .95fr;align-items:center;gap:35px;min-height:320px}
+.rt-motion-teaser-text{position:relative;z-index:1}
+.rt-motion-teaser-text h2{font-size:clamp(44px,5vw,73px);line-height:1.08;letter-spacing:-.065em;font-weight:700;margin-top:13px}
+.rt-motion-teaser-text h2 span{background:linear-gradient(130deg,#fff,#777);background-clip:text;-webkit-text-fill-color:transparent}
+.rt-motion-teaser-text p{color:#aaa;font-size:15px;line-height:1.75;max-width:530px;margin:20px 0 26px}
+.rt-motion-teaser-art{position:relative;height:300px;display:grid;place-items:center;}
+.rt-motion-teaser-ring{position:absolute;border:1px solid #7776;border-radius:50%;box-shadow:0 0 25px #ffffff0b,inset 0 0 22px #ffffff05}
+.rt-motion-ring-1{width:190px;height:190px;transform:rotateX(65deg) rotateZ(-20deg);animation:rt-ring-1 12s linear infinite}
+.rt-motion-ring-2{width:290px;height:290px;transform:rotateX(66deg) rotateZ(-20deg);animation:rt-ring-2 16s linear infinite}
+.rt-motion-ring-3{width:390px;height:390px;transform:rotateX(74deg) rotateZ(35deg);animation:rt-ring-1 22s linear infinite reverse}
+.rt-motion-teaser-core{height:145px;width:145px;display:grid;place-items:center;border-radius:28px;background:linear-gradient(145deg,#2d2d2d,#090909);border:1px solid #555;box-shadow:25px 25px 55px #000,inset 0 0 25px #fff1;transform:rotate(-13deg);font-size:94px;color:#e6e6e6;font-style:italic;font-weight:800;text-shadow:0 0 27px #fff4;animation:rt-hover 6s ease-in-out infinite;}
+.rt-motion-teaser-star{position:absolute;width:6px;height:6px;background:white;border-radius:50%;box-shadow:0 0 13px white}
+.rt-motion-star-a{top:30px;left:47%}
+.rt-motion-star-b{bottom:40px;right:16%}
+.rt-motion-star-c{top:46%;left:9%;width:4px;height:4px}
+@keyframes rt-ring-1{from{rotate:0deg}to{rotate:360deg}}
+@keyframes rt-ring-2{from{rotate:360deg}to{rotate:0deg}}
+@media(max-width:800px){.rt-motion-teaser-inner{grid-template-columns:1fr}.rt-motion-teaser-art{height:250px;max-width:500px;width:100%;margin:auto}}
+@media(max-width:500px){.rt-motion-teaser-text h2{font-size:46px}.rt-motion-teaser-art{transform:scale(.75);transform-origin:center}}
+@media(prefers-reduced-motion:reduce){.rt-motion-teaser-ring,.rt-motion-teaser-core{animation:none!important}}
