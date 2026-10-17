@@ -38,6 +38,12 @@ export const motionPresets: MotionPreset[] = [
   { slug:'hinge-in', en:'Hinge In', ar:'دخول بالمفصلة', category:'entrance', frames:'from{opacity:0;transform:perspective(700px) rotateX(-75deg)}to{opacity:1;transform:perspective(700px) rotateX(0)}' },
   { slug:'spring-rise', en:'Spring Rise', ar:'ارتداد للأعلى', category:'entrance', frames:'0%{opacity:0;transform:translateY(70px) scale(.8)}65%{opacity:1;transform:translateY(-13px) scale(1.03)}85%{transform:translateY(6px)}100%{transform:translateY(0) scale(1)}' },
   { slug:'pop-drop', en:'Pop Drop', ar:'سقوط ناعم', category:'entrance', frames:'0%{opacity:0;transform:translateY(-90px) scale(1.15)}55%{opacity:1;transform:translateY(12px) scale(.96)}80%{transform:translateY(-6px)}100%{transform:translateY(0) scale(1)}' },
+  { slug:'diagonal-in', en:'Diagonal In', ar:'دخول قطري', category:'entrance', frames:'from{opacity:0;transform:translate(-45px,45px) scale(.9)}to{opacity:1;transform:translate(0,0) scale(1)}' },
+  { slug:'depth-pull', en:'Depth Pull', ar:'اقتراب بالعمق', category:'entrance', frames:'from{opacity:0;transform:perspective(900px) translateZ(-180px) scale(.7)}to{opacity:1;transform:perspective(900px) translateZ(0) scale(1)}' },
+  { slug:'mask-rise', en:'Mask Rise', ar:'ظهور من خلف قناع', category:'entrance', frames:'from{clip-path:inset(100% 0 0 0);transform:translateY(18px)}to{clip-path:inset(0 0 0 0);transform:translateY(0)}' },
+  { slug:'perspective-fall', en:'Perspective Fall', ar:'سقوط منظور', category:'entrance', frames:'from{opacity:0;transform:perspective(800px) rotateY(65deg) translateY(-20px)}to{opacity:1;transform:perspective(800px) rotateY(0) translateY(0)}' },
+  { slug:'elastic-zoom', en:'Elastic Zoom', ar:'تقريب مرن', category:'entrance', frames:'0%{opacity:0;transform:scale(.2)}45%{opacity:1;transform:scale(1.2)}70%{transform:scale(.92)}100%{transform:scale(1)}' },
+  { slug:'sway-landing', en:'Sway Landing', ar:'هبوط متمايل', category:'entrance', frames:'0%{opacity:0;transform:rotate(-20deg) translateY(34px)}60%{opacity:1;transform:rotate(7deg) translateY(-4px)}100%{transform:rotate(0) translateY(0)}' },
   // Typography
   { slug:'letter-spread', en:'Letter Spread', ar:'اتساع الحروف', category:'text', setup:'letter-spacing:0', frames:'from{opacity:0;letter-spacing:-.2em;filter:blur(4px)}to{opacity:1;letter-spacing:0;filter:blur(0)}' },
   { slug:'text-shutter', en:'Text Shutter', ar:'ستارة النص', category:'text', frames:'from{clip-path:inset(0 100% 0 0);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}' },
@@ -45,6 +51,10 @@ export const motionPresets: MotionPreset[] = [
   { slug:'neon-wake', en:'Neon Wake', ar:'إضاءة النص', category:'text', frames:'0%{opacity:.18;text-shadow:none}50%{opacity:1;text-shadow:0 0 22px currentColor}100%{opacity:1;text-shadow:0 0 0 transparent}' },
   { slug:'tracking-sweep', en:'Tracking Sweep', ar:'تمدد الأحرف', category:'text', frames:'from{opacity:0;letter-spacing:.3em;transform:scaleX(.8)}to{opacity:1;letter-spacing:0;transform:scaleX(1)}' },
   { slug:'text-tilt', en:'Text Tilt', ar:'ميل النص', category:'text', frames:'0%{opacity:0;transform:rotate(8deg) translateY(24px);filter:blur(4px)}70%{opacity:1;transform:rotate(-3deg)}100%{opacity:1;transform:rotate(0);filter:blur(0)}' },
+  { slug:'focus-stretch', en:'Focus Stretch', ar:'تمدد بؤري', category:'text', frames:'from{opacity:0;transform:scaleY(1.6);filter:blur(10px)}to{opacity:1;transform:scaleY(1);filter:blur(0)}' },
+  { slug:'letter-flash', en:'Letter Flash', ar:'وميض الأحرف', category:'text', frames:'0%{opacity:0;filter:brightness(3)}40%{opacity:.4;filter:brightness(1)}70%{opacity:1;filter:brightness(2)}100%{opacity:1;filter:brightness(1)}' },
+  { slug:'vertical-slice', en:'Vertical Slice', ar:'شريحة عمودية', category:'text', frames:'from{clip-path:inset(0 45% 0 55%);opacity:0;transform:scaleX(.7)}to{clip-path:inset(0 0 0 0);opacity:1;transform:scaleX(1)}' },
+  { slug:'text-flicker', en:'Soft Flicker', ar:'وميض ناعم', category:'text', frames:'0%{opacity:0}18%{opacity:.7}30%{opacity:.2}52%{opacity:.9}65%{opacity:.55}100%{opacity:1}' },
   // Hover: user-initiated only
   { slug:'hover-lift', en:'Hover Lift', ar:'ارتفاع المؤشر', category:'hover', interaction:'hover', content:'button', frames:'from{transform:translateY(0)}to{transform:translateY(-12px)}' },
   { slug:'hover-tilt', en:'Hover Tilt', ar:'ميل ثلاثي', category:'hover', interaction:'hover', content:'button', frames:'from{transform:perspective(500px) rotateY(0)}to{transform:perspective(500px) rotateY(-16deg) rotateX(7deg)}' },
@@ -53,6 +63,10 @@ export const motionPresets: MotionPreset[] = [
   { slug:'hover-swing', en:'Hover Swing', ar:'اهتزاز جانبي', category:'hover', interaction:'hover', content:'button', frames:'0%,100%{transform:rotate(0)}25%{transform:rotate(5deg)}75%{transform:rotate(-5deg)}', seconds:.7 },
   { slug:'hover-glow', en:'Hover Glow', ar:'وهج المؤشر', category:'hover', interaction:'hover', content:'button', frames:'from{box-shadow:0 0 0 0 #ffffff00}to{box-shadow:0 0 36px 12px #ffffff50}' },
   { slug:'hover-squash', en:'Hover Squash', ar:'ضغط مطاطي', category:'hover', interaction:'hover', content:'button', frames:'0%{transform:scale(1)}40%{transform:scale(1.18,.85)}75%{transform:scale(.96,1.1)}100%{transform:scale(1.08,1.02)}', seconds:.7 },
+  { slug:'hover-skew', en:'Hover Skew', ar:'ميل المؤشر', category:'hover', interaction:'hover', content:'button', frames:'from{transform:skewX(0)}to{transform:skewX(-14deg)}' },
+  { slug:'hover-bob', en:'Hover Bob', ar:'قفزة المؤشر', category:'hover', interaction:'hover', content:'button', frames:'0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}', seconds:.5 },
+  { slug:'hover-nudge', en:'Hover Nudge', ar:'دفعة جانبية', category:'hover', interaction:'hover', content:'button', frames:'0%,100%{transform:translateX(0)}30%{transform:translateX(12px)}65%{transform:translateX(-5px)}' },
+  { slug:'hover-fade', en:'Hover Fade', ar:'خفت المؤشر', category:'hover', interaction:'hover', content:'button', frames:'from{opacity:1;transform:scale(1)}to{opacity:.4;transform:scale(.92)}' },
   // Continuous: intended as a looping demonstration and opt-in export
   { slug:'levitation', en:'Levitation', ar:'طفو مستمر', category:'loop', frames:'0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}', seconds:2.8 },
   { slug:'breathing', en:'Breathing', ar:'تنفّس', category:'loop', frames:'0%,100%{transform:scale(1)}50%{transform:scale(1.10)}', seconds:2.5 },
@@ -61,6 +75,8 @@ export const motionPresets: MotionPreset[] = [
   { slug:'orbital-path', en:'Orbital Path', ar:'مسار مداري', category:'loop', frames:'0%{transform:translate(0,-20px)}25%{transform:translate(22px,0)}50%{transform:translate(0,20px)}75%{transform:translate(-22px,0)}100%{transform:translate(0,-20px)}', seconds:3.5 },
   { slug:'soft-shake', en:'Soft Shake', ar:'اهتزاز لطيف', category:'loop', frames:'0%,100%{transform:rotate(0)}20%{transform:rotate(2deg)}40%{transform:rotate(-2deg)}60%{transform:rotate(1deg)}80%{transform:rotate(-1deg)}', seconds:2.8 },
   { slug:'heartbeat', en:'Heartbeat', ar:'نبض القلب', category:'loop', frames:'0%,30%,100%{transform:scale(1)}12%{transform:scale(1.15)}22%{transform:scale(1.06)}', seconds:2.2 },
+  { slug:'pendulum', en:'Pendulum', ar:'بندول', category:'loop', frames:'0%,100%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}', seconds:2.6 },
+  { slug:'sine-wave', en:'Sine Wave', ar:'موجة مستمرة', category:'loop', frames:'0%,100%{transform:translateX(-12px) translateY(0)}25%{transform:translateX(0) translateY(-12px)}50%{transform:translateX(12px) translateY(0)}75%{transform:translateX(0) translateY(12px)}', seconds:3.2 },
   // Background motifs
   { slug:'grid-travel', en:'Grid Travel', ar:'تحرك الشبكة', category:'background', content:'background', frames:'from{background-position:0 0}to{background-position:0 90px}', seconds:4, easing:'linear' },
   { slug:'sheen-drift', en:'Sheen Drift', ar:'انزلاق الضوء', category:'background', content:'background', frames:'from{background-position:200% 50%}to{background-position:-100% 50%}', seconds:3, easing:'linear' },
