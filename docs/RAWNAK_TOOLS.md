@@ -26,7 +26,7 @@ Available slugs:
 
 1. Add a typed slug and bilingual catalog details to \`lib/tools/catalog.ts\`.
 2. Add editor controls, preview, and copy/download code to \`components/tools/ToolWorkbench.tsx\`. Prefer extracting shared controls before the file gets larger.
-3. The index and static editor route parameters automatically pick up the new slug.
+3. The index and static editor route parameters automatically pick up the new slug. On the tools hostname, generated links omit the internal `/tools` segment.
 4. Test \`npm run build\`, keyboard navigation, reduced-motion mode, mobile screens, and export output.
 
 ## Third-party license caution
