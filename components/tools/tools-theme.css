@@ -332,3 +332,23 @@
 @keyframes rt-disc-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
 @media(max-width:800px){.rt-interaction-teaser-inner{grid-template-columns:1fr}.rt-interaction-demo{max-width:480px;width:100%;margin-inline:auto;height:270px}}
 @media(prefers-reduced-motion:reduce){.rt-interaction-disc{animation:none!important}}
+
+
+/* Kinetic teaser — original depth illustration. */
+.rt-kinetic-teaser{overflow:hidden;background:radial-gradient(ellipse at 24% 50%,#ffffff12,#080808 50%,#000 85%)}
+.rt-kinetic-inner{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,7vw,100px);align-items:center;min-height:330px}
+.rt-kinetic-art{position:relative;height:320px;perspective:700px;filter:drop-shadow(0 35px 45px #000c)}
+.rt-kinetic-wire{position:absolute;inset:20px 0;border-radius:50%;border:1px solid #ffffff22;transform:rotateX(69deg) rotateZ(24deg)}
+.rt-wire-two{inset:-20px -40px;border-color:#ffffff11}
+.rt-kinetic-panel{position:absolute;top:52px;left:27%;height:210px;width:215px;border:1px solid #ffffff65;border-radius:20px;background:linear-gradient(140deg,#383838,#0b0b0b 66%,#050505);display:flex;flex-direction:column;justify-content:flex-end;padding:23px;box-shadow:inset 0 0 24px #fff2,20px 30px 60px #000b}
+.rt-kinetic-panel-back{transform:translate3d(77px,11px,-130px) rotateY(-22deg) rotateZ(12deg);opacity:.6}
+.rt-kinetic-panel-mid{transform:translate3d(40px,5px,-54px) rotateY(-18deg) rotateZ(7deg);opacity:.8}
+.rt-kinetic-panel-front{transform:translate3d(-10px,-9px,30px) rotateY(-13deg) rotateZ(-6deg);animation:rt-hover 8s ease-in-out infinite}
+.rt-kinetic-panel span,.rt-kinetic-panel small{font:10px ui-monospace,monospace;letter-spacing:.14em;color:#bbb}
+.rt-kinetic-panel-front strong{font-size:95px;font-style:italic;line-height:1;color:#e8e8e8;font-weight:750;letter-spacing:-.12em;text-shadow:0 0 28px #fff5}
+.rt-kinetic-content h2{font-size:clamp(40px,5.2vw,72px);font-weight:720;line-height:1.08;letter-spacing:-.065em;margin:15px 0 17px}
+.rt-kinetic-content h2 span{background:linear-gradient(130deg,#fff,#818181);background-clip:text;color:transparent}
+.rt-kinetic-content p{max-width:520px;line-height:1.78;color:#aaa;font-size:15px;margin-bottom:26px}
+@media(max-width:810px){.rt-kinetic-inner{grid-template-columns:1fr}.rt-kinetic-art{order:2;height:250px;transform:scale(.83);transform-origin:top center}.rt-kinetic-content{order:1}}
+@media(max-width:520px){.rt-kinetic-art{transform:scale(.72);height:210px}.rt-kinetic-panel{left:20%}}
+@media(prefers-reduced-motion:reduce){.rt-kinetic-panel-front{animation:none!important}}
