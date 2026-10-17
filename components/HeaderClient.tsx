@@ -174,7 +174,7 @@ export default function HeaderClient({
             );
           })}
           <Link
-            href={'/' + currentLocale + '/tools'}
+            href={'https://tools.rawnakgroup.com/' + currentLocale + '/'}
             className={cn(
               'text-sm font-semibold text-muted-foreground transition-colors hover:text-blue-500',
               pathname.startsWith('/' + currentLocale + '/tools') && 'text-blue-500',
@@ -246,7 +246,7 @@ export default function HeaderClient({
               );
             })}
             <Link
-              href={'/' + currentLocale + '/tools'}
+              href={'https://tools.rawnakgroup.com/' + currentLocale + '/'}
               className={cn(
                 'rounded-lg border border-transparent px-3 py-2 text-start text-sm font-semibold text-muted-foreground transition-colors hover:text-blue-500',
                 pathname.startsWith('/' + currentLocale + '/tools') && 'border-border/80 bg-card/70 text-blue-500',
