@@ -173,6 +173,15 @@ export default function HeaderClient({
               </Link>
             );
           })}
+          <Link
+            href={'/' + currentLocale + '/tools'}
+            className={cn(
+              'text-sm font-semibold text-muted-foreground transition-colors hover:text-blue-500',
+              pathname.startsWith('/' + currentLocale + '/tools') && 'text-blue-500',
+            )}
+          >
+            {currentLocale === 'ar' ? 'أدوات رونق' : 'Tools'}
+          </Link>
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
@@ -236,6 +245,16 @@ export default function HeaderClient({
                 </Link>
               );
             })}
+            <Link
+              href={'/' + currentLocale + '/tools'}
+              className={cn(
+                'rounded-lg border border-transparent px-3 py-2 text-start text-sm font-semibold text-muted-foreground transition-colors hover:text-blue-500',
+                pathname.startsWith('/' + currentLocale + '/tools') && 'border-border/80 bg-card/70 text-blue-500',
+              )}
+              onClick={() => setMenuOpen(false)}
+            >
+              {currentLocale === 'ar' ? 'أدوات رونق' : 'Tools'}
+            </Link>
             {authLinks.map((link) => (
               <Link
                 key={link.href}
