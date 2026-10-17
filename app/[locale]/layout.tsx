@@ -10,6 +10,7 @@ import { BackgroundEffect } from '@/components/BackgroundEffect';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { ToolsFooter, ToolsHeader } from '@/components/tools/ToolsHeader';
+import '@/components/tools/tools-theme.css';
 import { isToolsHost } from '@/lib/tools/domain';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getPublicSiteSettings } from '@/lib/builder/repository';
@@ -67,7 +68,7 @@ export default async function LocaleLayout({
   const isToolsSubdomain = isToolsHost(requestHeaders.get('host') ?? requestHeaders.get('x-forwarded-host'));
   if (isToolsSubdomain) {
     return (
-      <div lang={locale} dir={isArabic ? 'rtl' : 'ltr'} className={`${manrope.variable} ${cairo.variable} theme-scope min-h-screen`}>
+      <div lang={locale} dir={isArabic ? 'rtl' : 'ltr'} className={`${manrope.variable} ${cairo.variable} theme-scope rawnak-tools-shell min-h-screen`}>
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <div className="flex min-h-screen flex-col bg-background text-foreground">
