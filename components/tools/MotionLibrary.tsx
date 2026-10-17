@@ -19,7 +19,7 @@ const categoryLabel = (value: Filter, ar: boolean) =>
   value === 'favorites' ? (ar ? 'المفضلة' : 'Favorites') :
   motionCategories.find(c=>c.id===value)?.[ar?'ar':'en'] ?? value;
 
-function Preview({ preset, duration, playing, version, label, accent, loop }: {
+function Preview({ preset, duration, playing, version, label, accent, loop, easing }: {
   preset: MotionPreset;
   duration: number;
   playing: boolean;
