@@ -10,6 +10,7 @@ import {
 import type { Locale } from '@/i18n/config';
 import { toolCatalog, type ToolSlug } from '@/lib/tools/catalog';
 import { motionCount } from '@/lib/tools/original-motions';
+import { interactionCount } from '@/lib/tools/interaction-presets';
 import { toolsPath } from '@/lib/tools/domain';
 
 type Category = 'all' | 'developers' | 'designers' | 'business' | 'professionals';
@@ -168,6 +169,27 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
           <span className="rt-motion-teaser-star rt-motion-star-a"/>
           <span className="rt-motion-teaser-star rt-motion-star-b"/>
           <span className="rt-motion-teaser-star rt-motion-star-c"/>
+        </div>
+      </div>
+    </section>
+
+
+    <section className="rt-section rt-interaction-teaser" aria-labelledby="rt-interaction-title">
+      <div className="rt-container rt-interaction-teaser-inner">
+        <div className="rt-interaction-content">
+          <div className="rt-eyebrow">SCROLL · CURSOR · BACKGROUNDS</div>
+          <h2 id="rt-interaction-title">{ar?'كل حركة':'Every move'} <span>{ar?'بتفرق.':'matters.'}</span></h2>
+          <p>{ar?interactionCount+' تأثير جديد: 12 حركة عند التمرير و12 خلفية متجاوبة مع الماوس واللمس، بمعاينة مباشرة وكود قابل للتصدير.':interactionCount+' new effects: 12 scroll-triggered animations and 12 pointer-reactive backgrounds, all customizable and exportable.'}</p>
+          <Link href={'/'+locale+(toolsHost?'/interactions':'/tools/interactions')} className="rt-button rt-button-white">
+            {ar?'استكشف التفاعلات':'Explore Interactions'} <ArrowUpRight size={17}/>
+          </Link>
+        </div>
+        <div className="rt-interaction-demo" aria-hidden="true">
+          <div className="rt-interaction-grid"/>
+          <div className="rt-interaction-disc rt-disc-one"/>
+          <div className="rt-interaction-disc rt-disc-two"/>
+          <div className="rt-interaction-disc rt-disc-three"/>
+          <span>INTERACTION / 024</span>
         </div>
       </div>
     </section>
