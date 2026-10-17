@@ -8,7 +8,7 @@ import { galleryEntries, kineticCategories, kineticCount, kineticCSS, kineticExp
 
 type Filter='all'|KineticCategory|'favorites';
 
-function LiveDemo({preset, label, amount, radius, version}:{preset:KineticPreset;label:string;amount:number;radius:number;version:number}) {
+export function LiveDemo({preset, label, amount, radius, version}:{preset:KineticPreset;label:string;amount:number;radius:number;version:number}) {
   const [slide,setSlide]=useState(0);
   const css=kineticCSS(preset,amount,radius);
   useEffect(()=>setSlide(0),[preset.id]);
