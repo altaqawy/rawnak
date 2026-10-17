@@ -17,7 +17,10 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
   const candidateTool = segments[1] === 'tools' ? segments[2] : segments[1];
   const selectedTool = candidateTool && isToolSlug(candidateTool) ? candidateTool : undefined;
   const home = toolsPath(locale, undefined, true);
-  const langHref = toolsPath(nextLocale, selectedTool, true);
+  const isComponentsPage = segments.includes('components');
+  const langHref = isComponentsPage
+    ? '/' + nextLocale + '/components'
+    : toolsPath(nextLocale, selectedTool, true);
 
   const switchLocale = () => {
     document.cookie = localeCookieName + '=' + nextLocale +
@@ -27,7 +30,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
 
   const nav = [
     { href: home + '#explore', label: ar ? 'الأدوات' : 'Tools' },
-    { href: home + '#components', label: ar ? 'المكونات' : 'Components' },
+    { href: '/' + locale + '/components', label: ar ? 'المكونات' : 'Components' },
     { href: home + '#studio', label: ar ? 'المحرر' : 'Studio' },
   ];
 
