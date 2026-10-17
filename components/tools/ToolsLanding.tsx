@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
-  ArrowUpRight, ArrowRight, Box, Braces, Check, ChevronDown, Code2,
+  ArrowUpRight, ArrowRight, Box, Check, ChevronDown, Code2,
   Component, Copy, Eye, Grid2X2, Layers3, MousePointer2, Palette, Play,
   Shapes, Sparkles, WandSparkles, Zap,
 } from 'lucide-react';
