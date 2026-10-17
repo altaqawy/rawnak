@@ -11,6 +11,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { ToolsFooter, ToolsHeader } from '@/components/tools/ToolsHeader';
 import '@/components/tools/tools-theme.css';
+import '@/components/tools/component-library.css';
 import { isToolsHost } from '@/lib/tools/domain';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getPublicSiteSettings } from '@/lib/builder/repository';
