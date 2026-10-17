@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type PointerEvent } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft, ArrowRight, Check, Code2, Copy, Download, Eye, Heart,
@@ -71,14 +71,14 @@ export default function InteractionLab({locale,baseHref}:{locale:Locale;baseHref
   function choose(id:string){setChosen(id);setRevision(n=>n+1);setFeedback('');}
   function toggleFavorite(id:string){setFavorites(xs=>xs.includes(id)?xs.filter(x=>x!==id):[...xs,id]);}
   function replay(){setRevision(x=>x+1);}
-  function pointerMove(e:React.PointerEvent<HTMLDivElement>){
+  function pointerMove(e:PointerEvent<HTMLDivElement>){
     if(preset.kind!=='pointer'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     const r=e.currentTarget.getBoundingClientRect();
     if(r.width<=0||r.height<=0)return;
     e.currentTarget.style.setProperty('--x',Math.max(0,Math.min(100,(e.clientX-r.left)/r.width*100))+'%');
     e.currentTarget.style.setProperty('--y',Math.max(0,Math.min(100,(e.clientY-r.top)/r.height*100))+'%');
   }
-  function pointerLeave(e:React.PointerEvent<HTMLDivElement>){
+  function pointerLeave(e:PointerEvent<HTMLDivElement>){
     e.currentTarget.style.setProperty('--x','50%');
     e.currentTarget.style.setProperty('--y','50%');
   }
