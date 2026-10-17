@@ -27,6 +27,7 @@ function Preview({ preset, duration, playing, version, label, accent, loop }: {
   label: string;
   accent: string;
   loop: boolean;
+  easing: string;
 }) {
   const [interacting,setInteracting]=useState(false);
   const trigger=preset.interaction==='hover';
@@ -45,7 +46,7 @@ function Preview({ preset, duration, playing, version, label, accent, loop }: {
   const style = {
     animationName: active?motionName:'none',
     animationDuration:durationText,
-    animationTimingFunction:preset.easing ?? 'ease-in-out',
+    animationTimingFunction:easing,
     animationIterationCount:loop?'infinite':1,
     animationFillMode:'both' as const,
     color:accent,
@@ -210,7 +211,7 @@ export default function MotionLibrary({locale,baseHref}: {locale:Locale;baseHref
           <div className="rtm-preview-window">
             <div className="rtm-preview-toolbar"><span><Play size={13}/>{ar?'المعاينة':'Preview'}</span><div><button type="button" onClick={replay} aria-label={ar?'إعادة تشغيل التأثير':'Replay'}><RotateCcw size={15}/></button><button type="button" onClick={()=>setPlaying(x=>!x)} aria-label={playing?(ar?'إيقاف':'Pause'):(ar?'تشغيل':'Play')}>{playing?<Pause size={15}/>:<Play size={15}/>}</button></div></div>
             <div className="rtm-preview-stage" onClick={replay}>
-              <Preview preset={active} duration={duration} playing={playing} version={version} accent={accent} label={label} loop={loop}/>
+              <Preview preset={active} duration={duration} playing={playing} version={version} accent={accent} label={label} loop={loop} easing={easing}/>
             </div>
             <div className="rtm-preview-bottom">{active.interaction==='hover'?(ar?'مرّر المؤشر على العنصر أو ركّز عليه':'Hover or focus the element to trigger motion'):(ar?'اضغط على المعاينة لإعادة التشغيل':'Click preview to replay')}</div>
           </div>
