@@ -115,3 +115,14 @@ Added 12 **new original** interactive presets grouped as:
 **Offline local review**: \`rawnak-tools-v5-kinetic.zip\`, a self-contained downloadable preview in the conversation (not a website release). Tested in Chromium for 3D pointer tilt, magnetic translation, gallery next/previous navigation, React export tab, favorites, and 390px mobile layout without JavaScript errors or horizontal overflow. This **does not** validate a future ChatGPT Sites port.
 
 **Accessibility/security**: no external packages or personal-data collection; reduced-motion fallbacks; keyboard/focus affordances. Generated source should be visually reviewed and smoke-tested inside each target application before production deployment.
+
+## V6 — Unified Visual Studio (2026-10-18)
+
+- Implemented `components/tools/VisualStudio.tsx`, `components/tools/visual-studio.css`, and `/[locale]/tools/studio` route (intended domain routes `/en/studio` and `/ar/studio`).
+- Aggregates 50 CSS animations + 24 scroll/pointer effects + 12 3D/magnetic/gallery effects + 5 live UI components = **91 directly editable/exportable items**. Adds links to 5 specialized utility studios = **96 searchable choices**.
+- Reuses existing source generation (`generateMotionExport`, `exportInteraction`, `kineticExport`, `sourceFor`) and live preview (`LiveDemo`, `LiveComponent`) rather than duplicating the effects in Next.js.
+- Features global search, category filters, favorites and per-item local settings, context-sensitive controls, replay, HTML/CSS/JS or React JSX code previews, copy and download, bilingual RTL/LTR, reduced-motion support.
+- Header language switch preserves `/studio`; home showcase links to the actual unified studio. Existing tools and components remain accessible.
+- **Offline V6 standalone demo:** `/mnt/data/rawnak-tools-v6-visual-studio.zip` in current conversation only. Built from prior V5 offline source; it is a browser-only reference and not a deployed ChatGPT Site. It offers live previews for all preset families; the Next.js branch is the canonical implementation.
+- Automated Chromium smoke tests covered both languages, 96-item catalog, filtering 50/24/12/5/5, 3D tilt, gallery next, pointer spotlight, favorites/save, JSX tab, no horizontal overflow at 390px, no JS page errors. Nine representative exported JSX files parsed successfully with TypeScript. Passing syntax checks is not full integration testing of code in a consuming project.
+- **Do not merge to published Rawnak Group site**. Move into a separate ChatGPT Sites project through Work and use Sites domain/DNS values only after owner reviews private preview.
