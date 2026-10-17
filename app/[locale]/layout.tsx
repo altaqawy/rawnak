@@ -13,6 +13,7 @@ import { ToolsFooter, ToolsHeader } from '@/components/tools/ToolsHeader';
 import '@/components/tools/tools-theme.css';
 import '@/components/tools/component-library.css';
 import '@/components/tools/motion-library.css';
+import '@/components/tools/interaction-lab.css';
 import { isToolsHost } from '@/lib/tools/domain';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getPublicSiteSettings } from '@/lib/builder/repository';
