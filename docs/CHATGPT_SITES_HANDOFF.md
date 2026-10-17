@@ -29,13 +29,13 @@ The prior `next.config.mjs` subdomain rewrites are for **Vercel/Next.js only**. 
 
 ## Design requirements
 
-- Premium, minimal, developer-centric interface. Neutral black/white (true #000000 for black), restrained electric/royal blue accent, calm typography, readable controls, generous white space, clean rounded cards.
+- Premium Framer-inspired cinematic interface matching the approved monochrome concept. Use true black #000000 for the background and ONLY white/charcoal/gray for the interface (NO blue accents). Dramatic oversized editorial typography, carefully crafted floating 3D-looking product cards/orbits rendered with CSS, subtle glow, hairline borders, responsive showcase sections and clean code-editor panels. Keep animations lightweight and honor reduced-motion.
 - Full Arabic RTL / English LTR UI, accessible language switch that preserves the selected studio.
 - Light and dark color modes if supported by the Sites runtime.
 - Responsive from mobile through wide desktop; keyboard-focus states and reduced-motion support.
 - Dedicated brand header: "RAWNAK TOOLS · BY RAWNAK GROUP".
 - Dedicated footer with a link to https://rawnakgroup.com/.
-- Landing page: hero, product value proposition, searchable/filterable tools grid only if implemented and tested, then links to studios.
+- Landing page: cinematic hero with floating orbit illustration and REAL metrics (5 tools, 2 languages, free to use); working category filters/search; five distinctive studio cards; large realistic Button Studio showcase; roadmap component gallery clearly labeled Coming Soon; closing CTA. Do NOT pretend that the component gallery is already live.
 - The public Site URL plan should be /en/ for English, /ar/ for Arabic and /en/<slug>, /ar/<slug> for tools. If ChatGPT Sites cannot provide this exact path layout, show the available URL behavior and ask before claiming it is implemented.
 
 ## Five actually-functional, completely free, client-side studios
@@ -60,7 +60,7 @@ Shared behavior: no signup and no backend; live preview updates with settings; c
 ## Acceptance checks before any public release
 
 - Arabic and English landings render correctly, including RTL/LTR and language switching.
-- All five studios work in preview on mobile and desktop.
+- All five studios work in preview on mobile and desktop with black, white and gray styling (no blue theme).
 - Exported snippets are syntactically valid and reproduce the intended preview.
 - No broken internal links, runtime exceptions or external secrets.
 - Save a private reviewable version and present it for approval.
@@ -81,3 +81,7 @@ The intended host is `tools.rawnakgroup.com`. The DNS zone for `rawnakgroup.com`
 ## Remaining explicit user action
 
 Start a ChatGPT **Work** conversation and invoke `@Sites` on this handoff. The owner should inspect the private preview and approve publishing; later they may need to authorize DNS-provider access to complete the custom-domain setup. Do not ask for passwords, API keys, or tokens in chat.
+
+## Approved reference design (2026-10-17)
+
+The owner specifically approved the black-and-white React Bits / Framer-inspired landing concept: hero with floating dark glass tiles and orbits, tool categories and five cards, code editor showcase, components gallery, nearly pure-black background. The updated implementation is in `components/tools/ToolsLanding.tsx`, `components/tools/tools-theme.css`, and `components/tools/ToolsHeader.tsx` on the same feature branch. Preserve this visual direction in the ChatGPT Sites port.
