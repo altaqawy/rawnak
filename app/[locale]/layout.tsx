@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { CSSProperties, ReactNode } from 'react';
 import { Cairo, Manrope } from 'next/font/google';
+import { headers } from 'next/headers';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -8,6 +9,8 @@ import { defaultLocale, isLocale, locales, type Locale } from '@/i18n/config';
 import { BackgroundEffect } from '@/components/BackgroundEffect';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { ToolsFooter, ToolsHeader } from '@/components/tools/ToolsHeader';
+import { isToolsHost } from '@/lib/tools/domain';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getPublicSiteSettings } from '@/lib/builder/repository';
 
@@ -57,6 +60,27 @@ export default async function LocaleLayout({
 
   const messages = (await import(`../../messages/${locale}.json`)).default;
   const isArabic = locale === 'ar';
+
+  // Tools subdomain is a product surface inside this Next.js deployment.
+  // Avoid loading the main site's CMS nav/settings on the tools hostname.
+  const requestHeaders = await headers();
+  const isToolsSubdomain = isToolsHost(requestHeaders.get('host') ?? requestHeaders.get('x-forwarded-host'));
+  if (isToolsSubdomain) {
+    return (
+      <div lang={locale} dir={isArabic ? 'rtl' : 'ltr'} className={`${manrope.variable} ${cairo.variable} theme-scope min-h-screen`}>
+        <ThemeProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <div className="flex min-h-screen flex-col bg-background text-foreground">
+              <ToolsHeader locale={locale} />
+              <main className="flex-1">{children}</main>
+              <ToolsFooter locale={locale} />
+            </div>
+          </NextIntlClientProvider>
+        </ThemeProvider>
+      </div>
+    );
+  }
+
   const siteSettings = await getPublicSiteSettings();
 
   const themeVars: CSSProperties = {
