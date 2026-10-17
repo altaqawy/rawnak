@@ -241,7 +241,7 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
             <div><span><Code2 size={18}/></span><section><strong>{ar?'أكثر من صيغة للتصدير':'Multiple Export Formats'}</strong><p>React, HTML, CSS & SVG.</p></section></div>
             <div><span><WandSparkles size={18}/></span><section><strong>{ar?'كود قابل للتخصيص':'Customizable Source'}</strong><p>{ar?'كود واضح قابل للتعديل.':'Clean source you can adapt.'}</p></section></div>
           </div>
-          <Link className="rt-text-link" href={studioLink('button-studio')}>{ar?'افتح Button Studio':'Open Button Studio'} <ArrowUpRight size={17}/></Link>
+          <Link className="rt-text-link" href={'/' + locale + (toolsHost ? '/studio' : '/tools/studio')}>{ar?'افتح المحرر البصري الموحد':'Open Visual Studio'} <ArrowUpRight size={17}/></Link>
         </div>
       </div>
     </section>
