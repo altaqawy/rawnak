@@ -10,7 +10,7 @@ import { kineticPresets } from '@/lib/tools/kinetic-presets';
 import { toolCatalog } from '@/lib/tools/catalog';
 
 type Props={params:Promise<{locale:string}>};
-const count=motionPresets.length+interactionPresets.length+kineticPresets.length+collection.length+toolCatalog.length;
+const count=motionPresets.length+interactionPresets.length+kineticPresets.length+5+toolCatalog.length;
 
 export async function generateMetadata({params}:Props):Promise<Metadata>{
   const {locale}=await params;
