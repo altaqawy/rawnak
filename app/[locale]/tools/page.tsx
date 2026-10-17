@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { headers } from 'next/headers';
 import { ArrowUpRight, Braces, Component, MousePointer2, MoveUpRight, Palette, Shapes } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { isLocale } from '@/i18n/config';
 import { toolCatalog } from '@/lib/tools/catalog';
+import { isToolsHost, toolsPath, toolsPublicUrl } from '@/lib/tools/domain';
 
 const icons = [MousePointer2, MoveUpRight, Palette, Shapes, Component] as const;
 
@@ -12,6 +14,10 @@ export async function generateMetadata({ params }: { params: Promise<{locale: st
   return {
     title: locale === 'ar' ? 'Rawnak Tools | أدوات رونق' : 'Rawnak Tools | Make more with less',
     description: locale === 'ar' ? 'مجموعة أدوات مجانية للمطورين والمصممين، مع معاينة وتعديل وتصدير مباشر.' : 'Free developer and designer tools. Preview, customize and export.',
+    alternates: {
+      canonical: toolsPublicUrl(locale === 'ar' ? 'ar' : 'en'),
+      languages: { ar: toolsPublicUrl('ar'), en: toolsPublicUrl('en') },
+    },
   };
 }
 
@@ -19,6 +25,7 @@ export default async function ToolsIndex({ params }: { params: Promise<{locale: 
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const ar = locale === 'ar';
+  const toolsHost = isToolsHost((await headers()).get('host'));
 
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-background text-foreground">
@@ -63,7 +70,7 @@ export default async function ToolsIndex({ params }: { params: Promise<{locale: 
               return (
                 <Link
                   key={tool.slug}
-                  href={'/' + locale + '/tools/' + tool.slug}
+                  href={toolsPath(locale, tool.slug, toolsHost)}
                   className="group relative flex min-h-[230px] flex-col justify-between overflow-hidden rounded-2xl border border-border/75 bg-card/60 p-7 transition-all duration-200 hover:-translate-y-1 hover:border-blue-500/50 hover:bg-card hover:shadow-xl hover:shadow-blue-950/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
                 >
                   <div className="flex items-start justify-between">
