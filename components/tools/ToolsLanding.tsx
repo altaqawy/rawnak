@@ -149,6 +149,28 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
       </div>
     </section>
 
+    <section className="rt-section rt-motion-teaser" aria-labelledby="rt-motions-title">
+      <div className="rt-container rt-motion-teaser-inner">
+        <div className="rt-motion-teaser-text">
+          <div className="rt-eyebrow">ORIGINAL MOTIONS · 034</div>
+          <h2 id="rt-motions-title">{ar?'الحركة تصنع':'Make it'} <span>{ar?'الفرق.':'move.'}</span></h2>
+          <p>{ar?'٣٤ أنيميشن أصلية مجانية، بخمس فئات، ومعاينة وتعديل وتصدير React أو CSS مباشرة.':'34 original free animations in five categories — preview, customize, then export as React or CSS.'}</p>
+          <Link className="rt-button rt-button-white" href={'/'+locale+(toolsHost?'/animations':'/tools/animations')}>
+            {ar?'افتح مكتبة الأنيميشن':'Explore Motion Library'} <ArrowUpRight size={17}/>
+          </Link>
+        </div>
+        <div className="rt-motion-teaser-art" aria-hidden="true">
+          <div className="rt-motion-teaser-ring rt-motion-ring-1"/>
+          <div className="rt-motion-teaser-ring rt-motion-ring-2"/>
+          <div className="rt-motion-teaser-ring rt-motion-ring-3"/>
+          <div className="rt-motion-teaser-core">M</div>
+          <span className="rt-motion-teaser-star rt-motion-star-a"/>
+          <span className="rt-motion-teaser-star rt-motion-star-b"/>
+          <span className="rt-motion-teaser-star rt-motion-star-c"/>
+        </div>
+      </div>
+    </section>
+
     <section className="rt-section rt-showcase" id="studio" aria-labelledby="rt-showcase-title">
       <div className="rt-container rt-showcase-inner">
         <div className="rt-editor-scene">
