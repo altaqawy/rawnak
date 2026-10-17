@@ -106,7 +106,7 @@ function generateReactSource(o: ExportOptions): string {
 export default function ToolWorkbench({ tool, locale }: Props) {
   const ar = locale === 'ar';
   const [label, setLabel] = useState('Explore Rawnak');
-  const [accent, setAccent] = useState('#4772f5');
+  const [accent, setAccent] = useState('#565656');
   const [radius, setRadius] = useState(14);
   const [shadow, setShadow] = useState(true);
   const [motion, setMotion] = useState<MotionKind>('float');
@@ -149,7 +149,7 @@ export default function ToolWorkbench({ tool, locale }: Props) {
 
   const reset = () => {
     setLabel('Explore Rawnak');
-    setAccent('#4772f5');
+    setAccent('#565656');
     setRadius(14);
     setShadow(true);
     setMotion('float');
@@ -206,8 +206,8 @@ export default function ToolWorkbench({ tool, locale }: Props) {
       <label className="block space-y-2">
         <span className="text-xs font-medium text-muted-foreground">{text}</span>
         {multiline
-          ? <textarea rows={3} maxLength={180} value={value} onChange={(e) => onChange(e.target.value)} className="w-full resize-y rounded-xl border border-border bg-background/70 px-3 py-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-blue-500" />
-          : <input maxLength={90} value={value} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-border bg-background/70 px-3 py-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-blue-500" />}
+          ? <textarea rows={3} maxLength={180} value={value} onChange={(e) => onChange(e.target.value)} className="w-full resize-y rounded-xl border border-border bg-background/70 px-3 py-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-neutral-300" />
+          : <input maxLength={90} value={value} onChange={(e) => onChange(e.target.value)} className="w-full rounded-xl border border-border bg-background/70 px-3 py-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-neutral-300" />}
       </label>
     );
   }
@@ -216,12 +216,12 @@ export default function ToolWorkbench({ tool, locale }: Props) {
     return (
       <label className="block space-y-3">
         <span className="flex items-center justify-between text-xs text-muted-foreground"><span>{text}</span><span className="font-mono text-foreground">{value}{unit}</span></span>
-        <input type="range" value={value} min={min} max={max} step={stepValue} onChange={(e) => onChange(Number(e.target.value))} className="w-full accent-blue-500" />
+        <input type="range" value={value} min={min} max={max} step={stepValue} onChange={(e) => onChange(Number(e.target.value))} className="w-full accent-white" />
       </label>
     );
   }
 
-  const selectClass = 'w-full rounded-xl border border-border bg-background/70 px-3 py-3 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
+  const selectClass = 'w-full rounded-xl border border-border bg-background/70 px-3 py-3 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-neutral-300';
 
   return (
     <div className="grid items-start gap-5 lg:grid-cols-[minmax(280px,350px)_minmax(0,1fr)]">
@@ -272,7 +272,7 @@ export default function ToolWorkbench({ tool, locale }: Props) {
           {tool === 'button-studio' && (
             <label className="flex cursor-pointer items-center justify-between text-sm text-muted-foreground">
               <span>{ar ? 'توهج وظل' : 'Glow shadow'}</span>
-              <input type="checkbox" checked={shadow} onChange={(e) => setShadow(e.target.checked)} className="size-4 accent-blue-500" />
+              <input type="checkbox" checked={shadow} onChange={(e) => setShadow(e.target.checked)} className="size-4 accent-white" />
             </label>
           )}
         </div>
@@ -292,7 +292,7 @@ export default function ToolWorkbench({ tool, locale }: Props) {
             {tool === 'button-studio' && (
               <button
                 type="button"
-                className="relative max-w-full break-words px-7 py-4 font-semibold text-white transition-transform duration-200 hover:-translate-y-1 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+                className="relative max-w-full break-words px-7 py-4 font-semibold text-white transition-transform duration-200 hover:-translate-y-1 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-white"
                 style={{ backgroundColor: accent, borderRadius: radius, boxShadow: shadow ? '0 12px 40px ' + accent + '70' : 'none' }}
               >{label || 'Button'}</button>
             )}
@@ -330,10 +330,10 @@ export default function ToolWorkbench({ tool, locale }: Props) {
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/80 px-5 py-4">
             <span className="flex items-center gap-2 text-sm font-semibold"><Code2 className="size-4" />{ar ? 'كود جاهز للتصدير' : 'Exportable source'}</span>
             <div className="flex flex-wrap items-center gap-2">
-              <button type="button" onClick={downloadCode} className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs font-semibold hover:border-blue-500/50">
+              <button type="button" onClick={downloadCode} className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2 text-xs font-semibold hover:border-neutral-500/50">
                 <Download className="size-3.5" />{ar ? 'تنزيل' : 'Download'}
               </button>
-              <button type="button" onClick={copyCode} className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-3 py-2 text-xs font-semibold text-white hover:bg-blue-500">
+              <button type="button" onClick={copyCode} className="inline-flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-xs font-semibold text-black hover:bg-neutral-200">
                 {copied ? <Check className="size-3.5" /> : <Clipboard className="size-3.5" />}{ar ? 'نسخ الكود' : 'Copy code'}
               </button>
             </div>
@@ -347,7 +347,7 @@ export default function ToolWorkbench({ tool, locale }: Props) {
                 aria-selected={exportFormat === format}
                 onClick={() => { setExportFormat(format); setCopied(false); }}
                 className={'rounded-md px-3 py-1.5 text-xs font-medium transition-colors ' +
-                  (exportFormat === format ? 'bg-blue-600/20 text-blue-400' : 'text-muted-foreground hover:text-foreground')}
+                  (exportFormat === format ? 'bg-white/15 text-white' : 'text-muted-foreground hover:text-foreground')}
               >
                 {format === 'react' ? 'React JSX' : tool === 'svg-studio' ? 'SVG' : tool === 'theme-builder' ? 'CSS' : 'HTML + CSS'}
               </button>
