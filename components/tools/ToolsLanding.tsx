@@ -155,7 +155,7 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
         <div className="rt-motion-teaser-text">
           <div className="rt-eyebrow">ORIGINAL MOTIONS · {motionCount}</div>
           <h2 id="rt-motions-title">{ar?'الحركة تصنع':'Make it'} <span>{ar?'الفرق.':'move.'}</span></h2>
-          <p>{ar?'{motionCount} أنيميشن أصلية مجانية، بخمس فئات، ومعاينة وتعديل وتصدير React أو CSS مباشرة.':'{motionCount} original free animations in five categories — preview, customize, then export as React or CSS.'}</p>
+          <p>{ar?`${motionCount} أنيميشن أصلية مجانية، بخمس فئات، ومعاينة وتعديل وتصدير React أو CSS مباشرة.`:`${motionCount} original free animations in five categories — preview, customize, then export as React or CSS.`}</p>
           <Link className="rt-button rt-button-white" href={'/'+locale+(toolsHost?'/animations':'/tools/animations')}>
             {ar?'افتح مكتبة الأنيميشن':'Explore Motion Library'} <ArrowUpRight size={17}/>
           </Link>
