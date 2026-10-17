@@ -169,7 +169,7 @@ export default function MotionLibrary({locale,baseHref}: {locale:Locale;baseHref
     setFeedback(ar?'تم تنزيل الكود':'Source downloaded');
   }
 
-  return <main className="rtm-library" id="animation-library">
+  return <div className="rtm-library" id="animation-library">
     <style>{allFrames}</style>
     <div className="rt-container rtm-hero">
       <Link href={baseHref} className="rtm-back">{ar?<ArrowRight size={15}/>:<ArrowLeft size={15}/>} {ar?'العودة إلى أدوات رونق':'Back to Rawnak Tools'}</Link>
@@ -239,5 +239,5 @@ export default function MotionLibrary({locale,baseHref}: {locale:Locale;baseHref
       </aside>
     </div>
     <section className="rt-container rtm-license-note">{ar?'كل تأثير في المجموعة الحالية مكتوب بصورة أصلية لـRawnak Tools، بدون إعادة نشر ملفات مكتبات أخرى.':'These effects are original to Rawnak Tools; no third-party premium or restricted source has been repackaged.'}</section>
-  </main>;
+  </div>;
 }
