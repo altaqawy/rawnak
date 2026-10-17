@@ -88,6 +88,8 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
      tool.subtitle[locale].toLowerCase().includes(filterText.trim().toLowerCase()))
   ),[category,filterText,locale]);
   const studioLink=(slug:ToolSlug)=>toolsPath(locale,slug,toolsHost);
+  const componentsLink='/' + locale + (toolsHost ? '/components' : '/tools/components');
+
   const buttonCode='<button class="rawnak-button">'+previewText.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</button>';
 
   async function copyDemo() {
@@ -181,14 +183,14 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
     <section className="rt-section rt-components" id="components" aria-labelledby="rt-components-title">
       <div className="rt-container">
         <div className="rt-section-heading">
-          <div><div className="rt-eyebrow">COMPONENTS · BLOCKS · TEMPLATES</div><h2 id="rt-components-title">{ar?'مكونات جاهزة — قريبًا':'Ready-Made Components'}</h2><p>{ar?'معاينة لأقسام المكتبة القادمة. المكونات دي لسه تحت التطوير.':'A preview of the component collections planned for upcoming releases.'}</p></div>
-          <span className="rt-coming-label">{ar?'قيد التطوير':'ON THE ROADMAP'}</span>
+          <div><div className="rt-eyebrow">COMPONENTS · BLOCKS · TEMPLATES</div><h2 id="rt-components-title">{ar?'مكونات جاهزة للاستخدام':'Ready-Made Components'}</h2><p>{ar?'خمسة مكونات أصلية تقدر تجرّبها وتخصصها وتصدّر كودها دلوقتي.':'Five original component styles you can now preview, customize and export.'}</p></div>
+          <Link href={componentsLink} className="rt-text-link">{ar?'تصفح المكونات':'Browse components'} <ArrowUpRight size={16}/></Link>
         </div>
         <div className="rt-components-grid">
-          {components.map((item,i)=><div className="rt-component-card" key={item.en}>
+          {components.map((item,i)=><Link href={componentsLink} className="rt-component-card rt-component-link" key={item.en}>
             <ComponentsPreview type={i}/>
-            <div className="rt-component-card-bottom"><h3>{item[locale]}</h3><span>{ar?'قريبًا':'Soon'} <ArrowUpRight size={14}/></span></div>
-          </div>)}
+            <div className="rt-component-card-bottom"><h3>{item[locale]}</h3><span>{ar?'جرّب':'Try it'} <ArrowUpRight size={14}/></span></div>
+          </Link>)}
         </div>
       </div>
     </section>
