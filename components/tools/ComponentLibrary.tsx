@@ -1,8 +1,8 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Code2, Copy, Download, Eye, MousePointer2, RefreshCcw, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Code2, Copy, Download, Eye, Heart, MousePointer2 } from 'lucide-react';
 import type { Locale } from '@/i18n/config';
 
 type ComponentKind = 'text-reveal' | 'glass-navigation' | 'spotlight-card' | 'dot-grid' | 'floating-input';
@@ -81,6 +81,25 @@ export default function ComponentLibrary({locale,baseHref}: {locale:Locale;baseH
   const [duration,setDuration]=useState(1.2);
   const [format,setFormat]=useState<Format>('html');
   const [status,setStatus]=useState('');
+  const [favorites,setFavorites]=useState<ComponentKind[]>([]);
+  const [favoritesReady,setFavoritesReady]=useState(false);
+  useEffect(()=>{
+    try {
+      const raw=JSON.parse(localStorage.getItem('rawnak-tools-favorites-v1')||'[]');
+      if(Array.isArray(raw)) setFavorites(raw.filter((v:unknown)=>typeof v==='string' && collection.some(item=>item.slug===v)) as ComponentKind[]);
+    } catch { /* Private browsing may disable local storage. */ }
+    setFavoritesReady(true);
+  },[]);
+  useEffect(()=>{
+    if(!favoritesReady) return;
+    try { localStorage.setItem('rawnak-tools-favorites-v1',JSON.stringify(favorites)); }
+    catch { /* Browsing remains usable if storage is unavailable. */ }
+  },[favorites,favoritesReady]);
+
+  const toggleFavorite=()=>{
+    setFavorites(prev=>prev.includes(active)?prev.filter(v=>v!==active):[...prev,active]);
+    setStatus(ar?'تم تحديث المفضلة':'Favorites updated');
+  };
   const item=collection.find(v=>v.slug===active)!;
   const source=useMemo(()=>sourceFor(active,text,accent,radius,duration,format),[active,text,accent,radius,duration,format]);
 
@@ -123,7 +142,7 @@ export default function ComponentLibrary({locale,baseHref}: {locale:Locale;baseH
       </aside>
 
       <div className="rtc-content">
-        <div className="rtc-component-title"><div><div className="rt-eyebrow">{item.category} / PREVIEW</div><h2>{ar?item.ar:item.en}</h2><p>{ar?item.descriptionAr:item.descriptionEn}</p></div><span className="rtc-available"><Check size={14}/>{ar?'متاح':'Available'}</span></div>
+        <div className="rtc-component-title"><div><div className="rt-eyebrow">{item.category} / PREVIEW</div><h2>{ar?item.ar:item.en}</h2><p>{ar?item.descriptionAr:item.descriptionEn}</p></div><div className="rtc-title-actions"><span className="rtc-available"><Check size={14}/>{ar?'متاح':'Available'}</span><button type="button" onClick={toggleFavorite} aria-pressed={favorites.includes(active)} className="rtc-favorite" aria-label={favorites.includes(active)?(ar?'إزالة من المفضلة':'Remove from favorites'):(ar?'إضافة للمفضلة':'Add to favorites')}><Heart size={17} fill={favorites.includes(active)?'currentColor':'none'}/></button></div></div>
         <div className="rtc-preview-window">
           <div className="rtc-window-header"><span><Eye size={14}/>{ar?'معاينة مباشرة':'Live Preview'}</span><span className="rtc-window-dots">● ● ●</span></div>
           <div className="rtc-preview-surface"><LiveComponent kind={active} text={text} accent={accent} radius={radius} duration={duration}/></div>
