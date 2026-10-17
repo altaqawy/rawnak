@@ -7,7 +7,6 @@ import { isToolsHost, toolsPath, TOOLS_ORIGIN } from '@/lib/tools/domain';
 import { motionPresets } from '@/lib/tools/original-motions';
 import { interactionPresets } from '@/lib/tools/interaction-presets';
 import { kineticPresets } from '@/lib/tools/kinetic-presets';
-import { collection } from '@/components/tools/ComponentLibrary';
 import { toolCatalog } from '@/lib/tools/catalog';
 
 type Props={params:Promise<{locale:string}>};
