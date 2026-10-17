@@ -11,6 +11,7 @@ import type { Locale } from '@/i18n/config';
 import { toolCatalog, type ToolSlug } from '@/lib/tools/catalog';
 import { motionCount } from '@/lib/tools/original-motions';
 import { interactionCount } from '@/lib/tools/interaction-presets';
+import { kineticCount } from '@/lib/tools/kinetic-presets';
 import { toolsPath } from '@/lib/tools/domain';
 
 type Category = 'all' | 'developers' | 'designers' | 'business' | 'professionals';
@@ -190,6 +191,26 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
           <div className="rt-interaction-disc rt-disc-two"/>
           <div className="rt-interaction-disc rt-disc-three"/>
           <span>INTERACTION / 024</span>
+        </div>
+      </div>
+    </section>
+
+    <section className="rt-section rt-kinetic-teaser" aria-labelledby="rt-kinetic-title">
+      <div className="rt-container rt-kinetic-inner">
+        <div className="rt-kinetic-art" aria-hidden="true">
+          <div className="rt-kinetic-wire rt-wire-one"/>
+          <div className="rt-kinetic-wire rt-wire-two"/>
+          <div className="rt-kinetic-panel rt-kinetic-panel-back"><span>DEPTH / 03</span></div>
+          <div className="rt-kinetic-panel rt-kinetic-panel-mid"><span>DESIGN / 02</span></div>
+          <div className="rt-kinetic-panel rt-kinetic-panel-front"><small>RAWNAK / KINETIC</small><strong>R.</strong></div>
+        </div>
+        <div className="rt-kinetic-content">
+          <div className="rt-eyebrow">3D · MAGNETIC · EDITORIAL GALLERIES</div>
+          <h2 id="rt-kinetic-title">{ar?'تفاعل':'A little'} <span>{ar?'بُعد تاني.':'depth.'}</span></h2>
+          <p>{ar?kineticCount+' تجربة جديدة للبطاقات ثلاثية الأبعاد والأزرار المغناطيسية والمعارض التفاعلية، مع تحكم وتصدير كامل للكود.':kineticCount+' original 3D cards, magnetic controls and editorial galleries — adjust, preview, and export clean source.'}</p>
+          <Link href={'/'+locale+(toolsHost?'/kinetic':'/tools/kinetic')} className="rt-button rt-button-white">
+            {ar?'افتح Kinetic Lab':'Explore Kinetic Lab'} <ArrowUpRight size={17}/>
+          </Link>
         </div>
       </div>
     </section>
