@@ -253,6 +253,24 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
       </div>
     </section>
 
+    <section className="rt-section rgpu-home-section" aria-labelledby="rt-gpu-home-title">
+      <div className="rt-container rgpu-home-layout">
+        <div className="rgpu-home-copy">
+          <div className="rt-eyebrow">WEBGL / THREE.JS / GPU EXPERIMENTS</div>
+          <h2 id="rt-gpu-home-title">{ar?'رونق تدخل':'A new'} <span>{ar?'البُعد الثالث.':'dimension.'}</span></h2>
+          <p>{ar?'مختبر رسوميات WebGL فيه كرة نقاط تفاعلية، قبة غامرة بشيدر خاص، وشريط ثلاثي الأبعاد يتبع المؤشر.':'Original real-time 3D experiments: a point-cloud globe, an immersive shader dome, and a responsive ribbon mesh.'}</p>
+          <Link href={'/'+locale+(toolsHost?'/gpu':'/tools/gpu')} className="rt-button rt-button-white">
+            {ar?'ادخل مختبر WebGL':'Explore WebGL Lab'} <ArrowUpRight size={17}/>
+          </Link>
+        </div>
+        <div className="rgpu-home-art" aria-hidden="true">
+          <div className="rgpu-home-orbit one"/><div className="rgpu-home-orbit two"/><div className="rgpu-home-orbit three"/>
+          <div className="rgpu-home-globe"><span>R</span></div>
+          <small>GPU ENGINE / RAWNAK</small>
+        </div>
+      </div>
+    </section>
+
     <section className="rt-section rt-showcase" id="studio" aria-labelledby="rt-showcase-title">
       <div className="rt-container rt-showcase-inner">
         <div className="rt-editor-scene">
