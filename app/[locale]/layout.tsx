@@ -17,6 +17,7 @@ import '@/components/tools/interaction-lab.css';
 import '@/components/tools/kinetic-lab.css';
 import '@/components/tools/visual-studio.css';
 import '@/components/tools/advanced-lab.css';
+import '@/components/tools/gallery-physics.css';
 import { isToolsHost } from '@/lib/tools/domain';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getPublicSiteSettings } from '@/lib/builder/repository';
