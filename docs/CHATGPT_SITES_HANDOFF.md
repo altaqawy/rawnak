@@ -135,3 +135,35 @@ Added 12 **new original** interactive presets grouped as:
 - No React Bits or React Bits Pro code or proprietary assets were embedded. Source comparison and roadmap: `docs/ADVANCED_MOTION_ROADMAP.md`.
 - Offline browser-only reference ZIP: `rawnak-tools-v7-advanced-lab.zip` is a separate conversation artifact (not committed in GitHub); HTML/CSS/JS stand-in demo. The offline ZIP is **not a compiled export of the React components**. JS syntax and ZIP CRC passed, browser automation was blocked in the current environment and pointer events require manual verification.
 - The actual public Rawnak Group website in ChatGPT Sites remains unchanged. Do not automatically merge this draft PR or claim deployment to tools.rawnakgroup.com.
+
+
+## V8 — Gallery Physics Lab (2026-10-18)
+
+**Why:** Following the approved monochrome V7 Advanced Lab, the owner asked to advance toward the concepts of Page Flip, Infinite Gallery, Elastic Reel and image-based Particle Morph, while avoiding reuse or redistribution of React Bits Pro implementation or assets.
+
+### Added first-party React components
+- \`components/tools/GalleryPhysics.tsx\`
+  - **Paperbound:** responsive CSS 3D page turning by swipe/drag or buttons, with reduced-motion handling.
+  - **Infinity Corridor:** circular/infinite index mapping with momentum, wheel/keyboard/drag navigation, perspective transforms and abstract first-party poster artworks.
+  - **Spring Filmstrip:** original responsive elastic strip, drag inertia and carousel navigation.
+  - **Pixel Drift:** Canvas-based 2-image particle morph with image files read from the visitor's device using local object URLs, no upload or API calls, particle budget capped around 1,800, reduced-motion handling and pause control.
+- \`components/tools/GalleryPhysicsLab.tsx\`: bilingual experimental demo and GitHub source/CSS links.
+- \`components/tools/gallery-physics.css\`: scoped black-white responsive styling.
+- \`app/[locale]/tools/gallery-physics/page.tsx\`: bilingual route and SEO metadata; tools-host visible routes would be \`/en/gallery-physics\` or \`/ar/gallery-physics\` after **separate Sites publication**.
+- Added main site teaser and dedicated product navigation with language switch.
+
+### Quality status
+- Latest implementation commit Vercel check passed after a fix to the one-slide navigation step for inertial galleries.
+- Standalone V8 offline browser demo archived as \`rawnak-tools-v8-gallery-physics.zip\` in this conversation; it includes older V7 demo pages. The ZIP checks its JS syntax, relative assets and CRC successfully.
+- The sandbox browser blocks local page navigation, so gestures and visual FPS have **not** been verified by automated Chromium test in this turn. Owners should test touch/mouse, mobile performance, accessibility and keyboard behavior before production publishing.
+- The offline demo uses *standalone vanilla JS* — it is NOT an exact compiled representation of the React source. It is a behavior preview.
+- Pixel Drift operates entirely in the browser; visitors' files are not submitted or persisted by this component. Built-in abstract images are original placeholders.
+- Components are **experiments**, not pixel-perfect copies of the referenced Pro examples. Use an independent UI, source and images.
+
+### Production gates
+- Verify 3D page transitions and touch gesture cancellation on actual devices.
+- Verify inertial gallery stability after rapid repeated swipes.
+- Verify image morph quality on portrait/background photo pairs; check canvas allocation and clean up object URLs as controls change.
+- Test real device memory/FPS and reduced-motion fallbacks.
+- Integrate *full component source* export before advertising one-click standalone exports.
+- Preview privately in a separate ChatGPT Site and obtain approval; do not mutate the live Rawnak Group ChatGPT Site.
