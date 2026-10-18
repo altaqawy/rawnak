@@ -392,3 +392,23 @@
 @media(max-width:800px){.rag-home-grid{grid-template-columns:1fr}.rag-home-illustration{max-width:480px;width:100%;margin:auto;height:250px;transform:scale(.85);transform-origin:top center}}
 @media(max-width:480px){.rag-home-grid h2{font-size:45px}.rag-home-illustration{transform:scale(.73);height:220px}}
 @media(prefers-reduced-motion:reduce){.rag-home-page-one{animation:none!important}}
+
+
+/* V9 WebGL hero preview — original monochrome orbital illustration */
+.rgpu-home-section{background:radial-gradient(ellipse at 78% 45%,#171717,#060606 50%,#000 82%);overflow:hidden}
+.rgpu-home-layout{min-height:345px;display:grid;grid-template-columns:1fr .92fr;gap:clamp(25px,6vw,85px);align-items:center}
+.rgpu-home-copy h2{font-size:clamp(42px,5.2vw,77px);font-weight:740;line-height:1.08;letter-spacing:-.065em;margin:16px 0 21px}
+.rgpu-home-copy h2 span{background:linear-gradient(130deg,#fff,#777);background-clip:text;-webkit-text-fill-color:transparent}
+.rgpu-home-copy p{color:#aaa;font-size:15px;line-height:1.8;max-width:540px;margin-bottom:27px}
+.rgpu-home-art{height:345px;position:relative;display:grid;place-items:center;perspective:900px;isolation:isolate}
+.rgpu-home-art:before{content:"";position:absolute;inset:6%;background-image:radial-gradient(#ffffff34 1px,transparent 1px);background-size:19px 19px;opacity:.35;mask-image:radial-gradient(ellipse,#000,transparent 65%)}
+.rgpu-home-orbit{position:absolute;border:1px solid #ffffff65;border-radius:50%;box-shadow:0 0 24px #fff1}
+.rgpu-home-orbit.one{width:260px;height:260px;transform:rotateX(65deg) rotateZ(30deg);animation:rt-ring-1 13s linear infinite}
+.rgpu-home-orbit.two{width:325px;height:325px;transform:rotateY(70deg) rotateZ(20deg);animation:rt-ring-2 17s linear infinite}
+.rgpu-home-orbit.three{width:185px;height:185px;transform:rotateY(40deg) rotateX(35deg);animation:rt-ring-1 22s linear infinite reverse}
+.rgpu-home-globe{height:162px;width:162px;border:1px solid #b6b6b6;border-radius:50%;background:radial-gradient(circle at 26% 23%,#afafaf,#444 47%,#060606 78%);box-shadow:inset -24px -25px 40px #000c,inset 20px 17px 35px #ffffff4d,0 0 55px #fff2;display:grid;place-items:center;animation:rt-hover 7s ease-in-out infinite}
+.rgpu-home-globe span{font-size:83px;font-weight:840;font-style:italic;letter-spacing:-.15em;color:#eee;text-shadow:0 0 30px #fff5}
+.rgpu-home-art small{position:absolute;bottom:14px;right:0;color:#888;font:10px ui-monospace,monospace;letter-spacing:.15em}
+@media(max-width:820px){.rgpu-home-layout{grid-template-columns:1fr}.rgpu-home-art{height:300px;max-width:460px;width:100%;margin:auto}}
+@media(max-width:480px){.rgpu-home-art{transform:scale(.75);height:235px}.rgpu-home-copy h2{font-size:46px}}
+@media(prefers-reduced-motion:reduce){.rgpu-home-orbit,.rgpu-home-globe{animation:none!important}}
