@@ -25,6 +25,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
   const isAdvancedPage = segments.includes('advanced');
   const isGalleryPhysicsPage = segments.includes('gallery-physics');
   const isGpuPage = segments.includes('gpu');
+  const isSpectraPage = segments.includes('spectra');
   const langHref = isComponentsPage
     ? '/' + nextLocale + '/components'
     : isAnimationsPage
@@ -33,7 +34,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
         ? '/' + nextLocale + '/interactions'
         : isKineticPage
           ? '/' + nextLocale + '/kinetic'
-          : isGpuPage ? '/' + nextLocale + '/gpu' : isGalleryPhysicsPage ? '/' + nextLocale + '/gallery-physics' : isAdvancedPage ? '/' + nextLocale + '/advanced' : isStudioPage ? '/' + nextLocale + '/studio' : toolsPath(nextLocale, selectedTool, true);
+          : isSpectraPage ? '/' + nextLocale + '/spectra' : isGpuPage ? '/' + nextLocale + '/gpu' : isGalleryPhysicsPage ? '/' + nextLocale + '/gallery-physics' : isAdvancedPage ? '/' + nextLocale + '/advanced' : isStudioPage ? '/' + nextLocale + '/studio' : toolsPath(nextLocale, selectedTool, true);
 
   const switchLocale = () => {
     document.cookie = localeCookieName + '=' + nextLocale +
@@ -51,6 +52,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
     { href: '/' + locale + '/advanced', label: ar ? 'تفاعلات متقدمة' : 'Advanced' },
     { href: '/' + locale + '/gallery-physics', label: ar ? 'معارض فيزيائية' : 'Physics Lab' },
     { href: '/' + locale + '/gpu', label: ar ? 'رسوميات WebGL' : 'WebGL Lab' },
+    { href: '/' + locale + '/spectra', label: ar ? 'مؤثرات V10' : 'Spectra Lab' },
   ];
 
   return (
