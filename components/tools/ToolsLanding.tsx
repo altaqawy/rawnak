@@ -215,6 +215,25 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
       </div>
     </section>
 
+    <section className="rt-section rav-home-teaser" aria-labelledby="rav-home-title">
+      <div className="rt-container rav-home-grid">
+        <div>
+          <div className="rt-eyebrow">ADVANCED INTERACTIONS / ORIGINAL EXPERIENCES</div>
+          <h2 id="rav-home-title">{ar?'أكثر من':'Beyond'} <span>{ar?'مجرد حركة.':'ordinary motion.'}</span></h2>
+          <p>{ar?'تجارب تفاعلية متقدمة: تجعيد الورق، تمزيق التذاكر، سحابة الجسيمات، معارض مرنة، وقوائم متفرعة.':'Gesture-driven physical simulations: paper, tickets, particle morphs, flexible galleries and branching menus.'}</p>
+          <Link href={'/'+locale+(toolsHost?'/advanced':'/tools/advanced')} className="rt-button rt-button-white">
+            {ar?'جرّب المختبر المتقدم':'Explore Advanced Lab'} <ArrowUpRight size={17}/>
+          </Link>
+        </div>
+        <div className="rav-home-art" aria-hidden="true">
+          <div className="rav-home-circle"/>
+          <div className="rav-home-paper"><span>RAWNAK</span><strong>01.</strong><i/><i/><i/></div>
+          <div className="rav-home-ticket"><small>ACCESS / 02</small><strong>BEYOND.</strong></div>
+          <div className="rav-home-core">R</div>
+        </div>
+      </div>
+    </section>
+
     <section className="rt-section rt-showcase" id="studio" aria-labelledby="rt-showcase-title">
       <div className="rt-container rt-showcase-inner">
         <div className="rt-editor-scene">
