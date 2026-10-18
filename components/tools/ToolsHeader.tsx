@@ -22,6 +22,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
   const isInteractionsPage = segments.includes('interactions');
   const isKineticPage = segments.includes('kinetic');
   const isStudioPage = segments.includes('studio');
+  const isAdvancedPage = segments.includes('advanced');
   const langHref = isComponentsPage
     ? '/' + nextLocale + '/components'
     : isAnimationsPage
@@ -30,7 +31,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
         ? '/' + nextLocale + '/interactions'
         : isKineticPage
           ? '/' + nextLocale + '/kinetic'
-          : isStudioPage ? '/' + nextLocale + '/studio' : toolsPath(nextLocale, selectedTool, true);
+          : isAdvancedPage ? '/' + nextLocale + '/advanced' : isStudioPage ? '/' + nextLocale + '/studio' : toolsPath(nextLocale, selectedTool, true);
 
   const switchLocale = () => {
     document.cookie = localeCookieName + '=' + nextLocale +
@@ -45,6 +46,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
     { href: '/' + locale + '/interactions', label: ar ? 'التفاعلات' : 'Interactions' },
     { href: '/' + locale + '/kinetic', label: ar ? 'ثلاثي الأبعاد' : '3D & Galleries' },
     { href: '/' + locale + '/studio', label: ar ? 'المحرر' : 'Studio' },
+    { href: '/' + locale + '/advanced', label: ar ? 'تفاعلات متقدمة' : 'Advanced' },
   ];
 
   return (
