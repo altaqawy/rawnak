@@ -23,6 +23,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
   const isKineticPage = segments.includes('kinetic');
   const isStudioPage = segments.includes('studio');
   const isAdvancedPage = segments.includes('advanced');
+  const isGalleryPhysicsPage = segments.includes('gallery-physics');
   const langHref = isComponentsPage
     ? '/' + nextLocale + '/components'
     : isAnimationsPage
@@ -31,7 +32,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
         ? '/' + nextLocale + '/interactions'
         : isKineticPage
           ? '/' + nextLocale + '/kinetic'
-          : isAdvancedPage ? '/' + nextLocale + '/advanced' : isStudioPage ? '/' + nextLocale + '/studio' : toolsPath(nextLocale, selectedTool, true);
+          : isGalleryPhysicsPage ? '/' + nextLocale + '/gallery-physics' : isAdvancedPage ? '/' + nextLocale + '/advanced' : isStudioPage ? '/' + nextLocale + '/studio' : toolsPath(nextLocale, selectedTool, true);
 
   const switchLocale = () => {
     document.cookie = localeCookieName + '=' + nextLocale +
@@ -47,6 +48,7 @@ export function ToolsHeader({ locale }: { locale: Locale }) {
     { href: '/' + locale + '/kinetic', label: ar ? 'ثلاثي الأبعاد' : '3D & Galleries' },
     { href: '/' + locale + '/studio', label: ar ? 'المحرر' : 'Studio' },
     { href: '/' + locale + '/advanced', label: ar ? 'تفاعلات متقدمة' : 'Advanced' },
+    { href: '/' + locale + '/gallery-physics', label: ar ? 'معارض فيزيائية' : 'Physics Lab' },
   ];
 
   return (
