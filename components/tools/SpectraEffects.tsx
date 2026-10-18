@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect,useMemo,useRef,useState,type CSSProperties,type PointerEvent as RPointerEvent} from 'react';
+import {useEffect,useRef,useState,type PointerEvent as RPointerEvent} from 'react';
 import {ChevronLeft,ChevronRight,Play,Pause,RotateCcw} from 'lucide-react';
 
 export type SpectraKind='star-burst'|'ribbon-flow'|'prism-carousel';
@@ -223,13 +223,13 @@ export function PrismCarousel({config,playing,resetKey=0}:{config:SpectraConfig;
   }
   function navigate(dir:number){setActive(v=>(v+dir+slides.length)%slides.length);setDrag(0)}
   return <div className="rvs-prism-root">
-    <div className="rvs-prism-space" role="region" tabIndex={0}
+    <div className="rvs-prism-space" role="region" tabIndex={0} style={{perspective:config.perspective+"px"}}
       aria-label="Prism carousel, use arrow keys or drag to rotate"
       onKeyDown={e=>{if(e.key==='ArrowRight'){e.preventDefault();navigate(1)}if(e.key==='ArrowLeft'){e.preventDefault();navigate(-1)}}}
       onPointerDown={e=>{origin.current=e.clientX;try{e.currentTarget.setPointerCapture(e.pointerId)}catch{}}}
       onPointerMove={move} onPointerUp={release} onPointerCancel={()=>{origin.current=null;setDrag(0)}}>
       <div className="rvs-prism-shape"
-        style={{'--perspective':config.perspective+'px',transform:'rotateY('+(-active*60+drag*.14)+'deg)'} as CSSProperties}>
+        style={{transform:'rotateY('+(-active*60+drag*.14)+'deg)'}}>
         {slides.map((item,i)=><div className="rvs-prism-face" key={item.id}
           style={{transform:'rotateY('+(i*60)+'deg) translateZ(var(--prism-depth))',background:item.shade}}
           aria-hidden={active!==i}>
