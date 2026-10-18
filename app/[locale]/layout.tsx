@@ -19,6 +19,7 @@ import '@/components/tools/visual-studio.css';
 import '@/components/tools/advanced-lab.css';
 import '@/components/tools/gallery-physics.css';
 import '@/components/tools/gpu-lab.css';
+import '@/components/tools/spectra-lab.css';
 import { isToolsHost } from '@/lib/tools/domain';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getPublicSiteSettings } from '@/lib/builder/repository';
