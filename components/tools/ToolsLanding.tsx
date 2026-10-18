@@ -234,6 +234,25 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
       </div>
     </section>
 
+    <section className="rt-section rag-home-teaser" aria-labelledby="rag-home-title">
+      <div className="rt-container rag-home-grid">
+        <div className="rag-home-copy">
+          <div className="rt-eyebrow">PAGE TURN · INERTIA · PARTICLES</div>
+          <h2 id="rag-home-title">{ar?'تجارب':'Physics for'} <span>{ar?'تتحس.':'the web.'}</span></h2>
+          <p>{ar?'أربع تجارب أصلية: تقليب الورق، معرض لا نهائي، شريط مرن، وجسيمات تتحول بين صورتين.':'Four original experiments: realistic page turning, infinite perspective galleries, elastic filmstrips and image-particle morphs.'}</p>
+          <Link href={'/'+locale+(toolsHost?'/gallery-physics':'/tools/gallery-physics')} className="rt-button rt-button-white">
+            {ar?'جرب معمل المعارض':'Explore Gallery Physics'} <ArrowUpRight size={16}/>
+          </Link>
+        </div>
+        <div className="rag-home-illustration" aria-hidden="true">
+          <div className="rag-home-guide"/>
+          <div className="rag-home-page rag-home-page-one"><span>01 / PAPER</span><strong>TURN.</strong></div>
+          <div className="rag-home-page rag-home-page-two"><span>02 / MOTION</span><strong>FLOW.</strong></div>
+          <div className="rag-home-orb"/>
+        </div>
+      </div>
+    </section>
+
     <section className="rt-section rt-showcase" id="studio" aria-labelledby="rt-showcase-title">
       <div className="rt-container rt-showcase-inner">
         <div className="rt-editor-scene">
