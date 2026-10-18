@@ -126,3 +126,12 @@ Added 12 **new original** interactive presets grouped as:
 - **Offline V6 standalone demo:** `/mnt/data/rawnak-tools-v6-visual-studio.zip` in current conversation only. Built from prior V5 offline source; it is a browser-only reference and not a deployed ChatGPT Site. It offers live previews for all preset families; the Next.js branch is the canonical implementation.
 - Automated Chromium smoke tests covered both languages, 96-item catalog, filtering 50/24/12/5/5, 3D tilt, gallery next, pointer spotlight, favorites/save, JSX tab, no horizontal overflow at 390px, no JS page errors. Nine representative exported JSX files parsed successfully with TypeScript. Passing syntax checks is not full integration testing of code in a consuming project.
 - **Do not merge to published Rawnak Group site**. Move into a separate ChatGPT Sites project through Work and use Sites domain/DNS values only after owner reviews private preview.
+
+## V7 — Advanced Physics and Gesture Interactions
+
+- Eight new **experimental first-party components** built in `components/tools/AdvancedLab.tsx` and `components/tools/advanced-lab.css`: Paper Mill (drag-to-shred), Perforated Pass (ticket tear), Folded Sheet (faceted crumple), Branch Navigator, Elastic Rail, Swipe Notice, Bell Pulse, and Glyph Cloud (Canvas particle text morph).
+- New bilingual page `app/[locale]/tools/advanced/page.tsx`, integrated in header and landing. Intended URLs `tools.rawnakgroup.com/en/advanced` and `/ar/advanced` are not live.
+- This expands the previously documented 96 choices by eight **experimental** interactions, but these are maintained as a separate lab pending production validation. Do not relabel them as exact React Bits reproductions.
+- No React Bits or React Bits Pro code or proprietary assets were embedded. Source comparison and roadmap: `docs/ADVANCED_MOTION_ROADMAP.md`.
+- Offline browser-only reference ZIP: `rawnak-tools-v7-advanced-lab.zip` is a separate conversation artifact (not committed in GitHub); HTML/CSS/JS stand-in demo. The offline ZIP is **not a compiled export of the React components**. JS syntax and ZIP CRC passed, browser automation was blocked in the current environment and pointer events require manual verification.
+- The actual public Rawnak Group website in ChatGPT Sites remains unchanged. Do not automatically merge this draft PR or claim deployment to tools.rawnakgroup.com.
