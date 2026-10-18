@@ -192,3 +192,30 @@ Advanced original interaction direction: mathematical Globe, Inside Dome and Sil
 4. Upgrade usage snippet to a full verified portable exporter; currently GitHub source links are supplied for reuse.
 5. Run real-device visual and accessibility regression checks.
 6. Keep this in draft PR; do not publish to the active Rawnak Group ChatGPT Site or connect domain without explicit owner approval.
+
+## V10 — Spectra Motion Lab (2026-10-18)
+
+Approved continuation after V9: build three independent original, more complex interactive motion systems while retaining the monochrome Framer-inspired art direction. No React Bits or React Bits Pro source or assets have been copied.
+
+### New React components / routes
+- components/tools/SpectraEffects.tsx: first-party 2D Canvas particle starburst (click/tap bursts, velocity drag, fading trails, configurable particle budget), multi-layer spring ribbon flow with pointer interaction, and a six-sided CSS 3D prism carousel with pointer drag, arrow-key access, on-screen buttons and optional autoplay.
+- components/tools/SpectraLab.tsx: context-specific sliders (burst count/power/drag/fade; ribbon width/spring/layers; prism perspective/speed/autoplay), replay/pause, localStorage persistence and portable JSON preset copy/download/import, validation/clamping, bilingual UI, reduced motion.
+- components/tools/spectra-lab.css: responsive monochrome editor.
+- app/[locale]/tools/spectra/page.tsx: bilingual page, canonical metadata.
+- Updated language-switching navigation, Next.js shared CSS imports and Framer-inspired landing teaser.
+- Intended public routes: tools.rawnakgroup.com/en/spectra and /ar/spectra **after** a separate ChatGPT Sites port. NOT currently live.
+
+### Offline reviewer & verification
+- Conversation artifact: rawnak-tools-v10-spectra-lab.zip (standalone self-contained HTML/CSS/JavaScript behavior preview, plus prior V9 assets/URLs; NOT a build/export of the React implementation).
+- The ZIP passed CRC validation, and the standalone JavaScript passed node --check.
+- Chromium navigation to file:// and 127.0.0.1 is blocked by the runtime administrator. However, **inline-page Chromium testing** succeeded using the same HTML, CSS and JavaScript loaded into the page in memory, with no JavaScript page errors. Verified starburst pixel changes after tapping the canvas; switching to Ribbon Flow and Prism Carousel; Next slide (01 → 02); actual CSS perspective update; JSON preset download/import roundtrip; pause toggle; mobile at 390px with 0px horizontal overflow.
+- The standalone demo is separate from the Next app implementation. Vercel build is a source correctness check, not end-user motion/FPS verification.
+- Real device performance, mobile gestures, React integrated browser/visual regression and memory stability remain **not yet fully verified**. Do not call V10 production-ready.
+- The original editor from V6 still lists its 96 choices; these 3 advanced effects live in a separate lab until integrated into a shared portable exporter/catalog.
+
+### Release gates
+- Test quality and response on Android and desktop hardware and validate accessibility/reduced-motion with physical devices.
+- Benchmark and cap particle updates to meet mobile FPS/power targets.
+- Create a full standalone React component exporter (currently only source links and portable configuration JSON available).
+- Review final visuals; port approved content into a **new ChatGPT Site** and receive explicit owner approval before DNS setup.
+- Keep PR draft; do not alter public Rawnak Group ChatGPT Site or tools.rawnakgroup.com.
