@@ -373,3 +373,22 @@
 @media(max-width:810px){.rav-home-grid{grid-template-columns:1fr}.rav-home-art{order:2;max-width:440px;width:100%;margin:auto;height:280px}}
 @media(max-width:480px){.rav-home-art{transform:scale(.85);transform-origin:center}.rav-home-grid h2{font-size:43px}}
 @media(prefers-reduced-motion:reduce){.rav-home-paper{animation:none!important}}
+
+
+/* Gallery Physics V8 — original layered page artwork */
+.rag-home-teaser{background:radial-gradient(ellipse at 72% 48%,#ffffff17,#080808 50%,#000 85%);overflow:hidden}
+.rag-home-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:clamp(30px,5vw,90px);min-height:335px}
+.rag-home-grid h2{font-size:clamp(42px,5vw,73px);font-weight:740;letter-spacing:-.065em;line-height:1.06;margin:14px 0 20px}
+.rag-home-grid h2 span{background:linear-gradient(125deg,#fff,#777);background-clip:text;-webkit-text-fill-color:transparent}
+.rag-home-grid p{font-size:15px;line-height:1.75;color:#aaa;max-width:520px;margin-bottom:27px}
+.rag-home-illustration{position:relative;height:330px;perspective:950px}
+.rag-home-guide{position:absolute;inset:12% 5%;border:1px solid #ffffff35;border-radius:50%;transform:rotateX(65deg) rotateZ(20deg)}
+.rag-home-page{position:absolute;left:33%;top:35px;width:230px;height:235px;padding:22px;border:1px solid #a8a8a8;border-radius:16px;background:linear-gradient(135deg,#aaa,#292929 64%,#080808);box-shadow:20px 25px 55px #000c;display:flex;flex-direction:column;justify-content:space-between}
+.rag-home-page span{font:10px ui-monospace,monospace;letter-spacing:.14em;color:#ddd}
+.rag-home-page strong{font-size:49px;letter-spacing:-.075em;font-weight:750}
+.rag-home-page-one{transform:rotateY(-28deg) rotateZ(-12deg) translateX(-38px);animation:rt-hover 8s ease-in-out infinite}
+.rag-home-page-two{background:linear-gradient(125deg,#181818,#666 61%,#111);transform:rotateY(25deg) rotateZ(12deg) translateX(52px) scale(.83)}
+.rag-home-orb{position:absolute;left:12%;top:30%;height:63px;width:63px;border:1px solid #aaa;border-radius:50%;background:radial-gradient(circle at 30% 22%,#eee,#666 42%,#111 78%);box-shadow:0 0 36px #fff2}
+@media(max-width:800px){.rag-home-grid{grid-template-columns:1fr}.rag-home-illustration{max-width:480px;width:100%;margin:auto;height:250px;transform:scale(.85);transform-origin:top center}}
+@media(max-width:480px){.rag-home-grid h2{font-size:45px}.rag-home-illustration{transform:scale(.73);height:220px}}
+@media(prefers-reduced-motion:reduce){.rag-home-page-one{animation:none!important}}
