@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ImagePlus, RotateCcw, Upload, Pause, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ImagePlus, Pause, Play } from 'lucide-react';
 
 export type GalleryPhysicsId='page-turn'|'endless-gallery'|'spring-reel'|'image-particles';
 export const galleryPhysicsCatalog: {id:GalleryPhysicsId;en:string;ar:string;description:string;reference:string}[]=[
@@ -88,7 +88,7 @@ function useDragInertia(size:number,reduced:boolean){
   const update=useCallback((v:number)=>{positionRef.current=v;setPosition(v)},[]);
   const cancel=useCallback(()=>cancelAnimationFrame(raf.current),[]);
   useEffect(()=>cancel, [cancel]);
-  const step=useCallback((dir:number)=>{cancel();update(positionRef.current+dir*size)},[cancel,size,update]);
+  const step=useCallback((dir:number)=>{cancel();update(positionRef.current+dir)},[cancel,update]);
   const handlers={
     onPointerDown:(e:ReactPointerEvent<HTMLDivElement>)=>{cancel();pointer.current={id:e.pointerId,lastX:e.clientX,lastT:performance.now(),velocity:0,moved:false};e.currentTarget.setPointerCapture(e.pointerId)},
     onPointerMove:(e:ReactPointerEvent<HTMLDivElement>)=>{
@@ -233,7 +233,7 @@ export function PixelDrift(){
           p.vx=(p.vx+fx+dx/Math.max(d,1)*force)*.81;
           p.vy=(p.vy+fy+dy/Math.max(d,1)*force)*.81;
           p.x+=p.vx;p.y+=p.vy;
-        }else{p.x=t.x;p.y=t.y;p.vx=0;p.vy=0}
+        }else if(reduced){p.x=t.x;p.y=t.y;p.vx=0;p.vy=0}
         ctx.fillStyle='rgb('+t.r+','+t.g+','+t.b+')';ctx.fillRect(p.x,p.y,2,2);
       }
       if(!reduced)raf=requestAnimationFrame(render);
