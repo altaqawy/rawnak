@@ -138,8 +138,9 @@ const gallery=[
 export function ElasticRail(){
   const [selected,setSelected]=useState(1);
   const origin=useRef<number|null>(null);
+  const swallowedClick=useRef(false);
   const [offset,setOffset]=useState(0);
-  function up(){if(origin.current===null)return;origin.current=null;if(Math.abs(offset)>32)setSelected(i=>(i+(offset<0?1:-1)+gallery.length)%gallery.length);setOffset(0)}
+  function up(){if(origin.current===null)return;origin.current=null;swallowedClick.current=Math.abs(offset)>32;if(swallowedClick.current)setSelected(i=>(i+(offset<0?1:-1)+gallery.length)%gallery.length);setOffset(0)}
   const step=(n:number)=>setSelected(i=>(i+n+gallery.length)%gallery.length);
   return <div className="rav-gallery-scene">
     <div className="rav-gallery-track" role="region" tabIndex={0} aria-label="Elastic gallery; use arrow keys"
@@ -151,8 +152,8 @@ export function ElasticRail(){
         const pos=diff>2?diff-gallery.length:diff;
         return <button key={g.id} tabIndex={pos===0?0:-1} aria-label={'Select '+g.title} type="button"
           className={'rav-gallery-slide '+(pos===0?'active':'')}
-          style={{'--pos':pos,'--drag':offset+'px','--scene':g.gradient} as CSSProperties}
-          onClick={()=>{if(origin.current===null)setSelected(i)}}>
+          style={{'--shift':(pos*77)+'%','--drag':(offset*.8)+'px','--turn':(pos*-20)+'deg','--scale':1-Math.abs(pos)*.13,'--opacity':1-Math.abs(pos)*.17,'--layer':4-Math.abs(pos),'--scene':g.gradient} as CSSProperties}
+          onClick={()=>{if(swallowedClick.current){swallowedClick.current=false;return}if(origin.current===null)setSelected(i)}}>
           <small>{g.id} / RAWNAK</small><div className="rav-gallery-orb"/><strong>{g.title}</strong><span>{g.sub}</span>
         </button>;
       })}
@@ -280,7 +281,7 @@ export default function AdvancedLab({locale,baseHref}:{locale:Locale;baseHref:st
           <div className="rav-stage"><Demo key={active}/></div>
         </div>
         <div className="rav-source-panel">
-          <div className="rav-source-head"><strong><Code2 size={15}/> React integration</strong><div><button onClick={copy}><Copy size={14}/>{ar?'نسخ مثال الاستخدام':'Copy usage'}</button><a href={sourceUrl} target="_blank" rel="noopener noreferrer">View complete source <ExternalLink size={13}/></a></div></div>
+          <div className="rav-source-head"><strong><Code2 size={15}/> React integration</strong><div><button onClick={copy}><Copy size={14}/>{ar?'نسخ مثال الاستخدام':'Copy usage'}</button><a href={sourceUrl} target="_blank" rel="noopener noreferrer">View complete source <ExternalLink size={13}/></a><a href="https://github.com/altaqawy/rawnak/blob/feat/rawnak-tools-mvp/components/tools/advanced-lab.css" target="_blank" rel="noopener noreferrer">Component CSS <ExternalLink size={13}/></a></div></div>
           <pre dir="ltr"><code>{snippet}</code></pre><p role="status" aria-live="polite">{notice||(ar?'انقل الملف الأصلي وملف CSS إلى مشروعك، ثم استخدم الاستيراد المعروض.':'Copy AdvancedLab.tsx and advanced-lab.css into your project before using this import.')}</p>
         </div>
         <p className="rav-legal">{ar?'هذه مكونات أصلية مستوحاة من أفكار التفاعل العامة وليست نسخًا من React Bits أو كود Pro.':'Independent original implementations inspired by general interaction patterns, not React Bits source or Pro code.'}</p>
