@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent as ReactPointerEvent } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Bell, Check, ChevronDown, ChevronLeft, ChevronRight, Code2, Copy, ExternalLink, GitBranch, Play, RotateCcw, Sparkles, Trash2, X } from 'lucide-react';
 import type { Locale } from '@/i18n/config';
@@ -91,11 +91,11 @@ export function FoldedSheet(){
   function end(){if(downY.current===null)return;downY.current=null;if(pressure>60){setBall(true)}else setPressure(0)}
   return <div className="rav-crumple-scene">
     <div role="button" tabIndex={0} aria-label="Press and drag paper to crumple" className={'rav-fold-sheet '+(ball?'is-ball':'')}
-      style={{'--pressure':pressure/100} as React.CSSProperties}
+      style={{'--pressure':pressure/100} as CSSProperties}
       onPointerDown={e=>{if(ball)return;downY.current=e.clientY;e.currentTarget.setPointerCapture(e.pointerId)}}
       onPointerMove={move} onPointerUp={end} onPointerCancel={end}
       onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setBall(true)}}}>
-      <div className="rav-crumple-facets">{Array.from({length:25},(_,i)=><i key={i} style={{'--i':i,'--angle':((i*37)%110)-55+'deg'} as React.CSSProperties}/>)}</div>
+      <div className="rav-crumple-facets">{Array.from({length:25},(_,i)=><i key={i} style={{'--i':i,'--angle':((i*37)%110)-55+'deg'} as CSSProperties}/>)}</div>
       <div className="rav-paper-ink"><span>R / 001</span><strong>GOOD IDEAS<br/>TAKE SHAPE.</strong><p>Hold and drag to fold the surface</p></div>
     </div>
     <p>{ball?'Shape transformed':'Press, hold and drag to wrinkle the paper'}</p>
@@ -118,7 +118,7 @@ export function BranchNavigator(){
         <button type="button" aria-expanded={expanded===i} className={'rav-branch-parent '+(expanded===i?'open':'')} onClick={()=>setExpanded(expanded===i?null:i)}>
           <span>{String(i+1).padStart(2,'0')}</span>{g.name}<ChevronDown size={16}/>
         </button>
-        <div className={'rav-branch-children '+(expanded===i?'show':'')} style={{'--child-count':g.nodes.length} as React.CSSProperties}>
+        <div className={'rav-branch-children '+(expanded===i?'show':'')} style={{'--child-count':g.nodes.length} as CSSProperties}>
           {g.nodes.map(n=><button type="button" key={n} aria-pressed={selected===n} onClick={()=>setSelected(n)}>
             <span className="rav-branch-node"/>{n}{selected===n&&<Check size={13}/>}
           </button>)}
@@ -151,7 +151,7 @@ export function ElasticRail(){
         const pos=diff>2?diff-gallery.length:diff;
         return <button key={g.id} tabIndex={pos===0?0:-1} aria-label={'Select '+g.title} type="button"
           className={'rav-gallery-slide '+(pos===0?'active':'')}
-          style={{'--pos':pos,'--drag':offset+'px','--scene':g.gradient} as React.CSSProperties}
+          style={{'--pos':pos,'--drag':offset+'px','--scene':g.gradient} as CSSProperties}
           onClick={()=>{if(origin.current===null)setSelected(i)}}>
           <small>{g.id} / RAWNAK</small><div className="rav-gallery-orb"/><strong>{g.title}</strong><span>{g.sub}</span>
         </button>;
@@ -246,7 +246,7 @@ export function GlyphCloud(){
   return <div className="rav-particles-scene"><canvas ref={canvas} aria-label={'Particle text '+words[index]}/><div className="rav-particles-controls"><button onClick={()=>setIndex(i=>(i+words.length-1)%words.length)} aria-label="Previous word"><ChevronLeft size={17}/></button><span>{words[index]}</span><button onClick={()=>setIndex(i=>(i+1)%words.length)} aria-label="Next word"><ChevronRight size={17}/></button></div></div>;
 }
 
-export const advancedRegistry:Record<AdvancedId,()=>React.JSX.Element>={
+export const advancedRegistry:Record<AdvancedId,()=>import('react').ReactElement>={
   'paper-mill':PaperMill,'tear-pass':TearPass,'folded-sheet':FoldedSheet,'branch-nav':BranchNavigator,
   'elastic-rail':ElasticRail,'swipe-notice':SwipeNotice,'bell-pulse':BellPulse,'dot-morph':GlyphCloud,
 };
