@@ -271,6 +271,26 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
       </div>
     </section>
 
+    <section className="rt-section rvs-home" aria-labelledby="rvs-home-title">
+      <div className="rt-container rvs-home-grid">
+        <div className="rvs-home-content">
+          <div className="rt-eyebrow">SPECTRA / PARTICLES · RIBBONS · PRISM</div>
+          <h2 id="rvs-home-title">{ar?'هندسة':'Engineer'} <span>{ar?'الحركة.':'the impossible.'}</span></h2>
+          <p>{ar?'ثلاث تجارب أصلية متقدمة: Star Burst بالجسيمات، Ribbon Flow متعدد الطبقات، وPrism Carousel بمنظور ثلاثي الأبعاد. عدّل تفاصيل كل حركة وصدّر إعداداتها.':'Three first-party motion systems: particle explosions, layered elastic ribbons and a spatial Prism Carousel. Preview, tune and export settings.'}</p>
+          <Link href={'/'+locale+(toolsHost?'/spectra':'/tools/spectra')} className="rt-button rt-button-white">
+            {ar?'جرب مختبر Spectra':'Open Spectra Lab'} <ArrowUpRight size={17}/>
+          </Link>
+        </div>
+        <div className="rvs-home-art" aria-hidden="true">
+          <div className="rvs-home-gridlines"/>
+          <div className="rvs-home-prism one"><span>RAWNAK / 01</span><strong>S.</strong></div>
+          <div className="rvs-home-prism two"/>
+          <div className="rvs-home-prism three"/>
+          <div className="rvs-home-orbit"/>
+        </div>
+      </div>
+    </section>
+
     <section className="rt-section rt-showcase" id="studio" aria-labelledby="rt-showcase-title">
       <div className="rt-container rt-showcase-inner">
         <div className="rt-editor-scene">
