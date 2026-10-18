@@ -412,3 +412,23 @@
 @media(max-width:820px){.rgpu-home-layout{grid-template-columns:1fr}.rgpu-home-art{height:300px;max-width:460px;width:100%;margin:auto}}
 @media(max-width:480px){.rgpu-home-art{transform:scale(.75);height:235px}.rgpu-home-copy h2{font-size:46px}}
 @media(prefers-reduced-motion:reduce){.rgpu-home-orbit,.rgpu-home-globe{animation:none!important}}
+
+
+/* V10 Spectra motion: original grayscale 3D prisms */
+.rvs-home{background:radial-gradient(ellipse at 79% 48%,#171717,#070707 50%,#000 88%);overflow:hidden}
+.rvs-home-grid{display:grid;grid-template-columns:1fr .95fr;align-items:center;gap:clamp(25px,6vw,85px);min-height:365px}
+.rvs-home-content h2{font-size:clamp(42px,5.1vw,75px);font-weight:740;letter-spacing:-.065em;line-height:1.08;margin:15px 0 19px}
+.rvs-home-content h2 span{background:linear-gradient(125deg,#fff,#858585);background-clip:text;-webkit-text-fill-color:transparent}
+.rvs-home-content p{color:#aaa;font-size:15px;line-height:1.8;max-width:520px;margin-bottom:27px}
+.rvs-home-art{height:325px;position:relative;perspective:860px;isolation:isolate}
+.rvs-home-gridlines{position:absolute;inset:0;opacity:.40;background-image:radial-gradient(#ffffff30 1px,transparent 1px);background-size:18px 18px;mask-image:radial-gradient(ellipse,#000,transparent 78%)}
+.rvs-home-prism{position:absolute;left:32%;top:58px;width:220px;height:200px;border:1px solid #999;border-radius:15px;background:linear-gradient(130deg,#aaa,#313131 60%,#090909);box-shadow:14px 21px 60px #000b}
+.rvs-home-prism.one{padding:21px;display:flex;flex-direction:column;justify-content:space-between;transform:rotateY(-15deg) rotateZ(-7deg);z-index:3;animation:rt-hover 7s ease-in-out infinite}
+.rvs-home-prism.one span{font:10px ui-monospace,monospace;letter-spacing:.11em}
+.rvs-home-prism.one strong{font-size:110px;font-weight:760;letter-spacing:-.1em;font-style:italic;line-height:1;color:#fff}
+.rvs-home-prism.two{transform:translateX(50px) rotateY(35deg) rotateZ(10deg);opacity:.6;z-index:2}
+.rvs-home-prism.three{transform:translateX(-65px) rotateY(-39deg) rotateZ(-17deg) scale(.89);opacity:.4;z-index:1}
+.rvs-home-orbit{position:absolute;left:20%;top:15px;width:280px;height:280px;border-radius:50%;border:1px solid #ffffff22;transform:rotateX(67deg) rotateZ(-25deg)}
+@media(max-width:810px){.rvs-home-grid{grid-template-columns:1fr}.rvs-home-art{height:260px;max-width:480px;width:100%;margin:auto}}
+@media(max-width:480px){.rvs-home-art{height:220px;transform:scale(.73);transform-origin:center top}.rvs-home-content h2{font-size:44px}}
+@media(prefers-reduced-motion:reduce){.rvs-home-prism.one{animation:none!important}}
