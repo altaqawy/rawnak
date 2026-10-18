@@ -167,3 +167,28 @@ Added 12 **new original** interactive presets grouped as:
 - Test real device memory/FPS and reduced-motion fallbacks.
 - Integrate *full component source* export before advertising one-click standalone exports.
 - Preview privately in a separate ChatGPT Site and obtain approval; do not mutate the live Rawnak Group ChatGPT Site.
+
+## V9 — WebGL / Three.js Lab (2026-10-18)
+
+Advanced original interaction direction: mathematical Globe, Inside Dome and Silk Ribbon, inspired by general 3D motion concepts but NOT copied from any React Bits or Pro code/asset.
+
+### First-party implementation
+- components/tools/GpuScenes.tsx: original Fibonacci sphere point geometry, geographic grid lines, procedural interior GLSL dome and continuously updated ribbon mesh with spring-following inertia.
+- components/tools/GpuCanvas.tsx: lazily loaded R3F/Three.js canvas with resolution quality tiers, rendering pause support and WebGL-context loss handling.
+- components/tools/GpuLab.tsx: bilingual editor with drag/pointer interactions, quality controls, play/pause, reduced-motion detection and graceful fallback if WebGL unavailable.
+- components/tools/gpu-lab.css and app/[locale]/tools/gpu/page.tsx.
+- Landing teaser + localized nav. Intended public URLs on dedicated tools hostname are /en/gpu and /ar/gpu. NOT currently published.
+
+### Offline reviewer
+- raw nak tools v9 webgl lab ZIP (file label: rawnak-tools-v9-webgl-lab.zip) is a conversation download. It includes the earlier demos plus a self-contained native WebGL GLSL example of all three interactions, without external dependencies. It is a separate browser preview, NOT an exact exported copy of the R3F source.
+- Local HTML, JavaScript syntax and ZIP CRC check pass.
+- Headless Chromium in the current environment could NOT initialize EGL/WebGL, so actual GPU rendering, gesture behavior, visual fidelity and frame rates have not been fully browser-verified.
+- GitHub/Vercel CI build must be checked separately. Passing a build does not establish visual functionality.
+
+### Mandatory QA gates
+1. Test smoothness and context limits on desktop GPU and Android/iOS devices using low-quality mode.
+2. Test pointer capture, touch, pause/resume and reduced-motion behavior.
+3. Check WebGL context-loss handling and memory disposal across mount/unmount.
+4. Upgrade usage snippet to a full verified portable exporter; currently GitHub source links are supplied for reuse.
+5. Run real-device visual and accessibility regression checks.
+6. Keep this in draft PR; do not publish to the active Rawnak Group ChatGPT Site or connect domain without explicit owner approval.
