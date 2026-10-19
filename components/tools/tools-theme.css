@@ -432,3 +432,25 @@
 @media(max-width:810px){.rvs-home-grid{grid-template-columns:1fr}.rvs-home-art{height:260px;max-width:480px;width:100%;margin:auto}}
 @media(max-width:480px){.rvs-home-art{height:220px;transform:scale(.73);transform-origin:center top}.rvs-home-content h2{font-size:44px}}
 @media(prefers-reduced-motion:reduce){.rvs-home-prism.one{animation:none!important}}
+
+
+/* V11 timeline landing editorial teaser */
+.rtl11-home{background:radial-gradient(ellipse at 74% 48%,#1c1c1c,#070707 52%,#000 85%);overflow:hidden}
+.rtl11-home-inner{display:grid;grid-template-columns:1fr .97fr;align-items:center;gap:clamp(24px,6vw,85px);min-height:385px}
+.rtl11-home-copy h2{font-size:clamp(42px,5.3vw,76px);font-weight:740;letter-spacing:-.065em;line-height:1.07;margin:15px 0 19px}
+.rtl11-home-copy h2 span{background:linear-gradient(125deg,#fff,#888);background-clip:text;-webkit-text-fill-color:transparent}
+.rtl11-home-copy p{color:#aaa;font-size:15px;line-height:1.8;max-width:530px;margin-bottom:27px}
+.rtl11-home-visual{position:relative;height:310px;padding:20px 12px 0;isolation:isolate}
+.rtl11-home-stage{height:192px;border-radius:14px;border:1px solid #555;background:radial-gradient(ellipse at 49% 43%,#525252,#111 55%,#030303);position:relative;display:grid;place-items:center;box-shadow:18px 20px 55px #000b}
+.rtl11-home-stage span{font-size:106px;letter-spacing:-.12em;color:#eee;font-weight:820;font-style:italic;line-height:1}
+.rtl11-home-stage small{position:absolute;bottom:14px;right:16px;font:9px ui-monospace,monospace;letter-spacing:.16em;color:#999}
+.rtl11-home-ruler{height:21px;display:flex;justify-content:space-between;align-items:center;margin:9px 0 5px;padding:0 8px;border-bottom:1px solid #393939}
+.rtl11-home-ruler i{height:8px;width:1px;background:#777}
+.rtl11-home-track{height:20px;background:#141414;border:1px solid #343434;border-radius:4px;margin:5px 0;position:relative}
+.rtl11-home-track span{display:block;position:absolute;top:4px;height:10px;background:linear-gradient(90deg,#f3f3f3,#888);border-radius:3px}
+.rtl11-home-track.a span{left:4%;width:39%}
+.rtl11-home-track.b span{left:21%;width:53%}
+.rtl11-home-track.c span{left:55%;width:39%}
+.rtl11-home-head{position:absolute;top:215px;bottom:0;left:49%;width:1px;background:#f9f9f9;box-shadow:0 0 10px #fff8}
+@media(max-width:820px){.rtl11-home-inner{grid-template-columns:1fr}.rtl11-home-visual{max-width:530px;width:100%;margin:auto;height:315px}}
+@media(max-width:500px){.rtl11-home-visual{height:295px}.rtl11-home-stage{height:170px}.rtl11-home-head{top:194px}.rtl11-home-copy h2{font-size:47px}}
