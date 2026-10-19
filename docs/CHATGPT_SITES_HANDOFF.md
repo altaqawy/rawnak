@@ -242,3 +242,29 @@ Verification:
 - Chromium blocked file:// navigation in runtime, but using in-memory inline page loading succeeded: 4 initial clips, added fifth, edited text/effect/start/duration, scrubbed to 2.00s, downloaded standalone HTML and opened it in an isolated page, verified all five layers and seek, downloaded validated JSON, tested Arabic, and 390px mobile with zero horizontal overflow. No JS page errors.
 - HTML/JS syntax and ZIP integrity checked. Real device performance and React integrated browser regression remain necessary before publishing.
 - Owner's active Rawnak Group site in ChatGPT Sites and tools.rawnakgroup.com remain unchanged; do not merge or publish this branch without explicit approval.
+
+## V11 — Motion Timeline + Unified Studio discovery (2026-10-19)
+
+**Scope:** Create a genuine multi-track motion composition editor while keeping the Framer-style black-and-white identity and the Group ChatGPT Site untouched.
+
+### GitHub implementation
+- `lib/tools/timeline.ts`: validates versioned `rawnak.timeline.v1` project JSON, stores up to 36 independently positioned clips, provides 12 original self-contained motion formulas and a standalone HTML file generator with playback/scrubbing.
+- `components/tools/MotionTimeline.tsx`: bilingual composer with layered live preview, play/pause, scrub, loop, draggable clip start times, exact timing/length controls, add/duplicate/delete, local auto-save, JSON import/export and standalone HTML export.
+- `components/tools/motion-timeline.css`: responsive grayscale editor.
+- `app/[locale]/tools/timeline/page.tsx`: locale routes /en/timeline and /ar/timeline (planned on separate tools host).
+- `lib/tools/experiment-shortcuts.ts`: records 18 advanced V7–V10 interactions as search and direct navigation shortcuts, without eager loading their GPU or Canvas bundles into the original Visual Studio.
+- Visual Studio now has **115 searchable choices**, consisting of 91 directly preview/edit/export effects/components, 5 specialist studios, 18 advanced standalone labs entries, and the V11 timeline composer. The 18 advanced effects do **not** yet compose directly as tracks; V11 has its own set of 12 reusable, timeline-safe text/transform effects. Do not claim complete unified GPU timeline integration.
+- Updated header locale routes, landing V11 teaser, CSS registration and unified studio SEO count.
+- No React Bits or React Bits Pro implementation or assets redistributed.
+
+### Offline reviewer and verification
+- `rawnak-tools-v11-motion-timeline.zip` is the verified current conversation artifact. Includes prior V10 preview pages plus a self-contained standalone V11 HTML/CSS/JS offline review build in English and Arabic. It is **not a compiled copy of the React code**, although it implements the same core motion-frame formulas.
+- Local validation: `node --check` passed on standalone JS, ZIP CRC passed (61 files).
+- Automated headless Chromium: direct `file://` navigation was blocked by environment admin policy; verified a new in-memory page using the ZIP's actual HTML, CSS and JS assets. Passed playback clock progression, scrub to 3.40s, layer add, name/effect/time edit, JSON export, imported JSON, standalone HTML export, separately opened and replayed exported HTML with no JS exceptions, drag-to-move clip, 390px viewport with no horizontal overflow. Screenshots `rawnak-tools-v11-desktop.png` and `rawnak-tools-v11-mobile.png` are conversation artifacts.
+- GitHub/Vercel integrated Next source build at commit `9b5c13b7f0d55fb28d43dc798a20cef3a946e99b` returned success. Local demo success does not replace real browser QA of the integrated Next pages.
+
+### Production/release conditions
+1. Verify Next UI / exported HTML accessibility on mobile touch and desktop keyboards. Analyze performance/memory with many simultaneous layers.
+2. Validate React exported standalone HTML source in the deployed build, not just offline reference.
+3. Later allow timeline track types for native GPU/Canvas effects with deterministic seeking and source bundle export (currently intentionally excluded).
+4. Preview on **new separate ChatGPT Sites project**; do not merge, overwrite or publish to existing main Rawnak Group site or connect tools.rawnakgroup.com without explicit owner approval.
