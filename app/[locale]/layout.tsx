@@ -20,6 +20,7 @@ import '@/components/tools/advanced-lab.css';
 import '@/components/tools/gallery-physics.css';
 import '@/components/tools/gpu-lab.css';
 import '@/components/tools/spectra-lab.css';
+import '@/components/tools/motion-timeline.css';
 import { isToolsHost } from '@/lib/tools/domain';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getPublicSiteSettings } from '@/lib/builder/repository';
