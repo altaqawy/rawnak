@@ -24,7 +24,7 @@ export default function MotionTimeline({locale,baseHref}:{locale:Locale;baseHref
   const ar=locale==='ar';
   const [project,setProject]=useState<TimelineProject>(timelineStarter);
   const [active,setActive]=useState('intro');
-  const [seconds,setSeconds]=useState(0);
+  const [seconds,setSeconds]=useState(2.6);
   const [playing,setPlaying]=useState(false);
   const [saved,setSaved]=useState(false);
   const [notice,setNotice]=useState('');
@@ -38,7 +38,7 @@ export default function MotionTimeline({locale,baseHref}:{locale:Locale;baseHref
   useEffect(()=>{
     try{
       const json=localStorage.getItem('rawnak-timeline-v11');
-      if(json){const p=validateTimeline(JSON.parse(json));setProject(p);setActive(p.clips[0]?.id??'');}
+      if(json){const p=validateTimeline(JSON.parse(json));setProject(p);setActive(p.clips[0]?.id??'');setSeconds(Math.min(2.6,p.length));}
     }catch{/* Invalid storage is ignored and starter restored. */}
     setSaved(true);
   },[]);
