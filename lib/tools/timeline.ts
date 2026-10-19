@@ -25,8 +25,8 @@ export const timelineStarter:TimelineProject={
   clips:[
     {id:'intro',name:'RAWNAK',effect:'rise',start:0,duration:1.5,layer:0},
     {id:'halo',name:'✳',effect:'pop',start:.65,duration:1.25,layer:1},
-    {id:'tagline',name:'DESIGN IN MOTION',effect:'wipe',start:1.7,duration:1.6,layer:2},
-    {id:'ending',name:'BEYOND ORDINARY',effect:'flip',start:3.8,duration:1.35,layer:3},
+    {id:'tagline',name:'DESIGN IN MOTION',effect:'wipe',start:1.7,duration:2.3,layer:2},
+    {id:'ending',name:'BEYOND ORDINARY',effect:'flip',start:3.8,duration:3.2,layer:3},
   ],
 };
 export function clampTimeline(n:number,min:number,max:number):number{return Math.max(min,Math.min(max,n))}
@@ -77,6 +77,7 @@ export function motionFrame(effect:TimelineEffect,progress:number):{opacity:numb
 }
 export function clipFrame(clip:TimelineClip,seconds:number,reduced=false){
   if(seconds<clip.start)return {...motionFrame(clip.effect,0),opacity:0};
+  if(seconds>clip.start+clip.duration)return {...motionFrame(clip.effect,1),opacity:0};
   if(reduced)return motionFrame(clip.effect,1);
   return motionFrame(clip.effect,(seconds-clip.start)/Math.max(.1,clip.duration));
 }
@@ -104,7 +105,7 @@ export function exportTimelineHTML(project:TimelineProject):string{
     'document.getElementById("title").textContent=project.title;seek.max=project.length;'+
     'const reduced=matchMedia("(prefers-reduced-motion: reduce)");'+
     'const layers=project.clips.map(c=>{const outer=document.createElement("div"),inner=document.createElement("span");outer.className="layer";inner.textContent=c.name;outer.append(inner);stage.append(outer);return {outer,inner,c}});'+
-    'let time=0,play=false,last=0,raf=0;function render(){layers.forEach(({outer,inner,c})=>{const f=time<c.start?{opacity:0,transform:"none",filter:"none",clipPath:"inset(0 0 0 0)"}:motionFrame(c.effect,reduced.matches?1:(time-c.start)/Math.max(.1,c.duration));'+
+    'let time=0,play=false,last=0,raf=0;function render(){layers.forEach(({outer,inner,c})=>{const f=time<c.start||time>c.start+c.duration?{opacity:0,transform:"none",filter:"none",clipPath:"inset(0 0 0 0)"}:motionFrame(c.effect,reduced.matches?1:(time-c.start)/Math.max(.1,c.duration));'+
     'inner.style.opacity=String(f.opacity);inner.style.transform=f.transform;inner.style.filter=f.filter;inner.style.clipPath=f.clipPath});seek.value=String(time);clock.textContent=time.toFixed(2)+"s";toggle.textContent=play?"Pause":"Play"}'+
     'function step(now){if(!play)return;if(!last)last=now;time+=(now-last)/1000;last=now;if(time>=project.length){if(project.loop){time=time%project.length}else{time=project.length;play=false}}render();if(play)raf=requestAnimationFrame(step)}'+
     'toggle.onclick=()=>{play=!play;last=0;cancelAnimationFrame(raf);if(play){if(time>=project.length)time=0;raf=requestAnimationFrame(step)}render()};'+
