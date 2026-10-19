@@ -8,9 +8,10 @@ import { motionPresets } from '@/lib/tools/original-motions';
 import { interactionPresets } from '@/lib/tools/interaction-presets';
 import { kineticPresets } from '@/lib/tools/kinetic-presets';
 import { toolCatalog } from '@/lib/tools/catalog';
+import { experimentShortcuts } from '@/lib/tools/experiment-shortcuts';
 
 type Props={params:Promise<{locale:string}>};
-const count=motionPresets.length+interactionPresets.length+kineticPresets.length+5+toolCatalog.length;
+const count=motionPresets.length+interactionPresets.length+kineticPresets.length+5+toolCatalog.length+experimentShortcuts.length+1;
 
 export async function generateMetadata({params}:Props):Promise<Metadata>{
   const {locale}=await params;
@@ -19,7 +20,7 @@ export async function generateMetadata({params}:Props):Promise<Metadata>{
     title:language==='ar'?'المحرر البصري | Rawnak Tools':'Visual Studio | Rawnak Tools',
     description:language==='ar'
       ?'محرر بصري واحد يجمع '+count+' تأثيرًا ومكونًا وأداة، بمعاينة وتخصيص وتصدير كود.'
-      :'One editor for '+count+' Rawnak effects, components and studio entry points, with live previews and code exports.',
+      :'One catalog for '+count+' Rawnak effects and tools, including advanced experiments and a multi-track motion timeline.',
     alternates:{canonical:TOOLS_ORIGIN+'/'+language+'/studio',
       languages:{ar:TOOLS_ORIGIN+'/ar/studio',en:TOOLS_ORIGIN+'/en/studio'}},
   };
