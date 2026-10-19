@@ -13,8 +13,9 @@ import { motionPresets, generateMotionExport, type MotionPreset } from '@/lib/to
 import { interactionPresets, exportInteraction, getInteractionStyle, type InteractionPreset } from '@/lib/tools/interaction-presets';
 import { kineticPresets, kineticExport, type KineticPreset } from '@/lib/tools/kinetic-presets';
 import { toolCatalog } from '@/lib/tools/catalog';
+import { experimentShortcuts } from '@/lib/tools/experiment-shortcuts';
 
-type Family='motion'|'interaction'|'kinetic'|'component'|'utility';
+type Family='motion'|'interaction'|'kinetic'|'component'|'utility'|'experiment'|'timeline';
 type Scope='all'|Family|'favorites';
 type Format='html'|'react';
 type Preset={id:string;name:{en:string;ar:string};family:Family;sub:string;summary:string};
@@ -27,8 +28,10 @@ const unified:Preset[]=[
   ...kineticPresets.map(p=>({id:'kinetic:'+p.id,name:{en:p.en,ar:p.ar},family:'kinetic' as const,sub:p.category,summary:'3D / POINTER'})),
   ...collection.map(p=>({id:'component:'+p.slug,name:{en:p.en,ar:p.ar},family:'component' as const,sub:p.category.toLowerCase(),summary:'UI COMPONENT'})),
   ...toolCatalog.map(p=>({id:'utility:'+p.slug,name:{en:p.label.en,ar:p.label.ar},family:'utility' as const,sub:p.category.en.toLowerCase(),summary:'SPECIALIZED STUDIO'})),
+  ...experimentShortcuts.map(p=>({id:'experiment:'+p.id,name:{en:p.en,ar:p.ar},family:'experiment' as const,sub:p.section.toLowerCase(),summary:'EXPERIMENTAL LAB'})),
+  {id:'timeline:composer',name:{en:'Motion Timeline',ar:'خط الزمن للحركة'},family:'timeline' as const,sub:'multitrack editor',summary:'COMPOSER'},
 ];
-const scopes:Scope[]=['all','motion','interaction','kinetic','component','utility','favorites'];
+const scopes:Scope[]=['all','motion','interaction','kinetic','component','experiment','timeline','utility','favorites'];
 const groupLabels:Record<Scope,{en:string;ar:string}>={
   all:{en:'Everything',ar:'الكل'},
   motion:{en:'Animations',ar:'أنيميشن'},
@@ -36,6 +39,8 @@ const groupLabels:Record<Scope,{en:string;ar:string}>={
   kinetic:{en:'3D & Galleries',ar:'ثلاثي الأبعاد'},
   component:{en:'UI Components',ar:'مكونات UI'},
   utility:{en:'Tools',ar:'الأدوات'},
+  experiment:{en:'Advanced V7–V10',ar:'المتقدمة V7–V10'},
+  timeline:{en:'Timeline',ar:'الخط الزمني'},
   favorites:{en:'Saved',ar:'المفضلة'},
 };
 
@@ -133,7 +138,7 @@ export default function VisualStudio({locale,baseHref,toolsHost}:{locale:Locale;
   const [limit,setLimit]=useState(30);
   const item=unified.find(x=>x.id===chosen)??unified[0];
   const needsText=item.family!=='interaction'||interactionPresets.find(p=>'interaction:'+p.id===chosen)?.kind==='scroll';
-  const isUtility=item.family==='utility';
+  const isUtility=item.family==='utility'||item.family==='experiment'||item.family==='timeline';
   const isKineticGallery=item.family==='kinetic'&&kineticPresets.find(p=>'kinetic:'+p.id===chosen)?.category==='galleries';
   const showDuration=item.family==='motion'||item.family==='interaction'&&interactionPresets.some(p=>'interaction:'+p.id===chosen&&p.kind==='scroll')||
     item.family==='component'&&chosen==='component:text-reveal';
@@ -197,7 +202,10 @@ export default function VisualStudio({locale,baseHref,toolsHost}:{locale:Locale;
     document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
     setNotice(ar?'الملف جاهز':'Source downloaded');
   }
-  const utilityHref=(toolsHost?'/'+locale+'/':'/'+locale+'/tools/')+item.id.slice('utility:'.length);
+  const destination= item.family==='experiment'
+    ? experimentShortcuts.find(p=>'experiment:'+p.id===item.id)?.page
+    : item.family==='timeline'?'timeline':item.id.slice('utility:'.length);
+  const utilityHref=(toolsHost?'/'+locale+'/':'/'+locale+'/tools/')+(destination||'');
 
   return <main className="rtv-root">
     <div className="rtv-intro rt-container">
@@ -245,7 +253,7 @@ export default function VisualStudio({locale,baseHref,toolsHost}:{locale:Locale;
           <div className="rtv-preview-bottom">{ar?'جرّب المؤشر أو اللمس، وغيّر الإعدادات علشان تشوف الفرق.':'Interact with the canvas, or change settings to update the result.'}</div>
         </div>
         {isUtility?
-          <div className="rtv-utility-link"><p>{ar?'الأداة دي ليها محرر متخصص بكل خصائصها.':'This tool has its own dedicated full-featured editor.'}</p>
+          <div className="rtv-utility-link"><p>{ar?'التجربة دي لها معمل متخصص؛ افتحه علشان تجرب التأثير بإعداداته الكاملة.':'This experience opens in its dedicated interactive lab with the full controls.'}</p>
             <Link href={utilityHref} className="rtv-action-primary">{ar?'افتح المحرر':'Open editor'} <ArrowUpRight size={15}/></Link>
           </div>:
           <>
