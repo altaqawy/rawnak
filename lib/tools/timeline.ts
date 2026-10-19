@@ -86,7 +86,7 @@ export function exportTimelineHTML(project:TimelineProject):string{
   const safe=validateTimeline(project);
   const motionSource=motionFrame.toString();
   const scene=escapeJson(safe);
-  return '<!doctype html>\\n<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>'+
+  return '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>'+
     '<title>Rawnak Motion Timeline</title><style>'+
     '*{box-sizing:border-box}body{background:#050505;color:white;margin:0;font:14px system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px}'+
     '.shell{width:min(880px,100%)}h1{font-size:clamp(28px,5vw,54px);letter-spacing:-.06em}'+
