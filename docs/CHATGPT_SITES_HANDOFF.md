@@ -219,3 +219,26 @@ Approved continuation after V9: build three independent original, more complex i
 - Create a full standalone React component exporter (currently only source links and portable configuration JSON available).
 - Review final visuals; port approved content into a **new ChatGPT Site** and receive explicit owner approval before DNS setup.
 - Keep PR draft; do not alter public Rawnak Group ChatGPT Site or tools.rawnakgroup.com.
+
+
+## V11 — Unified Discovery + Motion Timeline (2026-10-19)
+
+Rawnak Tools V11 now contains a new bilingual multi-track motion composition editor.
+Source files:
+- lib/tools/timeline.ts: 12 original deterministic motion effects; validated project schema; time-based per-clip frame evaluator; self-contained HTML export that includes animation logic, browser playback and seek.
+- components/tools/MotionTimeline.tsx: live layered preview, playback/seek, loop, draggable clip start time, input controls, duplication, delete, title, duration, imported/exported JSON, working standalone HTML download, browser-local autosave.
+- components/tools/motion-timeline.css and app/[locale]/tools/timeline/page.tsx: responsive monochrome UI and metadata.
+- lib/tools/experiment-shortcuts.ts: lightweight index of 18 V7-V10 effects. Visual Studio discovers these as specialist lab links, not deceptive embedded previews; additionally links V11 Motion Timeline. The unified catalog changes from 96 choices to 115 total: 91 directly edited inside V6 Studio, 5 original utility editors, 18 experimental labs and 1 timeline composer.
+- New V11 home-page section, header navigation and language switch preserving /timeline.
+
+Export restrictions:
+- HTML is standalone with embedded original animation evaluator, playback controls and seek.
+- JSON is validated first-party settings, not a video file or a React component.
+- Current timeline combines up to 36 independently positioned animated text layers and 12 supported motion effects. It does **not yet** compose arbitrary WebGL/GPU components, particle shaders, and interactions on a single shared timeline. Those V7–V10 experiences are accessible via linked specialist labs until a compatible timeline adapter is built.
+
+Verification:
+- Vercel build succeeded on the implementation commit; documentation changes tracked separately.
+- Offline reviewer: rawnak-tools-v11-motion-timeline.zip. Includes earlier offline previews as well as a native standalone HTML/CSS/JavaScript behavior preview of V11. The offline code is NOT a byte-identical compiled export of the React source.
+- Chromium blocked file:// navigation in runtime, but using in-memory inline page loading succeeded: 4 initial clips, added fifth, edited text/effect/start/duration, scrubbed to 2.00s, downloaded standalone HTML and opened it in an isolated page, verified all five layers and seek, downloaded validated JSON, tested Arabic, and 390px mobile with zero horizontal overflow. No JS page errors.
+- HTML/JS syntax and ZIP integrity checked. Real device performance and React integrated browser regression remain necessary before publishing.
+- Owner's active Rawnak Group site in ChatGPT Sites and tools.rawnakgroup.com remain unchanged; do not merge or publish this branch without explicit approval.
