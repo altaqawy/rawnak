@@ -53,14 +53,13 @@ export function validateTimeline(value:unknown):TimelineProject{
   return {schema:'rawnak.timeline.v1',title:sanitizeText(v.title,'Untitled composition',90),
     length,loop:v.loop===true,clips};
 }
-function easeOut(p:number):number{return 1-Math.pow(1-p,3)}
 /**
  * Returns inline style values. No browser dependencies; embedded verbatim in standalone export.
  * One independent clip owns one DOM layer; overlaps combine visually, not as conflicting transforms.
  */
 export function motionFrame(effect:TimelineEffect,progress:number):{opacity:number;transform:string;filter:string;clipPath:string}{
   const p=Math.max(0,Math.min(1,progress));
-  const e=easeOut(p);
+  const e=1-Math.pow(1-p,3);
   const state={opacity:1,transform:'translate3d(0,0,0)',filter:'none',clipPath:'inset(0 0 0 0)'};
   if(effect==='fade'){state.opacity=e}
   else if(effect==='rise'){state.opacity=p;state.transform='translate3d(0,'+(70*(1-e)).toFixed(2)+'px,0)'}
@@ -85,7 +84,7 @@ function escapeJson(value:unknown):string{return JSON.stringify(value).replace(/
 /** A complete file with working Play/Pause/Seek and the same motionFrame evaluator as React preview. */
 export function exportTimelineHTML(project:TimelineProject):string{
   const safe=validateTimeline(project);
-  const motionSource=motionFrame.toString().replace('easeOut(p)','(1-Math.pow(1-p,3))');
+  const motionSource=motionFrame.toString();
   const scene=escapeJson(safe);
   return '<!doctype html>\\n<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>'+
     '<title>Rawnak Motion Timeline</title><style>'+
