@@ -291,6 +291,28 @@ export default function ToolsLanding({locale, toolsHost}: {locale:Locale;toolsHo
       </div>
     </section>
 
+    <section className="rt-section rtl11-home" aria-labelledby="rtl11-home-title">
+      <div className="rt-container rtl11-home-inner">
+        <div className="rtl11-home-copy">
+          <div className="rt-eyebrow">V11 / MULTI-TRACK MOTION TIMELINE</div>
+          <h2 id="rtl11-home-title">{ar?'صمّم':'Control'} <span>{ar?'كل ثانية.':'every second.'}</span></h2>
+          <p>{ar?'ركّب الأنيميشن في خط زمني متعدد الطبقات، غيّر بداية كل حركة ومدتها، عاين كل إطار، وصدّر ملف HTML كامل.':
+            'Layer animations on a real timeline. Drag clips, scrub the playhead, adjust timing, and export a working standalone HTML scene.'}</p>
+          <Link href={'/'+locale+(toolsHost?'/timeline':'/tools/timeline')} className="rt-button rt-button-white">
+            {ar?'افتح محرر الخط الزمني':'Open Motion Timeline'} <ArrowUpRight size={17}/>
+          </Link>
+        </div>
+        <div className="rtl11-home-visual" aria-hidden="true">
+          <div className="rtl11-home-stage"><span>R.</span><small>SEQUENCE / 01</small></div>
+          <div className="rtl11-home-ruler"><i/><i/><i/><i/><i/><i/><i/></div>
+          <div className="rtl11-home-track a"><b/><span/></div>
+          <div className="rtl11-home-track b"><b/><span/></div>
+          <div className="rtl11-home-track c"><b/><span/></div>
+          <div className="rtl11-home-head"/>
+        </div>
+      </div>
+    </section>
+
     <section className="rt-section rt-showcase" id="studio" aria-labelledby="rt-showcase-title">
       <div className="rt-container rt-showcase-inner">
         <div className="rt-editor-scene">
