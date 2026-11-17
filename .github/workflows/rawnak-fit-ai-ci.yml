@@ -1,0 +1,25 @@
+name: RAWNAK FIT AI — Static QA
+on:
+  push:
+    branches: [feat/rawnak-fit-ai-alpha-02]
+    paths:
+      - "projects/rawnak-fit-ai/**"
+      - ".github/workflows/rawnak-fit-ai-ci.yml"
+  pull_request:
+    paths:
+      - "projects/rawnak-fit-ai/**"
+      - ".github/workflows/rawnak-fit-ai-ci.yml"
+permissions:
+  contents: read
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check JavaScript syntax
+        run: node --check projects/rawnak-fit-ai/src/app.js
+      - name: Verify camera lifecycle and UI contracts
+        run: node projects/rawnak-fit-ai/tests/static-check.mjs
