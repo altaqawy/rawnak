@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RAWNAK FIT AI — Camera-only Diagnostic</title>
+<style>
+body{font:15px system-ui;max-width:680px;margin:30px auto;padding:15px;background:#eef4e8;color:#1d422f}
+video{width:100%;min-height:250px;background:#162b1e;border-radius:14px;object-fit:contain}
+button{border:0;border-radius:10px;background:#275b3a;color:#fff;padding:12px;margin:8px 2px;cursor:pointer}
+pre{padding:14px;background:#dce9d7;white-space:pre-wrap;word-break:break-all;direction:ltr;text-align:left}
+</style></head>
+<body><h2>RAWNAK — Camera Test</h2>
+<p>الاختبار ده بيفتح الكاميرا فقط، بدون تحميل نموذج AI، علشان نعرف مصدر المشكلة. لا يرفع الصور للسيرفر.</p>
+<video id="preview" autoplay muted playsinline></video>
+<div><button id="start">فتح الكاميرا</button><button id="stop">إيقاف</button><button id="copy">نسخ التقرير</button></div>
+<pre id="log"></pre>
+<script>
+(()=> {
+const video=document.querySelector('#preview'),log=document.querySelector('#log');
+let stream=null;
+const print=(s)=>log.textContent+=new Date().toLocaleTimeString('en-GB')+' '+s+'\n';
+print('Secure context: '+isSecureContext);
+print('User agent: '+navigator.userAgent);
+const stop=()=>{
+  if(stream){stream.getTracks().forEach(t=>{t.onended=null;t.stop()});stream=null}
+  video.pause();video.srcObject=null;print('STOPPED by user');
+};
+document.querySelector('#start').onclick=async()=>{
+ if(stream)return;
+ try{
+  if(!navigator.mediaDevices?.getUserMedia)throw Error('getUserMedia requires HTTPS/localhost');
+  stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});
+  video.srcObject=stream;
+  await video.play();
+  const track=stream.getVideoTracks()[0];
+  print('CAMERA LIVE; track='+track.readyState);
+  print('Settings: '+JSON.stringify(track.getSettings()));
+  track.onended=()=>print('UNEXPECTED TRACK END');
+  track.onmute=()=>print('Track muted');
+  track.onunmute=()=>print('Track unmuted');
+ }catch(e){
+  print('ERROR: '+(e.name||'Error')+' — '+(e.message||e));
+  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}
+ }
+};
+document.querySelector('#stop').onclick=stop;
+document.querySelector('#copy').onclick=()=>{
+ navigator.clipboard.writeText(log.textContent).then(()=>print('Copied'),()=>print('Clipboard permission denied'));
+};
+window.addEventListener('pagehide',()=>{if(stream)stream.getTracks().forEach(t=>t.stop())});
+})();
+</script></body></html>
